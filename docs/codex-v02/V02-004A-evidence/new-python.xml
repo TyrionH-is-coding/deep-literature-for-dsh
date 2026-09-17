@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="8" time="64.998" timestamp="2026-09-17T16:11:57.843195+08:00" hostname="DESKTOP-niuniu"><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[parse-fail-before]" time="5.156"><failure message="AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:11:59.122769+00:00', 'current_stage': 'translate_full', ...}&#10;assert 'failed' == 'completed'&#10;  &#10;  - completed&#10;  + failed">tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov0')
+boundary = 'parse-fail-before'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+&gt;       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:11:59.122769+00:00', 'current_stage': 'translate_full', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError</failure></testcase><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[parse-kill-before]" time="7.215"><failure message="AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:05.069202+00:00', 'current_stage': 'parse_mineru', ...}&#10;assert 'failed' == 'completed'&#10;  &#10;  - completed&#10;  + failed">tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov1')
+boundary = 'parse-kill-before'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+&gt;       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:05.069202+00:00', 'current_stage': 'parse_mineru', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError</failure></testcase><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[parse-kill-after]" time="20.918" /><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[translation-fail-after]" time="5.799"><failure message="AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:33.276954+00:00', 'current_stage': 'translate_full', ...}&#10;assert 'failed' == 'completed'&#10;  &#10;  - completed&#10;  + failed">tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov3')
+boundary = 'translation-fail-after'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+&gt;       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:33.276954+00:00', 'current_stage': 'translate_full', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError</failure></testcase><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[translation-kill-after]" time="7.240"><failure message="AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:39.108088+00:00', 'current_stage': 'translate_full', ...}&#10;assert 'failed' == 'completed'&#10;  &#10;  - completed&#10;  + failed">tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov4')
+boundary = 'translation-kill-after'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+&gt;       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:39.108088+00:00', 'current_stage': 'translate_full', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError</failure></testcase><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[baseline]" time="15.025" /><testcase classname="tests.test_v02_pipeline_contract" name="test_duplicate_translation_and_incomplete_candidate_are_non_destructive" time="1.747" /><testcase classname="tests.test_v02_pipeline_contract" name="test_engine_has_no_cancel_state_or_cli_command" time="0.119" /></testsuite></testsuites>

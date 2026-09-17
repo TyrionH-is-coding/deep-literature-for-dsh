@@ -1,0 +1,314 @@
+{
+  "scenario": "parse-fail-before",
+  "root": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before",
+  "parent": "job_c21001182252fe88",
+  "processes": [
+    {
+      "pid": 3884,
+      "identity": "windows:01dd467bf9a56b83",
+      "attempt": 0,
+      "exit": 4,
+      "worker": {
+        "pid": 20164,
+        "identity": "windows:01dd467bf9ada7d7"
+      },
+      "alive_after_wait": false,
+      "worker_alive_after_wait": false
+    },
+    {
+      "pid": 34464,
+      "identity": "windows:01dd467bfadaaecf",
+      "attempt": 1,
+      "exit": 3,
+      "worker": {
+        "pid": 31860,
+        "identity": "windows:01dd467bfae2b8ea"
+      },
+      "alive_after_wait": false,
+      "worker_alive_after_wait": false
+    }
+  ],
+  "snapshots": [],
+  "attempts": [
+    {
+      "status": {
+        "job_id": "job_c21001182252fe88",
+        "state": "failed",
+        "created_at": "2026-09-17T08:10:17.321696+00:00",
+        "updated_at": "2026-09-17T08:10:19.358134+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": "controlled_parse_fail_before",
+        "scope": null
+      },
+      "pipeline": {
+        "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+        "parent_job_id": "job_c21001182252fe88",
+        "current_stage": "parse_mineru",
+        "state": "failed",
+        "stage_jobs": {},
+        "stage_outputs": {
+          "ensure_pdf": {
+            "status": "pdf_ready",
+            "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "source_path": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+            "page_count": 0,
+            "reused": true
+          }
+        },
+        "stage_timings": {
+          "ensure_pdf": {
+            "started_at": "2026-09-17T08:10:19.034583+00:00",
+            "finished_at": "2026-09-17T08:10:19.133832+00:00"
+          },
+          "parse_mineru": {
+            "started_at": "2026-09-17T08:10:19.204159+00:00",
+            "finished_at": null
+          }
+        },
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "reader_source_sha256": null,
+        "required_action": null,
+        "last_error": "controlled_parse_fail_before",
+        "created_at": "2026-09-17T08:10:17.338886+00:00",
+        "updated_at": "2026-09-17T08:10:19.325864+00:00",
+        "completed_at": null,
+        "contract_version": "reading-pipeline-v1"
+      },
+      "assets": {}
+    },
+    {
+      "status": {
+        "job_id": "job_c21001182252fe88",
+        "state": "waiting_agent",
+        "created_at": "2026-09-17T08:10:17.321696+00:00",
+        "updated_at": "2026-09-17T08:10:21.337628+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": "full_read_artifact_inconsistent",
+        "required_input": {
+          "stage": "translate_full",
+          "error": "full_read_artifact_inconsistent"
+        },
+        "result": {},
+        "error": null,
+        "scope": null
+      },
+      "pipeline": {
+        "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+        "parent_job_id": "job_c21001182252fe88",
+        "current_stage": "translate_full",
+        "state": "waiting_agent",
+        "stage_jobs": {},
+        "stage_outputs": {
+          "ensure_pdf": {
+            "status": "pdf_ready",
+            "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "source_path": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+            "page_count": 0,
+            "reused": true
+          },
+          "parse_mineru": {
+            "status": "parsed_mineru",
+            "source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "output_path": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md",
+            "manifest_path": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json"
+          }
+        },
+        "stage_timings": {
+          "ensure_pdf": {
+            "started_at": "2026-09-17T08:10:19.034583+00:00",
+            "finished_at": "2026-09-17T08:10:19.133832+00:00"
+          },
+          "parse_mineru": {
+            "started_at": "2026-09-17T08:10:19.204159+00:00",
+            "finished_at": "2026-09-17T08:10:21.170823+00:00"
+          },
+          "translate_full": {
+            "started_at": "2026-09-17T08:10:21.212010+00:00",
+            "finished_at": null
+          }
+        },
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "reader_source_sha256": null,
+        "required_action": {
+          "reason_code": "full_read_artifact_inconsistent",
+          "stage": "translate_full",
+          "error": "full_read_artifact_inconsistent"
+        },
+        "last_error": null,
+        "created_at": "2026-09-17T08:10:17.338886+00:00",
+        "updated_at": "2026-09-17T08:10:21.304240+00:00",
+        "completed_at": null,
+        "contract_version": "reading-pipeline-v1"
+      },
+      "assets": {
+        "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md": "fda36e794449e2b9fb08def1985a92f2fb2c1dc07e2fd77de241ea8dde415afa",
+        "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json": "1cf8ac12f622d62efcbc4f161d295c773352ae2b1ccfa72c942f57b7a25b9ac9"
+      }
+    }
+  ],
+  "final": {
+    "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+    "parent_job_id": "job_c21001182252fe88",
+    "current_stage": "translate_full",
+    "state": "waiting_agent",
+    "stage_jobs": {},
+    "stage_outputs": {
+      "ensure_pdf": {
+        "status": "pdf_ready",
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "source_path": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+        "page_count": 0,
+        "reused": true
+      },
+      "parse_mineru": {
+        "status": "parsed_mineru",
+        "source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "output_path": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md",
+        "manifest_path": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json"
+      }
+    },
+    "stage_timings": {
+      "ensure_pdf": {
+        "started_at": "2026-09-17T08:10:19.034583+00:00",
+        "finished_at": "2026-09-17T08:10:19.133832+00:00"
+      },
+      "parse_mineru": {
+        "started_at": "2026-09-17T08:10:19.204159+00:00",
+        "finished_at": "2026-09-17T08:10:21.170823+00:00"
+      },
+      "translate_full": {
+        "started_at": "2026-09-17T08:10:21.212010+00:00",
+        "finished_at": null
+      }
+    },
+    "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+    "reader_source_sha256": null,
+    "required_action": {
+      "reason_code": "full_read_artifact_inconsistent",
+      "stage": "translate_full",
+      "error": "full_read_artifact_inconsistent"
+    },
+    "last_error": null,
+    "created_at": "2026-09-17T08:10:17.338886+00:00",
+    "updated_at": "2026-09-17T08:10:21.304240+00:00",
+    "completed_at": null,
+    "contract_version": "reading-pipeline-v1"
+  },
+  "final_assets": {
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md": "fda36e794449e2b9fb08def1985a92f2fb2c1dc07e2fd77de241ea8dde415afa",
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json": "1cf8ac12f622d62efcbc4f161d295c773352ae2b1ccfa72c942f57b7a25b9ac9"
+  },
+  "protected_assets_unchanged": true,
+  "duplicate_start_id": "job_c21001182252fe88",
+  "calls": [
+    {
+      "name": "worker_loaded",
+      "pid": 20164,
+      "before": {
+        "job_id": "job_c21001182252fe88",
+        "state": "queued",
+        "created_at": "2026-09-17T08:10:17.321696+00:00",
+        "updated_at": "2026-09-17T08:10:17.321696+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      },
+      "after": {
+        "job_id": "job_c21001182252fe88",
+        "state": "queued",
+        "created_at": "2026-09-17T08:10:17.321696+00:00",
+        "updated_at": "2026-09-17T08:10:17.321696+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      }
+    },
+    {
+      "name": "provider_parse",
+      "pid": 20164
+    },
+    {
+      "name": "worker_loaded",
+      "pid": 31860,
+      "before": {
+        "job_id": "job_c21001182252fe88",
+        "state": "failed",
+        "created_at": "2026-09-17T08:10:17.321696+00:00",
+        "updated_at": "2026-09-17T08:10:19.358134+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": "controlled_parse_fail_before",
+        "scope": null
+      },
+      "after": {
+        "job_id": "job_c21001182252fe88",
+        "state": "failed",
+        "created_at": "2026-09-17T08:10:17.321696+00:00",
+        "updated_at": "2026-09-17T08:10:19.358134+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": "controlled_parse_fail_before",
+        "scope": null
+      }
+    },
+    {
+      "name": "provider_parse",
+      "pid": 31860
+    },
+    {
+      "name": "parse_service",
+      "pid": 31860,
+      "cached": false
+    }
+  ],
+  "library_item": {
+    "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+    "library_key": "lib_3527b0decfa9",
+    "title": "Load Distribution in Modular Truss Bridges",
+    "authors": [
+      "Alex Rivera"
+    ],
+    "doi": "10.5555/full-read-recovery.2026.1",
+    "pmid": null,
+    "year": 2026,
+    "journal": "Fictional Engineering Notes",
+    "source_url": null,
+    "status": "pdf_ready",
+    "created_at": "2026-09-17T08:10:17.257108+00:00",
+    "updated_at": "2026-09-17T08:10:21.566973+00:00",
+    "folder_id": null,
+    "active_job_id": "job_c21001182252fe88",
+    "last_error": null,
+    "folder_name": null,
+    "tags": [],
+    "display_title": "Load Distribution in Modular Truss Bridges",
+    "abstract_en": null,
+    "abstract_zh": null,
+    "abstract_status": null,
+    "full_read_status": "翻译与生成",
+    "xlsx_sync_state": null,
+    "xlsx_error": null
+  },
+  "schema": 4,
+  "derived": [],
+  "live_owned_processes": []
+}

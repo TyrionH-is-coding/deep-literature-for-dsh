@@ -1,0 +1,47 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________ test_incomplete_new_generation_preserves_published_reader __________
+
+short_root = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4at-evv99gy6')
+
+    def test_incomplete_new_generation_preserves_published_reader(short_root):
+        result = probe.scenario(short_root / 'case', 'baseline')
+        assert result['final']['state'] == 'completed'
+        root = Path(result['root'])
+        data = root / 'data'
+        paper = result['final']['paper_id']
+        library = probe.LibraryService(data)
+        try:
+            old_artifact = tuple(library.conn.execute(
+                "SELECT rel_path, status, updated_at FROM artifacts WHERE paper_id=? AND kind='reader'", (paper,)).fetchone())
+        finally:
+            library.close()
+        base = probe.PaperWorkspace.create_for_paper_id(data, paper, probe._metadata())
+        old_reader = base.root / old_artifact[0]
+        confirmed = old_reader.read_bytes(), old_reader.stat().st_mtime_ns
+        pipeline = probe.ReadingPipeline(data, mineru_service=probe.Parse(root))
+        # Repeated completed resume/start must not republish or rewrite formal Reader.
+        pipeline.advance(result['parent'], {})
+        assert pipeline.start(paper).parent_job_id == result['parent']
+        base.source_pdf.write_bytes(base.source_pdf.read_bytes() + b'\n% changed synthetic source\n')
+        new = pipeline.start(paper)
+        assert new.parent_job_id != result['parent']
+        pipeline.advance(new.parent_job_id)
+        pipeline.advance(new.parent_job_id)
+        gate = pipeline.advance(new.parent_job_id)
+        assert gate.state == 'waiting_agent'
+        assert gate.source_pdf_sha256 != result['final']['source_pdf_sha256']
+        assert pipeline.advance(new.parent_job_id, {'full_translation': {}}).state == 'waiting_agent'
+        assert (old_reader.read_bytes(), old_reader.stat().st_mtime_ns) == confirmed
+        library = probe.LibraryService(data)
+        try:
+>           assert tuple(library.conn.execute(
+                "SELECT rel_path, status, updated_at FROM artifacts WHERE paper_id=? AND kind='reader'", (paper,)).fetchone()) == old_artifact
+E               AssertionError: assert ('generations...207439+00:00') == ('generations...112097+00:00')
+E                 
+E                 At index 1 diff: 'stale' != 'ready'
+E                 Use -v to get more diff
+
+engine\tests\test_v02_pipeline_contract.py:125: AssertionError
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\docs\codex-v02\V02-004A-evidence\new-reader-protection.xml -
+1 failed in 13.91s

@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 278, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 269, in main
+    results = [scenario(args.output / name, name) for name in SCENARIOS]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 269, in <listcomp>
+    results = [scenario(args.output / name, name) for name in SCENARIOS]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 231, in scenario
+    final = pipeline.inspect(parent)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\data_guard.py", line 127, in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\reading_pipeline.py", line 745, in inspect
+    state = self._load(parent_job_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\reading_pipeline.py", line 790, in _load
+    self._validate_state(
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\reading_pipeline.py", line 914, in _validate_state
+    raise ValueError("reading_pipeline_state_invalid")
+ValueError: reading_pipeline_state_invalid

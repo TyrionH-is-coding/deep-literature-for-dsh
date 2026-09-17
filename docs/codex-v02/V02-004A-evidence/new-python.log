@@ -1,0 +1,80 @@
+FF.FF...                                                                 [100%]
+================================== FAILURES ===================================
+____________ test_cross_process_stage_recovery[parse-fail-before] _____________
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov0')
+boundary = 'parse-fail-before'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+>       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:11:59.122769+00:00', 'current_stage': 'translate_full', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError
+____________ test_cross_process_stage_recovery[parse-kill-before] _____________
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov1')
+boundary = 'parse-kill-before'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+>       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:05.069202+00:00', 'current_stage': 'parse_mineru', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError
+__________ test_cross_process_stage_recovery[translation-fail-after] __________
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov3')
+boundary = 'translation-fail-after'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+>       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:33.276954+00:00', 'current_stage': 'translate_full', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError
+__________ test_cross_process_stage_recovery[translation-kill-after] __________
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4a-pytest/test_cross_process_stage_recov4')
+boundary = 'translation-kill-after'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(tmp_path, boundary):
+        result = probe.scenario(tmp_path / boundary, boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+>       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:12:39.108088+00:00', 'current_stage': 'translate_full', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:19: AssertionError
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\docs\codex-v02\V02-004A-evidence\new-python.xml -
+4 failed, 4 passed in 65.05s (0:01:05)

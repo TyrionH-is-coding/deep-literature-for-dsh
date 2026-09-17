@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 24, in <module>
+    from scientific_reading.full_read_service import FullReadService
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\full_read_service.py", line 14, in <module>
+    from reader.build_reader import READER_BUILD_VERSION
+ModuleNotFoundError: No module named 'reader'

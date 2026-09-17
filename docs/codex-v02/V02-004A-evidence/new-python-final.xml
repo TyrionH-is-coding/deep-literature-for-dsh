@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="8" time="75.591" timestamp="2026-09-17T16:13:31.945268+08:00" hostname="DESKTOP-niuniu"><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[parse-fail-before]" time="14.554" /><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[parse-kill-before]" time="4.703"><failure message="AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:13:47.787859+00:00', 'current_stage': 'parse_mineru', ...}&#10;assert 'failed' == 'completed'&#10;  &#10;  - completed&#10;  + failed">short_root = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4at-i3au18sk')
+boundary = 'parse-kill-before'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(short_root, boundary):
+        result = probe.scenario(short_root / 'case', boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+&gt;       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:13:47.787859+00:00', 'current_stage': 'parse_mineru', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[parse-kill-after]" time="12.800" /><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[translation-fail-after]" time="15.099" /><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[translation-kill-after]" time="13.084" /><testcase classname="tests.test_v02_pipeline_contract" name="test_cross_process_stage_recovery[baseline]" time="12.114" /><testcase classname="tests.test_v02_pipeline_contract" name="test_duplicate_translation_and_incomplete_candidate_are_non_destructive" time="1.557" /><testcase classname="tests.test_v02_pipeline_contract" name="test_engine_has_no_cancel_state_or_cli_command" time="0.087" /></testsuite></testsuites>

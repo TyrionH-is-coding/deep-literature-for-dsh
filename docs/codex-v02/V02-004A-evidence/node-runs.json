@@ -1,0 +1,32 @@
+[
+  {
+    "started": "2026-09-17T08:09:12.3427893Z",
+    "command": "node tests/full-read-pipeline.mjs",
+    "ended": "2026-09-17T08:09:13.2432557Z",
+    "exit": 0
+  },
+  {
+    "started": "2026-09-17T08:09:13.2456769Z",
+    "command": "node tests/reading-routes.mjs",
+    "ended": "2026-09-17T08:09:16.1601204Z",
+    "exit": 0
+  },
+  {
+    "started": "2026-09-17T08:09:16.1603281Z",
+    "command": "node tests/full-read-routes.mjs",
+    "ended": "2026-09-17T08:09:20.8562080Z",
+    "exit": 0
+  },
+  {
+    "started": "2026-09-17T08:09:20.8565282Z",
+    "command": "node tests/restart-recovery-pid-safety.mjs",
+    "ended": "2026-09-17T08:09:21.4558873Z",
+    "exit": 0
+  },
+  {
+    "started": "2026-09-17T08:09:21.4560634Z",
+    "command": "node tests/task7-hidden-subprocess.mjs",
+    "ended": "2026-09-17T08:09:21.9618316Z",
+    "exit": 0
+  }
+]

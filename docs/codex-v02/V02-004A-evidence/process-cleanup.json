@@ -1,0 +1,453 @@
+{
+  "checked_at": "2026-09-17T08:20:27.192309+00:00",
+  "processes": [
+    {
+      "scenario": "baseline",
+      "kind": "wrapper",
+      "pid": 34704,
+      "recorded_identity": "windows:01dd467c5468eb07",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "worker",
+      "pid": 404,
+      "recorded_identity": "windows:01dd467c5472bb12",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "wrapper",
+      "pid": 34724,
+      "recorded_identity": "windows:01dd467c566e6a9d",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "worker",
+      "pid": 35604,
+      "recorded_identity": "windows:01dd467c567a6afd",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "wrapper",
+      "pid": 12644,
+      "recorded_identity": "windows:01dd467c57f60f28",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "worker",
+      "pid": 36532,
+      "recorded_identity": "windows:01dd467c57fea5c9",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "wrapper",
+      "pid": 2044,
+      "recorded_identity": "windows:01dd467c595311cd",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "worker",
+      "pid": 19332,
+      "recorded_identity": "windows:01dd467c595aaed7",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "baseline",
+      "kind": "derived-launch-marker",
+      "pid": 32736,
+      "alive_now": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "wrapper",
+      "pid": 34800,
+      "recorded_identity": "windows:01dd467c299933d4",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "worker",
+      "pid": 30044,
+      "recorded_identity": "windows:01dd467c299efe4d",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "wrapper",
+      "pid": 3424,
+      "recorded_identity": "windows:01dd467c2a886e06",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "worker",
+      "pid": 33168,
+      "recorded_identity": "windows:01dd467c2a8ee202",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "wrapper",
+      "pid": 21540,
+      "recorded_identity": "windows:01dd467c2bde3d4e",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "worker",
+      "pid": 34252,
+      "recorded_identity": "windows:01dd467c2be6f8b2",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "wrapper",
+      "pid": 22328,
+      "recorded_identity": "windows:01dd467c2d29b8fd",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "worker",
+      "pid": 34368,
+      "recorded_identity": "windows:01dd467c2d333205",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "wrapper",
+      "pid": 17832,
+      "recorded_identity": "windows:01dd467c2e57eb57",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "worker",
+      "pid": 22092,
+      "recorded_identity": "windows:01dd467c2e5f82a3",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-fail-before",
+      "kind": "derived-launch-marker",
+      "pid": 22104,
+      "alive_now": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "wrapper",
+      "pid": 35508,
+      "recorded_identity": "windows:01dd467c33fbe17e",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "worker",
+      "pid": 5372,
+      "recorded_identity": "windows:01dd467c34044431",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "wrapper",
+      "pid": 20896,
+      "recorded_identity": "windows:01dd467c34fba251",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "worker",
+      "pid": 35072,
+      "recorded_identity": "windows:01dd467c35021742",
+      "current_identity": "windows:01dd467d64eadac5",
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "wrapper",
+      "pid": 7392,
+      "recorded_identity": "windows:01dd467c36238446",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "worker",
+      "pid": 33800,
+      "recorded_identity": "windows:01dd467c362a3b27",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "wrapper",
+      "pid": 15552,
+      "recorded_identity": "windows:01dd467c37911ec5",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "worker",
+      "pid": 25736,
+      "recorded_identity": "windows:01dd467c37996dc7",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "wrapper",
+      "pid": 29680,
+      "recorded_identity": "windows:01dd467c38d35735",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "worker",
+      "pid": 32276,
+      "recorded_identity": "windows:01dd467c38da0ca5",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-after",
+      "kind": "derived-launch-marker",
+      "pid": 25376,
+      "alive_now": false
+    },
+    {
+      "scenario": "parse-kill-before",
+      "kind": "wrapper",
+      "pid": 23976,
+      "recorded_identity": "windows:01dd467c3173093c",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-before",
+      "kind": "worker",
+      "pid": 35208,
+      "recorded_identity": "windows:01dd467c3179fda8",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-before",
+      "kind": "wrapper",
+      "pid": 20032,
+      "recorded_identity": "windows:01dd467c328f9559",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "parse-kill-before",
+      "kind": "worker",
+      "pid": 31816,
+      "recorded_identity": "windows:01dd467c329660a2",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "wrapper",
+      "pid": 5852,
+      "recorded_identity": "windows:01dd467c3d687b3a",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "worker",
+      "pid": 10452,
+      "recorded_identity": "windows:01dd467c3d7181ad",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "wrapper",
+      "pid": 29520,
+      "recorded_identity": "windows:01dd467c3f37b6f7",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "worker",
+      "pid": 31348,
+      "recorded_identity": "windows:01dd467c3f41d21e",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "wrapper",
+      "pid": 33560,
+      "recorded_identity": "windows:01dd467c40f3605f",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "worker",
+      "pid": 35424,
+      "recorded_identity": "windows:01dd467c4108b63b",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "wrapper",
+      "pid": 32472,
+      "recorded_identity": "windows:01dd467c43c6bb57",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "worker",
+      "pid": 33788,
+      "recorded_identity": "windows:01dd467c43d30014",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "wrapper",
+      "pid": 8536,
+      "recorded_identity": "windows:01dd467c45a487da",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "worker",
+      "pid": 10508,
+      "recorded_identity": "windows:01dd467c45adcddb",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-fail-after",
+      "kind": "derived-launch-marker",
+      "pid": 34700,
+      "alive_now": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "wrapper",
+      "pid": 12652,
+      "recorded_identity": "windows:01dd467c498a95d2",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "worker",
+      "pid": 1360,
+      "recorded_identity": "windows:01dd467c49942f16",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "wrapper",
+      "pid": 36480,
+      "recorded_identity": "windows:01dd467c4b479613",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "worker",
+      "pid": 34712,
+      "recorded_identity": "windows:01dd467c4b5094e1",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "wrapper",
+      "pid": 23164,
+      "recorded_identity": "windows:01dd467c4cad2b04",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "worker",
+      "pid": 31168,
+      "recorded_identity": "windows:01dd467c4cb62d82",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "wrapper",
+      "pid": 36744,
+      "recorded_identity": "windows:01dd467c4e0cc9c6",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "worker",
+      "pid": 6456,
+      "recorded_identity": "windows:01dd467c4e15e840",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "wrapper",
+      "pid": 35124,
+      "recorded_identity": "windows:01dd467c4fcacc76",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "worker",
+      "pid": 31912,
+      "recorded_identity": "windows:01dd467c4fd3adee",
+      "current_identity": null,
+      "same_process_alive": false
+    },
+    {
+      "scenario": "translation-kill-after",
+      "kind": "derived-launch-marker",
+      "pid": 31256,
+      "alive_now": false
+    }
+  ],
+  "live_owned_count": 0,
+  "scope": "Only task-owned registered workers and derived launch PIDs; no other task terminated."
+}

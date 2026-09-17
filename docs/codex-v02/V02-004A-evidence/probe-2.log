@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 263, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 254, in main
+    results = [scenario(args.output / name, name) for name in SCENARIOS]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 254, in <listcomp>
+    results = [scenario(args.output / name, name) for name in SCENARIOS]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\scripts\v02-004a-probe.py", line 184, in scenario
+    raise TimeoutError('worker_timeout')
+TimeoutError: worker_timeout

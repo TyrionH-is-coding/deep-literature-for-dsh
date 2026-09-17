@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\full_read_service.py", line 704, in _inspect_active_mineru
+    MineruArtifactValidator.validate_mineru_artifacts(
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\mineru_artifacts.py", line 204, in validate_mineru_artifacts
+    MineruArtifactValidator._verify_mineru_normalization(
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\mineru_artifacts.py", line 231, in _verify_mineru_normalization
+    regenerated = MineruNormalizer(mineru_version, normalization_version=stored_version).normalize(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\mineru_normalizer.py", line 322, in normalize
+    atomic_write_json(output / "source_map.json", source_map)
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\workspace.py", line 28, in atomic_write_json
+    temporary.write_text(
+  File "C:\Users\15694\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004a\\outputs\\v02-004a\\probe-3\\parse-fail-before\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\.mineru-verify-979cbfc2f04a45f48727dced9cf41a76\\source_map.json.tmp'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\data_guard.py", line 156, in guarded
+    return method(self, workspace, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\full_read_service.py", line 103, in prepare
+    active = self._inspect_active_mineru(workspace)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004a\engine\src\scientific_reading\full_read_service.py", line 806, in _inspect_active_mineru
+    raise FullReadError(
+scientific_reading.full_read_service.FullReadError: full_read_artifact_inconsistent
