@@ -437,25 +437,44 @@ class ReadingPipeline:
             != source_sha256
         ):
             raise ValueError("generation_source_conflict")
-        if generation.source_pdf.exists():
+        had_generation_source = generation.source_pdf.exists()
+        if had_generation_source:
             if (
                 hashlib.sha256(generation.source_pdf.read_bytes()).hexdigest()
                 != source_sha256
             ):
                 raise ValueError("generation_source_conflict")
-        else:
-            temporary = generation.source_pdf.with_suffix(".pdf.tmp")
-            shutil.copyfile(workspace.source_pdf, temporary)
-            temporary.replace(generation.source_pdf)
         nested_stage = generation_state.stages.get(pointer_stage)
+        pdf_stage = generation_state.stages.get("pdf_acquisition")
+        # Older MinerU running checkpoints predate result.source_sha256.
+        # Admit only the uncommitted parse backed by its original, full-hash
+        # checked PDF and completed acquisition; never infer a completed cache.
+        legacy_parse_running = (
+            pointer_stage == "paper_parse_upgrade"
+            and not require_stage
+            and nested_stage is not None
+            and nested_stage.status == "running"
+            and "source_sha256" not in nested_stage.result
+            and generation_state.status == "mineru_running"
+            and had_generation_source
+            and pdf_stage is not None
+            and pdf_stage.status == "completed"
+            and pdf_stage.result.get("sha256") == source_sha256
+            and not (generation.parsed_dir / "mineru").exists()
+            and not generation.manifest_path.exists()
+        )
         if nested_stage is not None and (
             nested_stage.result.get("source_sha256") != source_sha256
-        ):
+        ) and not legacy_parse_running:
             raise ValueError("generation_workspace_conflict")
         if require_stage and (
             nested_stage is None or nested_stage.status != "completed"
         ):
             raise ValueError("generation_workspace_conflict")
+        if not had_generation_source:
+            temporary = generation.source_pdf.with_suffix(".pdf.tmp")
+            shutil.copyfile(workspace.source_pdf, temporary)
+            temporary.replace(generation.source_pdf)
         if (
             pointer_stage in {"paper_parse", "paper_parse_upgrade"}
             and nested_stage is None

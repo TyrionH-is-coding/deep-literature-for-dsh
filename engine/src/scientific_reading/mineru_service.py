@@ -235,6 +235,7 @@ class MineruParseService:
                 input_hash=identity,
                 tool_version=__version__,
                 result={
+                    "source_sha256": validation.sha256,
                     "method": method,
                     "mineru_version": mineru_version,
                     "upgrade_reason": upgrade_reason,
