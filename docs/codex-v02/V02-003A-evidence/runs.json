@@ -1,0 +1,145 @@
+[
+  {
+    "name": "targeted",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "engine/tests/test_xlsx_snapshot.py",
+      "engine/tests/test_worker_xlsx_snapshot.py",
+      "engine/tests/test_pipeline_excel_end_to_end.py",
+      "-q",
+      "--tb=short",
+      "--junitxml=C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\docs\\codex-v02\\V02-003A-evidence\\targeted-junit.xml"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 42.666
+  },
+  {
+    "name": "wheel-build",
+    "command": [
+      "node",
+      "scripts/build-engine.mjs"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 20.138
+  },
+  {
+    "name": "typescript-build",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "-p",
+      "tsconfig.json"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 2.072
+  },
+  {
+    "name": "excel-actions",
+    "command": [
+      "node",
+      "tests/excel-actions.mjs"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 0.494
+  },
+  {
+    "name": "source-smoke",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\.venv\\Scripts\\python.exe",
+      "scripts/v02-003a-smoke.py"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 3.023
+  },
+  {
+    "name": "installed-venv",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\.venv\\Scripts\\python.exe",
+      "-m",
+      "venv",
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\outputs\\v02-003a\\installed-env"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 12.376
+  },
+  {
+    "name": "installed-dependencies",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\outputs\\v02-003a\\installed-env\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "-r",
+      "docs/codex-v02/evidence/audit-python-requirements.txt"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 32.225
+  },
+  {
+    "name": "installed-wheel",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\outputs\\v02-003a\\installed-env\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "install",
+      "--no-deps",
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\dist\\python\\dsh_scientific_reading_engine-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 2.221
+  },
+  {
+    "name": "installed-smoke",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\outputs\\v02-003a\\installed-env\\Scripts\\python.exe",
+      "scripts/v02-003a-smoke.py",
+      "--installed"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 3.905
+  },
+  {
+    "name": "installed-freeze",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\outputs\\v02-003a\\installed-env\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "freeze",
+      "--all"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 1.2
+  },
+  {
+    "name": "python-version",
+    "command": [
+      "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\.venv\\Scripts\\python.exe",
+      "--version"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 0.088
+  },
+  {
+    "name": "node-version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a",
+    "exit_code": 0,
+    "seconds": 0.15
+  }
+]

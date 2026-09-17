@@ -10,6 +10,7 @@ import subprocess
 import sqlite3
 import tempfile
 import re
+from contextlib import closing
 from pathlib import Path
 from typing import Any
 
@@ -21,6 +22,7 @@ from openpyxl.utils import get_column_letter
 from .library_service import library_path
 from .library_schema import migrate_library
 from .data_guard import root_operation
+from .xlsx_user_fields import read_baseline, write_baseline, text_value
 
 XLSX_COLUMNS = (
     "文献名", "作者", "主要研究单位", "年份", "期刊", "标签",
@@ -425,9 +427,13 @@ class XlsxSnapshotService:
         for row_number in range(2, sheet.max_row + 1):
             identity.append((row_number, sheet.cell(row_number, paper_id_column).value))
         identity.sheet_state = "veryHidden"
+        write_baseline(workbook, {
+            row[19]: tuple(text_value(value) for value in row[6:9]) for row in rows
+        })
         note = workbook.create_sheet("说明")
         note.append(("说明",))
         note.append(("仅“个人思考、个人理解程度、用户笔记”三列会回写 SQLite；其余字段由系统维护。",))
+        note.append(("个人字段按上次导出基线逐字段合并；冲突时整批暂停，请先备份并核对 Excel 与库中的记录。请勿修改隐藏身份与基线表。",))
         note.append(("“整理结论”来自论文整理子会话中经用户明确确认的结论，只读展示且逐条保留。",))
         note.append(("“图表资产”从当前 PDF 对应的解析清单生成，为只读视图；路径可点击并保留为可复制文本。",))
         handle, name = tempfile.mkstemp(prefix=".scientific-reading-", suffix=".xlsx", dir=self.target.parent)
@@ -503,7 +509,8 @@ class XlsxSnapshotService:
             expected: dict[int, str] = {}
             ambiguous_rows: set[int] = set()
             for row in identity.iter_rows(min_row=2, values_only=True):
-                if not isinstance(row[0], int) or not isinstance(row[1], str):
+                if type(row[0]) is not int or row[0] < 2 or not isinstance(row[1], str) or not row[1]:
+                    conflicts.append({"code": "identity_invalid"})
                     continue
                 row_number = int(row[0])
                 if row_number in expected or row_number in ambiguous_rows:
@@ -519,6 +526,13 @@ class XlsxSnapshotService:
                 {"row": row_number, "code": "identity_missing"}
                 for row_number in sorted(set(expected).difference(range(2, sheet.max_row + 1)))
             )
+            # Preserve the established identity error contract before baseline validation.
+            baseline = None
+            if not conflicts:
+                try:
+                    baseline = read_baseline(workbook, expected.values())
+                except ValueError as error:
+                    conflicts.append({"code": "baseline_invalid", "reason": str(error)})
             seen: set[str] = set()
             for row_number in range(2, sheet.max_row + 1):
                 if row_number in ambiguous_rows:
@@ -532,32 +546,57 @@ class XlsxSnapshotService:
                     continue
                 seen.add(paper_id)
                 values = [sheet.cell(row_number, headers[name]).value for name in USER_FIELDS]
-                updates.append(tuple("" if value is None else str(value) for value in values) + (paper_id,))
+                updates.append(tuple(text_value(value) for value in values) + (paper_id,))
         finally:
             workbook.close()
         migrate_library(self.data_root)
-        with sqlite3.connect(str(library_path(self.data_root))) as conn:
-            known = {row[0] for row in conn.execute("SELECT paper_id FROM items")}
+        structural_conflicts = bool(conflicts)
+        with closing(sqlite3.connect(str(library_path(self.data_root)))) as conn, conn:
+            # Acquire the writer reservation BEFORE reading D; competing writers
+            # either commit before this read or wait until this whole batch commits.
+            conn.execute("BEGIN IMMEDIATE")
             valid = []
-            for update in updates:
-                if update[-1] not in known:
-                    conflicts.append({"paper_id": update[-1], "code": "identity_unknown"})
-                else:
-                    valid.append(update)
-            conn.executemany(
-                "UPDATE items SET personal_thoughts=?, understanding_level=?, user_notes=? WHERE paper_id=?",
-                valid,
-            )
+            for *excel, paper_id in updates:
+                current = conn.execute(
+                    "SELECT personal_thoughts, understanding_level, user_notes FROM items WHERE paper_id=?",
+                    (paper_id,),
+                ).fetchone()
+                if current is None:
+                    conflicts.append({"paper_id": paper_id, "code": "identity_unknown"})
+                    continue
+                if structural_conflicts:
+                    continue
+                database = tuple(text_value(value) for value in current)
+                merged = list(database)
+                for index, field in enumerate(USER_FIELDS.values()):
+                    e, d = excel[index], database[index]
+                    b = baseline[paper_id][index] if baseline is not None and paper_id in baseline else None
+                    if e == d or (b is not None and e == b):
+                        continue
+                    if b is not None and d == b:
+                        merged[index] = e
+                    else:
+                        conflicts.append({"paper_id": paper_id, "field": field,
+                                          "code": "user_field_conflict" if b is not None else "baseline_missing_difference"})
+                if tuple(merged) != database:
+                    valid.append((*merged, paper_id))
+            if not conflicts:
+                conn.executemany(
+                    "UPDATE items SET personal_thoughts=?, understanding_level=?, user_notes=? WHERE paper_id=?",
+                    valid,
+                )
             conn.execute(
                 "INSERT OR REPLACE INTO library_meta(key,value) VALUES('xlsx_conflicts',?)",
                 (json.dumps(conflicts, ensure_ascii=False),),
             )
-        result = {"status": "success", "updated": len(valid), "conflicts": len(conflicts)}
+        result = {"status": "success", "updated": 0 if conflicts else len(valid), "conflicts": len(conflicts)}
         if conflicts:
+            code = "xlsx_identity_conflict" if any(c["code"].startswith("identity_") for c in conflicts) else "xlsx_user_fields_conflict"
             result.update(self._pending_import(
-                "xlsx_identity_conflict",
-                "已保留原工作簿和冲突行笔记；请修正文献 ID 与行身份的冲突后重试。",
+                code,
+                "已保留原工作簿和数据库，整批未导入；请先备份并核对身份、基线及冲突字段后重试。",
             ))
+            result["conflict_details"] = conflicts
         return result
 
     def _workbook_in_use(self) -> bool:

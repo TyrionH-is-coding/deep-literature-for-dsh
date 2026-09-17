@@ -1,0 +1,9 @@
+{
+  "f1_preserves_new_sqlite": true,
+  "conflict_preserves_both_sides": true,
+  "fresh_cli_retries": 2,
+  "schema": 4,
+  "installed": true,
+  "python": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\outputs\\v02-003a\\installed-env\\Scripts\\python.exe",
+  "module": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\outputs\\v02-003a\\installed-env\\Lib\\site-packages\\scientific_reading\\xlsx_snapshot.py"
+}

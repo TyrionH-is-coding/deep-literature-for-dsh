@@ -1,0 +1,20 @@
+{
+  "wheel": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003a\\dist\\python\\dsh_scientific_reading_engine-0.1.0-py3-none-any.whl",
+  "sha256": "1b4d6297fc9afdb53b68a6da97ebed867c063d8e1f33dcd812b3da1ac156bc73",
+  "bytes": 189709,
+  "requirements_sha256": "f76fab572a1f9a0bcfa6fc070309343795cc838e76ce49eb327110bee9e4ba86",
+  "source": {
+    "engine\\src\\scientific_reading\\xlsx_snapshot.py": "77e975f30f00e3dd57d2e66acc4085eb0f65d022b114e46322b424d506905bda",
+    "engine\\src\\scientific_reading\\xlsx_user_fields.py": "a8f6df85d66dbd1f5d05637be2d02b4103b8b5bfe0b01b5411138ce881a320de"
+  },
+  "wheel_members": {
+    "scientific_reading/xlsx_snapshot.py": {
+      "sha256": "77e975f30f00e3dd57d2e66acc4085eb0f65d022b114e46322b424d506905bda",
+      "matches_source_normalized": true
+    },
+    "scientific_reading/xlsx_user_fields.py": {
+      "sha256": "a8f6df85d66dbd1f5d05637be2d02b4103b8b5bfe0b01b5411138ce881a320de",
+      "matches_source_normalized": true
+    }
+  }
+}

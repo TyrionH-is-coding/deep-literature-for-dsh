@@ -1,0 +1,6 @@
+Processing c:\users\15694\documents\chatgpt\deep-literature-engine-v02-003a\dist\python\dsh_scientific_reading_engine-0.1.0-py3-none-any.whl
+Installing collected packages: dsh-scientific-reading-engine
+Successfully installed dsh-scientific-reading-engine-0.1.0
+
+[notice] A new release of pip is available: 24.0 -> 26.2.1
+[notice] To update, run: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-003a\outputs\v02-003a\installed-env\Scripts\python.exe -m pip install --upgrade pip

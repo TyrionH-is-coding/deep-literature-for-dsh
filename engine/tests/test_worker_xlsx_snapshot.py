@@ -75,3 +75,38 @@ def test_xlsx_worker_reports_write_failure_and_keeps_original(tmp_path, monkeypa
     assert status.state == state
     assert (status.reason_code if state == "waiting_user" else status.error) == code
     assert snapshot.target.read_bytes() == original
+
+
+def test_xlsx_worker_content_conflict_survives_store_restart_and_retry(tmp_path):
+    import sqlite3
+    from contextlib import closing
+    library = LibraryService(tmp_path)
+    paper_id = library.ingest(PaperMetadata(title="Offline content conflict"))["paper_id"]
+    library.close()
+    snapshot = XlsxSnapshotService(tmp_path)
+    assert snapshot.refresh()["status"] == "success"
+    workbook = openpyxl.load_workbook(snapshot.target)
+    workbook["文献"].cell(2, XLSX_COLUMNS.index("用户笔记") + 1, "Excel edit")
+    workbook.save(snapshot.target)
+    workbook.close()
+    with closing(sqlite3.connect(tmp_path / "library.sqlite")) as conn, conn:
+        conn.execute("UPDATE items SET user_notes='DB edit'")
+    original = snapshot.target.read_bytes()
+    store = BackgroundJobStore(tmp_path)
+    request = BackgroundRequest(paper_id, "xlsx_snapshot", "c" * 64, {"data_root": str(tmp_path)})
+    job_id = store.create_or_get(request).job_id
+    for attempt in range(2):
+        store = BackgroundJobStore(tmp_path)
+        if attempt:
+            store.transition(job_id, "queued")
+        assert run_job(store, job_id) == 2
+        status = store.load_status(job_id)
+        assert status.state == "waiting_user"
+        assert status.reason_code == "xlsx_user_fields_conflict"
+        assert status.required_input["updated"] == 0
+        assert status.required_input["conflict_details"] == [{
+            "paper_id": paper_id, "field": "user_notes", "code": "user_field_conflict"
+        }]
+        assert snapshot.target.read_bytes() == original
+        with closing(sqlite3.connect(tmp_path / "library.sqlite")) as conn:
+            assert conn.execute("SELECT user_notes FROM items").fetchone()[0] == "DB edit"

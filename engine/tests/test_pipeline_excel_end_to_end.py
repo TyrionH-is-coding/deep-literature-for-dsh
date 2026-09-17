@@ -302,3 +302,38 @@ def test_real_scheduled_worker_preserves_notes_across_pending_and_retry(
     assert note == "身份修复前必须保留"
     assert meta["xlsx_pending"] == "0"
     assert "xlsx_error" not in meta
+
+
+def test_real_worker_content_conflict_persists_after_process_restart(tmp_path, monkeypatch):
+    from contextlib import closing
+    engine_src = Path(__file__).resolve().parents[1] / "src"
+    inherited = os.environ.get("PYTHONPATH")
+    monkeypatch.setenv("PYTHONPATH", str(engine_src) + (os.pathsep + inherited if inherited else ""))
+    paper_id, _reader = _publish_local_reader(tmp_path)
+    first = _schedule_real_xlsx_worker(tmp_path, paper_id, "job_excel_content_seed")
+    assert first["state"] == "completed"
+    snapshot = XlsxSnapshotService(tmp_path)
+    workbook = openpyxl.load_workbook(snapshot.target)
+    sheet, row, headers = _row_for_paper(workbook, paper_id)
+    sheet.cell(row, headers["用户笔记"], "Excel conflict")
+    workbook.save(snapshot.target)
+    workbook.close()
+    with closing(sqlite3.connect(library_path(tmp_path))) as conn, conn:
+        conn.execute("UPDATE items SET user_notes='DB conflict' WHERE paper_id=?", (paper_id,))
+    original = snapshot.target.read_bytes()
+    pending = _schedule_real_xlsx_worker(tmp_path, paper_id, "job_excel_content_pending")
+    for attempt in range(2):
+        assert pending["state"] == "waiting_user", pending
+        assert pending["reason_code"] == "xlsx_user_fields_conflict"
+        assert pending["required_input"]["conflict_details"] == [{
+            "paper_id": paper_id, "field": "user_notes", "code": "user_field_conflict"
+        }]
+        assert snapshot.target.read_bytes() == original
+        with closing(sqlite3.connect(library_path(tmp_path))) as conn:
+            assert conn.execute("SELECT user_notes FROM items WHERE paper_id=?", (paper_id,)).fetchone()[0] == "DB conflict"
+        _wait_for_worker_exit(tmp_path, pending["job_id"])
+        if attempt == 0:
+            store = BackgroundJobStore(tmp_path)
+            store.transition(pending["job_id"], "queued")
+            BackgroundLauncher(tmp_path).launch_existing(pending["job_id"])
+            pending = _wait_for_terminal_status(tmp_path, pending["job_id"])

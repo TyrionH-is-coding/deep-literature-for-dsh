@@ -1,0 +1,17 @@
+beautifulsoup4==4.14.3
+colorama==0.4.6
+dsh-scientific-reading-engine @ file:///C:/Users/15694/Documents/ChatGPT/deep-literature-engine-v02-003a/dist/python/dsh_scientific_reading_engine-0.1.0-py3-none-any.whl#sha256=1b4d6297fc9afdb53b68a6da97ebed867c063d8e1f33dcd812b3da1ac156bc73
+et_xmlfile==2.0.0
+iniconfig==2.1.0
+latex2mathml==3.81.0
+openpyxl==3.1.5
+packaging==25.0
+pillow==12.0.0
+pip==24.0
+pluggy==1.6.0
+Pygments==2.19.2
+pytest==8.4.2
+setuptools==80.9.0
+soupsieve==2.8
+typing_extensions==4.15.0
+wheel==0.45.1

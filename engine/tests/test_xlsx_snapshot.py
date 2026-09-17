@@ -1,5 +1,6 @@
 import json
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 
 import openpyxl
@@ -9,6 +10,7 @@ from scientific_reading.library_service import LibraryService
 from scientific_reading.models import PaperMetadata
 from scientific_reading.review_service import ReviewService
 from scientific_reading.xlsx_snapshot import REVIEW_COLUMNS, XlsxSnapshotService, XLSX_COLUMNS
+from scientific_reading.xlsx_user_fields import BASELINE_SHEET
 
 
 def _seed(root: Path, count: int = 2) -> None:
@@ -151,7 +153,7 @@ def test_snapshot_links_pdf_reader_and_indexes_each_parsed_asset(tmp_path):
 
     assert result["status"] == "success"
     workbook = openpyxl.load_workbook(tmp_path / "library" / "scientific-reading.xlsx")
-    assert workbook.sheetnames == ["文献", "图表资产", "整理结论", "_身份", "说明"]
+    assert workbook.sheetnames == ["文献", "图表资产", "整理结论", "_身份", "_个人字段基线", "说明"]
     papers = workbook["文献"]
     paper_headers = {cell.value: cell.column for cell in papers[1]}
     assert papers.cell(2, paper_headers["PDF 路径"]).hyperlink.target == (
@@ -219,7 +221,7 @@ def test_snapshot_has_fixed_columns_all_rows_and_readme_sheet(tmp_path):
     result = XlsxSnapshotService(tmp_path).refresh()
     assert result["status"] == "success"
     workbook = openpyxl.load_workbook(tmp_path / "library" / "scientific-reading.xlsx")
-    assert workbook.sheetnames == ["文献", "图表资产", "整理结论", "_身份", "说明"]
+    assert workbook.sheetnames == ["文献", "图表资产", "整理结论", "_身份", "_个人字段基线", "说明"]
     sheet = workbook["文献"]
     assert tuple(cell.value for cell in next(sheet.iter_rows())) == XLSX_COLUMNS
     rows = list(sheet.iter_rows(values_only=True))
@@ -316,18 +318,31 @@ def test_only_user_columns_are_imported_and_identity_conflicts_are_recorded(tmp_
     workbook.close()
 
     result = service.import_user_fields()
-    assert result["updated"] == 1
+    assert result["updated"] == 0
     assert result["conflicts"] == 1
     conn = sqlite3.connect(tmp_path / "library.sqlite")
     conn.row_factory = sqlite3.Row
     row = conn.execute("SELECT * FROM items WHERE paper_id=?", (first_id,)).fetchone()
     assert row["title"] == original_title
-    assert row["personal_thoughts"] == "自己的判断"
-    assert row["understanding_level"] == "基本理解"
-    assert row["user_notes"] == "复习图 2"
+    assert not row["personal_thoughts"]
+    assert not row["understanding_level"]
+    assert not row["user_notes"]
     conflicts = conn.execute("SELECT value FROM library_meta WHERE key='xlsx_conflicts'").fetchone()[0]
     conn.close()
     assert "identity_changed" in conflicts
+    # Repairing the identity allows the full batch; system columns still cannot
+    # be imported. Keep the original successful-import protection assertions.
+    workbook = openpyxl.load_workbook(service.target)
+    workbook["文献"].cell(3, headers["文献 ID"], workbook["_身份"].cell(3, 2).value)
+    workbook.save(service.target)
+    workbook.close()
+    assert service.refresh()["status"] == "success"
+    with closing(sqlite3.connect(tmp_path / "library.sqlite")) as conn:
+        row = conn.execute(
+            "SELECT title, personal_thoughts, understanding_level, user_notes FROM items WHERE paper_id=?",
+            (first_id,),
+        ).fetchone()
+    assert row == (original_title, "自己的判断", "基本理解", "复习图 2")
 
 
 def test_permission_error_keeps_old_file_and_records_pending_then_retry(tmp_path, monkeypatch):
@@ -379,14 +394,14 @@ def test_refresh_preserves_conflicting_notes_until_identity_is_repaired(tmp_path
 
     assert result["status"] == "pending"
     assert result["error"]["code"] == "xlsx_identity_conflict"
-    assert result["updated"] == 1
+    assert result["updated"] == 0
     assert result["conflicts"] == 1
     assert service.target.read_bytes() == original
     conn = sqlite3.connect(tmp_path / "library.sqlite")
     notes = dict(conn.execute("SELECT paper_id, user_notes FROM items"))
     meta = dict(conn.execute("SELECT key,value FROM library_meta"))
     conn.close()
-    assert "正常行的笔记" in notes.values()
+    assert all(not value for value in notes.values())
     assert not notes[paper_id]
     assert meta["xlsx_pending"] == "1"
     assert meta["xlsx_error"] == "xlsx_identity_conflict"
@@ -529,7 +544,7 @@ def test_refresh_does_not_misattribute_notes_when_identity_row_is_duplicated(tmp
     notes = dict(conn.execute("SELECT paper_id, user_notes FROM items"))
     conn.close()
     assert notes[first_id] is None
-    assert notes[second_id] == "属于第二行的笔记"
+    assert notes[second_id] is None
 
 
 def test_refresh_preserves_unreadable_workbook_and_allows_file_repair(tmp_path):
@@ -550,3 +565,254 @@ def test_refresh_preserves_unreadable_workbook_and_allows_file_repair(tmp_path):
     moved.replace(service.target)
     service.target.write_bytes(valid)
     assert service.refresh()["status"] == "success"
+
+
+FIELD_NAMES = ("个人思考", "个人理解程度", "用户笔记")
+SQL_FIELDS = "personal_thoughts, understanding_level, user_notes"
+
+
+def _write_personal(root, values):
+    with closing(sqlite3.connect(root / "library.sqlite")) as conn, conn:
+        conn.execute("UPDATE items SET personal_thoughts=?, understanding_level=?, user_notes=?", values)
+
+
+def _read_personal(root):
+    with closing(sqlite3.connect(root / "library.sqlite")) as conn:
+        return conn.execute(f"SELECT {SQL_FIELDS} FROM items ORDER BY paper_id").fetchall()
+
+
+def _edit_personal(service, values, row=2):
+    workbook = openpyxl.load_workbook(service.target)
+    for name, value in zip(FIELD_NAMES, values):
+        workbook["文献"].cell(row, XLSX_COLUMNS.index(name) + 1).value = value
+    workbook.save(service.target)
+    workbook.close()
+
+
+@pytest.mark.parametrize("excel,database,expected", [
+    (("B",)*3, ("D",)*3, ("D",)*3),  # F1: untouched old workbook
+    (("E",)*3, ("B",)*3, ("E",)*3),
+    (("same",)*3, ("same",)*3, ("same",)*3),
+    (("E", "B", "B"), ("B", "D", "B"), ("E", "D", "B")),
+    ((None, "", None), ("B",)*3, ("",)*3),
+    (("B",)*3, ("",)*3, ("",)*3),
+    (("B",)*3, ("B",)*3, ("B",)*3),
+    (("=literal", "中文\n换行", "#N/A"), ("B",)*3, ("=literal", "中文\n换行", "#N/A")),
+])
+def test_three_way_user_fields(tmp_path, excel, database, expected):
+    _seed(tmp_path, 1)
+    _write_personal(tmp_path, ("B",)*3)
+    service = XlsxSnapshotService(tmp_path)
+    assert service.refresh()["status"] == "success"
+    _edit_personal(service, excel)
+    _write_personal(tmp_path, database)
+    assert service.refresh()["status"] == "success"
+    assert _read_personal(tmp_path) == [expected]
+    # A new service (restart) reads the newly published baseline, idempotently.
+    assert XlsxSnapshotService(tmp_path).refresh()["status"] == "success"
+    assert _read_personal(tmp_path) == [expected]
+    workbook = openpyxl.load_workbook(service.target)
+    assert workbook[BASELINE_SHEET].sheet_state == "veryHidden"
+    workbook.close()
+
+
+@pytest.mark.parametrize("field", range(3))
+def test_content_conflict_preserves_whole_batch_and_retries(tmp_path, field):
+    _seed(tmp_path, 2)
+    _write_personal(tmp_path, ("B",)*3)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    excel = ["B"]*3
+    excel[field] = "Excel edit"
+    _edit_personal(service, excel)
+    _edit_personal(service, ("other row edit", "B", "B"), row=3)
+    database = ["B"]*3
+    database[field] = "DB edit"
+    _write_personal(tmp_path, database)
+    before = service.target.read_bytes()
+    for _ in range(2):
+        result = XlsxSnapshotService(tmp_path).refresh()
+        assert result["status"] == "pending"
+        assert result["updated"] == 0
+        assert any(c.get("field") == SQL_FIELDS.split(", ")[field] for c in result["conflict_details"])
+        assert service.target.read_bytes() == before
+        assert _read_personal(tmp_path) == [tuple(database)]*2
+
+
+@pytest.mark.parametrize("different", [False, True])
+def test_legacy_workbook_requires_equality(tmp_path, different):
+    _seed(tmp_path, 1)
+    _write_personal(tmp_path, ("B",)*3)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    workbook = openpyxl.load_workbook(service.target)
+    del workbook[BASELINE_SHEET]
+    workbook["_身份"]["C1"] = None
+    workbook["_身份"]["D1"] = None
+    workbook.save(service.target)
+    workbook.close()
+    if different:
+        _edit_personal(service, ("E", "B", "B"))
+    original = service.target.read_bytes()
+    result = service.refresh()
+    assert result["status"] == ("pending" if different else "success")
+    assert _read_personal(tmp_path) == [("B",)*3]
+    if different:
+        assert service.target.read_bytes() == original
+        assert result["conflict_details"][0]["code"] == "baseline_missing_difference"
+    else:
+        workbook = openpyxl.load_workbook(service.target)
+        assert BASELINE_SHEET in workbook.sheetnames
+        workbook.close()
+
+
+@pytest.mark.parametrize("damage", ["sheet", "marker", "checksum", "value", "duplicate", "missing", "id", "header", "formula"])
+def test_damaged_baseline_never_falls_back_to_import(tmp_path, damage):
+    _seed(tmp_path, 1)
+    _write_personal(tmp_path, ("B",)*3)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    _edit_personal(service, ("E",)*3)
+    workbook = openpyxl.load_workbook(service.target)
+    baseline = workbook[BASELINE_SHEET]
+    if damage == "sheet":
+        del workbook[BASELINE_SHEET]
+    elif damage in ("marker", "checksum"):
+        workbook["_身份"]["C1" if damage == "marker" else "D1"] = "broken"
+    elif damage == "duplicate":
+        baseline.append(tuple(cell.value for cell in baseline[2]))
+    elif damage == "missing":
+        baseline.delete_rows(2)
+    else:
+        baseline[{"value": "B2", "id": "A2", "header": "A1", "formula": "B2"}[damage]] = "=1" if damage == "formula" else "broken"
+    workbook.save(service.target)
+    workbook.close()
+    original = service.target.read_bytes()
+    result = service.refresh()
+    assert result["status"] == "pending"
+    assert result["updated"] == 0
+    assert result["conflict_details"][0]["code"] == "baseline_invalid"
+    assert service.target.read_bytes() == original
+    assert _read_personal(tmp_path) == [("B",)*3]
+
+
+def test_import_commit_replace_failure_and_retry_is_idempotent(tmp_path, monkeypatch):
+    _seed(tmp_path, 1)
+    _write_personal(tmp_path, ("B",)*3)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    _edit_personal(service, ("E",)*3)
+    original = service.target.read_bytes()
+    real_replace = __import__("os").replace
+    def fail(source, target):
+        if str(target) == str(service.target):
+            raise PermissionError("fixture")
+        return real_replace(source, target)
+    with monkeypatch.context() as patch:
+        patch.setattr("scientific_reading.xlsx_snapshot.os.replace", fail)
+        assert service.refresh()["status"] == "pending"
+    assert _read_personal(tmp_path) == [("E",)*3]
+    assert service.target.read_bytes() == original
+    assert XlsxSnapshotService(tmp_path).refresh()["status"] == "success"
+    assert _read_personal(tmp_path) == [("E",)*3]
+
+
+def test_import_rereads_database_after_excel_load(tmp_path, monkeypatch):
+    _seed(tmp_path, 1)
+    _write_personal(tmp_path, ("B",)*3)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    _edit_personal(service, ("E", "B", "B"))
+    original = service.target.read_bytes()
+    real_load = openpyxl.load_workbook
+    def concurrent_load(*args, **kwargs):
+        workbook = real_load(*args, **kwargs)
+        _write_personal(tmp_path, ("D",)*3)
+        return workbook
+    monkeypatch.setattr("scientific_reading.xlsx_snapshot.load_workbook", concurrent_load)
+    assert service.refresh()["status"] == "pending"
+    assert _read_personal(tmp_path) == [("D",)*3]
+    assert service.target.read_bytes() == original
+
+
+def test_writer_reservation_covers_read_through_commit(tmp_path, monkeypatch):
+    import threading
+    _seed(tmp_path, 1)
+    _write_personal(tmp_path, ("B",)*3)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    _edit_personal(service, ("E",)*3)
+    real_connect = sqlite3.connect
+    attempts = []
+    def attempt_write():
+        with closing(real_connect(tmp_path / "library.sqlite", timeout=0)) as conn:
+            try:
+                conn.execute("UPDATE items SET user_notes='concurrent'")
+                conn.commit()
+                attempts.append("wrote")
+            except sqlite3.OperationalError as error:
+                attempts.append(str(error))
+    class Connection(sqlite3.Connection):
+        def execute(self, sql, *args, **kwargs):
+            result = super().execute(sql, *args, **kwargs)
+            if sql.startswith("SELECT personal_thoughts,"):
+                thread = threading.Thread(target=attempt_write)
+                thread.start()
+                thread.join(timeout=3)
+                assert not thread.is_alive()
+            return result
+    def connect(*args, **kwargs):
+        kwargs["factory"] = Connection
+        return real_connect(*args, **kwargs)
+    monkeypatch.setattr("scientific_reading.xlsx_snapshot.sqlite3.connect", connect)
+    assert service.refresh()["status"] == "success"
+    assert attempts == ["database is locked"]
+    # A later committed writer is retained on the next refresh.
+    _write_personal(tmp_path, ("D",)*3)
+    assert service.refresh()["status"] == "success"
+    assert _read_personal(tmp_path) == [("D",)*3]
+
+
+@pytest.mark.parametrize("damage", ["sort", "invalid_identity", "unknown_db"])
+def test_identity_errors_block_other_valid_edits(tmp_path, damage):
+    _seed(tmp_path, 2)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    _edit_personal(service, ("edit", "edit", "edit"))
+    workbook = openpyxl.load_workbook(service.target)
+    sheet = workbook["文献"]
+    if damage == "sort":
+        first = [cell.value for cell in sheet[2]]
+        second = [cell.value for cell in sheet[3]]
+        for column, (one, two) in enumerate(zip(first, second), 1):
+            sheet.cell(2, column).value = two
+            sheet.cell(3, column).value = one
+    elif damage == "invalid_identity":
+        workbook["_身份"].append(("not a row", "unknown"))
+    else:
+        paper_id = sheet.cell(3, XLSX_COLUMNS.index("文献 ID") + 1).value
+        with closing(sqlite3.connect(tmp_path / "library.sqlite")) as conn, conn:
+            conn.execute("DELETE FROM items WHERE paper_id=?", (paper_id,))
+    workbook.save(service.target)
+    workbook.close()
+    before = service.target.read_bytes()
+    database = _read_personal(tmp_path)
+    result = service.refresh()
+    assert result["status"] == "pending"
+    assert result["error"]["code"] == "xlsx_identity_conflict"
+    assert result["updated"] == 0
+    assert service.target.read_bytes() == before
+    assert _read_personal(tmp_path) == database
+
+
+def test_overlong_database_note_is_not_silently_truncated(tmp_path):
+    _seed(tmp_path, 1)
+    service = XlsxSnapshotService(tmp_path)
+    service.refresh()
+    before = service.target.read_bytes()
+    _write_personal(tmp_path, ("B", "B", "x"*32768))
+    result = service.refresh()
+    assert result["status"] == "failed"
+    assert result["error"]["code"] == "xlsx_snapshot_failed"
+    assert service.target.read_bytes() == before
+    assert _read_personal(tmp_path) == [("B", "B", "x"*32768)]
