@@ -1,0 +1,25 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_cross_process_stage_recovery[parse-kill-before] _____________
+
+short_root = WindowsPath('C:/Users/15694/AppData/Local/Temp/v4at-l6en771t')
+boundary = 'parse-kill-before'
+
+    @pytest.mark.parametrize('boundary', probe.SCENARIOS)
+    def test_cross_process_stage_recovery(short_root, boundary):
+        result = probe.scenario(short_root / 'case', boundary)
+        assert not result['live_owned_processes']
+        assert result['duplicate_start_id'] == result['parent']
+        assert result['protected_assets_unchanged']
+>       assert result['final']['state'] == 'completed', result['final']
+E       AssertionError: {'completed_at': None, 'contract_version': 'reading-pipeline-v1', 'created_at': '2026-09-17T08:33:15.198819+00:00', 'current_stage': 'parse_mineru', ...}
+E       assert 'failed' == 'completed'
+E         
+E         - completed
+E         + failed
+
+engine\tests\test_v02_pipeline_contract.py:27: AssertionError
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004b\docs\codex-v02\V02-004B-evidence\baseline.xml -
+=========================== short test summary info ===========================
+FAILED engine\tests\test_v02_pipeline_contract.py::test_cross_process_stage_recovery[parse-kill-before]
+1 failed in 8.26s

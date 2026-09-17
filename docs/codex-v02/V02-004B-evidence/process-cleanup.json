@@ -1,0 +1,617 @@
+{
+  "records": [
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "launcher",
+      "pid": 37812,
+      "expected": "windows:01dd467f4129a4a8",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "worker",
+      "pid": 36848,
+      "expected": "windows:01dd467f412fe688",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "launcher",
+      "pid": 38408,
+      "expected": "windows:01dd467f4224cace",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "worker",
+      "pid": 38604,
+      "expected": "windows:01dd467f422b522e",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "launcher",
+      "pid": 26896,
+      "expected": "windows:01dd467f4bd3d994",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "worker",
+      "pid": 27684,
+      "expected": "windows:01dd467f4be0415e",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "launcher",
+      "pid": 26764,
+      "expected": "windows:01dd467f4ce8cfe9",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "worker",
+      "pid": 28064,
+      "expected": "windows:01dd467f4cef7493",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "launcher",
+      "pid": 28372,
+      "expected": "windows:01dd467f4dcad398",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "worker",
+      "pid": 38892,
+      "expected": "windows:01dd467f4dd2218c",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "launcher",
+      "pid": 21536,
+      "expected": "windows:01dd467f4eb45ddb",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "worker",
+      "pid": 38328,
+      "expected": "windows:01dd467f4ebc592e",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-old",
+      "role": "derived",
+      "pid": 28420,
+      "alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "launcher",
+      "pid": 38088,
+      "expected": "windows:01dd467fb71e6b41",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "worker",
+      "pid": 37180,
+      "expected": "windows:01dd467fb72caef8",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "launcher",
+      "pid": 19968,
+      "expected": "windows:01dd467fb8ca6540",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "worker",
+      "pid": 40872,
+      "expected": "windows:01dd467fb8d316a7",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "launcher",
+      "pid": 31344,
+      "expected": "windows:01dd467fb9df820b",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "worker",
+      "pid": 39220,
+      "expected": "windows:01dd467fb9e62154",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "launcher",
+      "pid": 39648,
+      "expected": "windows:01dd467fbacf4077",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "worker",
+      "pid": 33592,
+      "expected": "windows:01dd467fbad50df5",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\baseline",
+      "role": "derived",
+      "pid": 37864,
+      "alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "launcher",
+      "pid": 34080,
+      "expected": "windows:01dd467f8b450356",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "worker",
+      "pid": 36016,
+      "expected": "windows:01dd467f8b4c40bd",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "launcher",
+      "pid": 33236,
+      "expected": "windows:01dd467f8cab62ff",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "worker",
+      "pid": 34252,
+      "expected": "windows:01dd467f8cb3a82a",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "launcher",
+      "pid": 38684,
+      "expected": "windows:01dd467f8e35d9c4",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "worker",
+      "pid": 20032,
+      "expected": "windows:01dd467f8e3f6fed",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "launcher",
+      "pid": 36824,
+      "expected": "windows:01dd467f8f912926",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "worker",
+      "pid": 27900,
+      "expected": "windows:01dd467f8f98ac84",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "launcher",
+      "pid": 38836,
+      "expected": "windows:01dd467f90eb5abc",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "worker",
+      "pid": 35052,
+      "expected": "windows:01dd467f90f32c66",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-fail-before",
+      "role": "derived",
+      "pid": 30980,
+      "alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "launcher",
+      "pid": 38772,
+      "expected": "windows:01dd467f9cb60734",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "worker",
+      "pid": 38880,
+      "expected": "windows:01dd467f9cbe9f08",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "launcher",
+      "pid": 38048,
+      "expected": "windows:01dd467f9e456f35",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "worker",
+      "pid": 38476,
+      "expected": "windows:01dd467f9e4c2866",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "launcher",
+      "pid": 28884,
+      "expected": "windows:01dd467f9ff6b1e9",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "worker",
+      "pid": 32164,
+      "expected": "windows:01dd467f9fff5d77",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "launcher",
+      "pid": 38372,
+      "expected": "windows:01dd467fa154cd5f",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "worker",
+      "pid": 37916,
+      "expected": "windows:01dd467fa15b037a",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "launcher",
+      "pid": 7104,
+      "expected": "windows:01dd467fa2651144",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "worker",
+      "pid": 29508,
+      "expected": "windows:01dd467fa26b0784",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-after",
+      "role": "derived",
+      "pid": 37020,
+      "alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "launcher",
+      "pid": 25420,
+      "expected": "windows:01dd467f93f9de25",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "worker",
+      "pid": 28644,
+      "expected": "windows:01dd467f9400a645",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "launcher",
+      "pid": 34888,
+      "expected": "windows:01dd467f9545297c",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "worker",
+      "pid": 28756,
+      "expected": "windows:01dd467f954be9d0",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "launcher",
+      "pid": 37704,
+      "expected": "windows:01dd467f96a36d5d",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "worker",
+      "pid": 38688,
+      "expected": "windows:01dd467f96a97755",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "launcher",
+      "pid": 34612,
+      "expected": "windows:01dd467f97b82337",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "worker",
+      "pid": 35160,
+      "expected": "windows:01dd467f97bf0218",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "launcher",
+      "pid": 34876,
+      "expected": "windows:01dd467f98cdb46d",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "worker",
+      "pid": 35128,
+      "expected": "windows:01dd467f98d502f0",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\parse-kill-before",
+      "role": "derived",
+      "pid": 14220,
+      "alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "launcher",
+      "pid": 37628,
+      "expected": "windows:01dd467fa4e7b6d4",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "worker",
+      "pid": 36948,
+      "expected": "windows:01dd467fa4edb1c3",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "launcher",
+      "pid": 36876,
+      "expected": "windows:01dd467fa631a2b2",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "worker",
+      "pid": 37388,
+      "expected": "windows:01dd467fa637473f",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "launcher",
+      "pid": 28984,
+      "expected": "windows:01dd467fa734b4bc",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "worker",
+      "pid": 37064,
+      "expected": "windows:01dd467fa73a9450",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "launcher",
+      "pid": 38888,
+      "expected": "windows:01dd467fa82a1faa",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "worker",
+      "pid": 35756,
+      "expected": "windows:01dd467fa8314ae9",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "launcher",
+      "pid": 38772,
+      "expected": "windows:01dd467fa94018de",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "worker",
+      "pid": 8556,
+      "expected": "windows:01dd467fa9479c00",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-fail-after",
+      "role": "derived",
+      "pid": 30972,
+      "alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "launcher",
+      "pid": 31020,
+      "expected": "windows:01dd467fabb45c39",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "worker",
+      "pid": 34928,
+      "expected": "windows:01dd467fabbb7e45",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "launcher",
+      "pid": 38372,
+      "expected": "windows:01dd467face78476",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "worker",
+      "pid": 38132,
+      "expected": "windows:01dd467faced2866",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "launcher",
+      "pid": 36148,
+      "expected": "windows:01dd467fade77b53",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "worker",
+      "pid": 36292,
+      "expected": "windows:01dd467faded69d0",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "launcher",
+      "pid": 31792,
+      "expected": "windows:01dd467faeed672c",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "worker",
+      "pid": 12424,
+      "expected": "windows:01dd467faef3cd4f",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "launcher",
+      "pid": 38360,
+      "expected": "windows:01dd467fb010a07b",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "worker",
+      "pid": 38832,
+      "expected": "windows:01dd467fb0170f35",
+      "current": null,
+      "owned_alive": false
+    },
+    {
+      "root": "C:\\tmp\\v02-004b-new\\translation-kill-after",
+      "role": "derived",
+      "pid": 25884,
+      "alive": false
+    }
+  ],
+  "live_owned_count": 0,
+  "claims": [],
+  "retained_roots": [
+    "C:\\tmp\\v02-004b-old",
+    "C:\\tmp\\v02-004b-new\\baseline",
+    "C:\\tmp\\v02-004b-new\\parse-fail-before",
+    "C:\\tmp\\v02-004b-new\\parse-kill-after",
+    "C:\\tmp\\v02-004b-new\\parse-kill-before",
+    "C:\\tmp\\v02-004b-new\\translation-fail-after",
+    "C:\\tmp\\v02-004b-new\\translation-kill-after"
+  ]
+}

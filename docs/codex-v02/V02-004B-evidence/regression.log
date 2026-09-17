@@ -1,0 +1,8 @@
+........................................................ss.............. [ 67%]
+..................................s                                      [100%]
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004b\docs\codex-v02\V02-004B-evidence\regression.xml -
+=========================== short test summary info ===========================
+SKIPPED [1] engine\tests\test_platform_integration.py:84: Unix zombie lifecycle
+SKIPPED [1] engine\tests\test_platform_integration.py:97: requires unlocked OS credential service
+SKIPPED [1] engine\tests\test_generation_package_manifest.py:127: directory symlinks unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\15694\\AppData\\Local\\Temp\\pytest-of-15694\\pytest-32\\test_generation_package_manife3\\outside-dir' -> 'C:\\Users\\15694\\AppData\\Local\\Temp\\pytest-of-15694\\pytest-32\\test_generation_package_manife3\\papers\\doi_10.5555_bridge.2024.1\\generations\\eeeeeeeeeeeeeeee\\linked'
+104 passed, 3 skipped in 47.28s

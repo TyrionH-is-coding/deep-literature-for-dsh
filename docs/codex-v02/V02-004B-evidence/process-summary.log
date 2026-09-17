@@ -1,0 +1,44 @@
+[
+  {
+    "scenario": "parse-fail-before",
+    "state": "completed",
+    "error": null,
+    "protected": true,
+    "live": []
+  },
+  {
+    "scenario": "parse-kill-before",
+    "state": "completed",
+    "error": null,
+    "protected": true,
+    "live": []
+  },
+  {
+    "scenario": "parse-kill-after",
+    "state": "completed",
+    "error": null,
+    "protected": true,
+    "live": []
+  },
+  {
+    "scenario": "translation-fail-after",
+    "state": "completed",
+    "error": null,
+    "protected": true,
+    "live": []
+  },
+  {
+    "scenario": "translation-kill-after",
+    "state": "completed",
+    "error": null,
+    "protected": true,
+    "live": []
+  },
+  {
+    "scenario": "baseline",
+    "state": "completed",
+    "error": null,
+    "protected": true,
+    "live": []
+  }
+]

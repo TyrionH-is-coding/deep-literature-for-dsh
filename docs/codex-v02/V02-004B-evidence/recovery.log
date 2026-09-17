@@ -1,0 +1,57 @@
+................F..............                                          [100%]
+================================== FAILURES ===================================
+_________ test_legacy_exception_rejects_conflicts[directory_identity] _________
+
+pending = (<scientific_reading.reading_pipeline.ReadingPipeline object at 0x000001FB3EBADB10>, PaperWorkspace(root=WindowsPath('...de3d9fbe566316222c11283f12e46a', 'job_14bbc10d40757965', WindowsPath('C:/Users/15694/AppData/Local/Temp/v4b-picb89ql'))
+mutation = 'directory_identity'
+
+    @pytest.mark.parametrize('mutation', [
+        'explicit_other_sha', 'explicit_null_sha', 'completed_missing_sha', 'completed_other_sha',
+        'failed', 'queued', 'wrong_job_status', 'pdf_unconfirmed', 'pdf_hash_missing',
+        'pdf_hash_other', 'missing_generation_source', 'changed_generation_source',
+        'changed_base_source', 'metadata', 'directory_identity', 'published_target', 'other_stage',
+    ])
+    def test_legacy_exception_rejects_conflicts(pending, mutation):
+        pipeline, base, generation, digest, _, _ = pending
+        job = generation.load_job()
+        stage = job.stages['paper_parse_upgrade']
+        pointer_stage = 'paper_parse_upgrade'
+        if mutation == 'explicit_other_sha': stage.result['source_sha256'] = digest[:16] + '0' * 48
+        elif mutation == 'explicit_null_sha': stage.result['source_sha256'] = None
+        elif mutation.startswith('completed_'):
+            stage.status = 'completed'
+            if mutation.endswith('other_sha'): stage.result['source_sha256'] = '0' * 64
+        elif mutation in {'failed', 'queued'}: stage.status = mutation
+        elif mutation == 'wrong_job_status': job.status = 'pdf_ready'
+        elif mutation == 'pdf_unconfirmed': job.stages['pdf_acquisition'].status = 'running'
+        elif mutation == 'pdf_hash_missing': job.stages['pdf_acquisition'].result.pop('sha256')
+        elif mutation == 'pdf_hash_other': job.stages['pdf_acquisition'].result['sha256'] = '0' * 64
+        elif mutation == 'missing_generation_source': generation.source_pdf.unlink()
+        elif mutation == 'changed_generation_source': generation.source_pdf.write_bytes(b'changed')
+        elif mutation == 'changed_base_source': base.source_pdf.write_bytes(b'changed')
+        elif mutation == 'metadata':
+            metadata = p.read(generation.metadata_path)
+            metadata['doi'] = '10.9999/conflict'
+            p.atomic_write_json(generation.metadata_path, metadata)
+        elif mutation == 'directory_identity': job.paper_id = 'wrong-generation'
+        elif mutation == 'published_target': (generation.parsed_dir / 'mineru').mkdir()
+        elif mutation == 'other_stage':
+            pointer_stage = 'paper_parse'
+            job.stages[pointer_stage] = stage
+>       generation.save_job(job)
+
+engine\tests\test_v02_parse_recovery.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = PaperWorkspace(root=WindowsPath('C:/Users/15694/AppData/Local/Temp/v4b-picb89ql/data/papers/doi_10.5555_full-read-recovery.2026.1/generations/482ea8ab20667b66'))
+state = JobState(paper_id='wrong-generation', status='mineru_running', stages={'pdf_acquisition': StageRecord(status='complete...ted_at=None, finished_at=None, input_hash=None, tool_version=None, result={'method': 'auto'}, error=None)}, error=None)
+
+    def save_job(self, state: JobState) -> None:
+        with data_root_operation(workspace_data_root(self)):
+            if state.paper_id != self.root.name:
+>               raise ValueError("job state paper_id \u4e0e\u5de5\u4f5c\u76ee\u5f55\u4e0d\u4e00\u81f4")
+E               ValueError: job state paper_id \u4e0e\u5de5\u4f5c\u76ee\u5f55\u4e0d\u4e00\u81f4
+
+engine\src\scientific_reading\workspace.py:194: ValueError
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004b\docs\codex-v02\V02-004B-evidence\recovery.xml -
+1 failed, 30 passed in 111.82s (0:01:51)

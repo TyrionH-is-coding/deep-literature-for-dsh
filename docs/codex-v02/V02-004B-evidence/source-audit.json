@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "f9dbab5dc13accf0b78db48151dc46e6a3acd808",
+  "baseCommit": "dcdb8e6cb23dd8329ceabd4487db0a79fae470ea",
+  "time": "2026-09-17T08:40:02.2925391Z",
+  "sha256": {
+    "engine/src/scientific_reading/reading_pipeline.py": "e592713abb2159530f72dd1d30d5683ae1233aa25f54e742939621ae5a3f1987",
+    "engine/tests/test_v02_pipeline_contract.py": "7aa447f666b5630228d7e6a7492289d89ca4efdab7f4530457016bfd039a5dd7",
+    "scripts/v02-004a-probe.py": "10c09cb53f6df606ebfb9562e44cb450093b8cfa10020c147086f6db9cf4469b",
+    "scripts/v02-004b-recovery.py": "4ab641e3e6b1096ecfb9a57c949f3044fedf2df1481c474a91c3791af4776631",
+    "engine/src/scientific_reading/mineru_service.py": "dcea3693f22c8a12675ae2cbb9f9e036afbc6c52b42f6ac7445caa21b7d8c09d",
+    "engine/tests/test_v02_parse_recovery.py": "d40bb57a2a3d1076405f63581836521d9dd88f1d7646a00e552b6a99cc4cf737"
+  }
+}
