@@ -1,0 +1,12 @@
+{
+  "platform": "Microsoft Windows NT 10.0.26200.0",
+  "node": "v24.18.0",
+  "npm": "11.16.0",
+  "python": "Python 3.11.9",
+  "typescript": "Version 5.9.3",
+  "npmCiExitCode": 0,
+  "pythonInstallExitCode": 0,
+  "dependencyPolicy": "npm ci --ignore-scripts --legacy-peer-deps; pip exact V02-002 audit requirements",
+  "nativeKeyringTests": "disabled",
+  "independentVenv": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-002b\\.venv"
+}
