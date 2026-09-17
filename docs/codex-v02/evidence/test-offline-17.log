@@ -1,0 +1,2 @@
+$ node tests/library-navigation-api.mjs
+PASS: 主库/文件夹/摘要轻量 API 稳定 JSON 与路径校验

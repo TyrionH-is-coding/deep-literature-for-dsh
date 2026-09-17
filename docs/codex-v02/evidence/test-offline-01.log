@@ -1,0 +1,2 @@
+$ node tests/client-build.mjs
+PASS: 客户端构建器通过

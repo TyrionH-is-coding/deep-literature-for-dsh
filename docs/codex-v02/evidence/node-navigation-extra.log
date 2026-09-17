@@ -1,0 +1,117 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+... Skipped lines
+
+  {
+    items: [
+      {
+        abstract_status: 'ready',
+        authors_short: 'A et al.',
+...
+        has_reader: true,
++       journal: '',
+        last_error: '',
+        paper_id: 'library_navigation',
++       search_matches: [],
+        tags: [
+          'NLP'
+        ],
+        title: 'Navigation',
+        year: 2024
+...
+        has_reader: false,
++       journal: '',
+        last_error: '',
+        paper_id: '',
++       search_matches: [],
+        tags: [],
+        title: '',
+        year: null
+      }
+    ],
+
+    at file:///C:/Users/15694/Documents/ChatGPT/deep-literature-engine-v02-002/tests/navigation-contract.mjs:69:10
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: {
+    items: [
+      {
+        paper_id: 'library_navigation',
+        title: 'Navigation',
+        authors_short: 'A et al.',
+        year: 2024,
+        journal: '',
+        folder: null,
+        tags: [ 'NLP' ],
+        abstract_status: 'ready',
+        full_read_status: 'not_started',
+        has_pdf: true,
+        has_reader: true,
+        last_error: '',
+        search_matches: []
+      },
+      {
+        paper_id: '',
+        title: '',
+        authors_short: '',
+        year: null,
+        journal: '',
+        folder: null,
+        tags: [],
+        abstract_status: '',
+        full_read_status: '',
+        has_pdf: false,
+        has_reader: false,
+        last_error: '',
+        search_matches: []
+      }
+    ],
+    page: 1,
+    page_size: 50,
+    total: 2,
+    jobs: { running: 0, queued: 0 }
+  },
+  expected: {
+    items: [
+      {
+        paper_id: 'library_navigation',
+        title: 'Navigation',
+        authors_short: 'A et al.',
+        year: 2024,
+        folder: null,
+        tags: [ 'NLP' ],
+        abstract_status: 'ready',
+        full_read_status: 'not_started',
+        has_pdf: true,
+        has_reader: true,
+        last_error: ''
+      },
+      {
+        paper_id: '',
+        title: '',
+        authors_short: '',
+        year: null,
+        folder: null,
+        tags: [],
+        abstract_status: '',
+        full_read_status: '',
+        has_pdf: false,
+        has_reader: false,
+        last_error: ''
+      }
+    ],
+    page: 1,
+    page_size: 50,
+    total: 2,
+    jobs: { running: 0, queued: 0 }
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

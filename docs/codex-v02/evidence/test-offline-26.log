@@ -1,0 +1,2 @@
+$ node tests/feishu-retired.mjs
+PASS: 飞书已退出现行运行面，SQLite 遗留列仅作不可见兼容

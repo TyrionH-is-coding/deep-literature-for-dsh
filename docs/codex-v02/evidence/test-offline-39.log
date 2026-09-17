@@ -1,0 +1,2 @@
+$ node tests/reader-acceptance.mjs --self-check
+PASS: Reader 离线验收编排、失败写回与 HTML 预检合同通过

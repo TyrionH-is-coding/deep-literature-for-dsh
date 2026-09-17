@@ -1,0 +1,2 @@
+$ node tests/settings-page-ui.mjs
+PASS: 独立设置页、首次展示与 MinerU Key UI 合同

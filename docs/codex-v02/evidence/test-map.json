@@ -1,0 +1,1184 @@
+{
+  "pythonFiles": {
+    "test_abstract_read.py": {
+      "group": "reading-and-review",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.334
+    },
+    "test_artifact_resolution.py": {
+      "group": "derived-and-assets",
+      "passed": 9,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 4.038000000000001
+    },
+    "test_atomic_json_retry.py": {
+      "group": "storage-and-scope",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.064
+    },
+    "test_background_launcher.py": {
+      "group": "pipeline-and-jobs",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.07500000000000001
+    },
+    "test_candidate_rebuild.py": {
+      "group": "storage-and-scope",
+      "passed": 13,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.685
+    },
+    "test_classification_service.py": {
+      "group": "derived-and-assets",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.8959999999999995
+    },
+    "test_cli_export_assets.py": {
+      "group": "derived-and-assets",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.14200000000000002
+    },
+    "test_cli_library_navigation.py": {
+      "group": "storage-and-scope",
+      "passed": 8,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.27
+    },
+    "test_data_guard.py": {
+      "group": "storage-and-scope",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.4749999999999996
+    },
+    "test_data_guard_assets.py": {
+      "group": "storage-and-scope",
+      "passed": 18,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.7010000000000002
+    },
+    "test_data_guard_services.py": {
+      "group": "storage-and-scope",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.27699999999999997
+    },
+    "test_environment_status.py": {
+      "group": "platform-and-environment",
+      "passed": 9,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.074
+    },
+    "test_evidence_entrypoints.py": {
+      "group": "derived-and-assets",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.315
+    },
+    "test_evidence_locator.py": {
+      "group": "derived-and-assets",
+      "passed": 10,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.8840000000000003
+    },
+    "test_foreground.py": {
+      "group": "pipeline-and-jobs",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.003
+    },
+    "test_full_read_models.py": {
+      "group": "reading-and-review",
+      "passed": 30,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.026000000000000016
+    },
+    "test_full_read_renderer.py": {
+      "group": "reading-and-review",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.06699999999999999
+    },
+    "test_full_read_service.py": {
+      "group": "reading-and-review",
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.01
+    },
+    "test_generation_package_manifest.py": {
+      "group": "storage-and-scope",
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "seconds": 0.187
+    },
+    "test_library_backup.py": {
+      "group": "storage-and-scope",
+      "passed": 23,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 10.147
+    },
+    "test_library_navigation.py": {
+      "group": "storage-and-scope",
+      "passed": 15,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 4.183000000000001
+    },
+    "test_library_schema.py": {
+      "group": "storage-and-scope",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.058
+    },
+    "test_library_search.py": {
+      "group": "storage-and-scope",
+      "passed": 14,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.2529999999999997
+    },
+    "test_metadata_enrichment.py": {
+      "group": "acquisition-and-parse",
+      "passed": 16,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.018000000000000006
+    },
+    "test_mineru_api.py": {
+      "group": "acquisition-and-parse",
+      "passed": 9,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.129
+    },
+    "test_mineru_artifacts.py": {
+      "group": "acquisition-and-parse",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.193
+    },
+    "test_mineru_current_output.py": {
+      "group": "acquisition-and-parse",
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.451
+    },
+    "test_mineru_local.py": {
+      "group": "acquisition-and-parse",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.053
+    },
+    "test_mineru_models.py": {
+      "group": "acquisition-and-parse",
+      "passed": 62,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.04500000000000003
+    },
+    "test_mineru_normalizer.py": {
+      "group": "acquisition-and-parse",
+      "passed": 28,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.508
+    },
+    "test_mineru_parse_gate.py": {
+      "group": "acquisition-and-parse",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.001
+    },
+    "test_mineru_process_lifecycle.py": {
+      "group": "acquisition-and-parse",
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.23
+    },
+    "test_mineru_provider.py": {
+      "group": "acquisition-and-parse",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.003
+    },
+    "test_mineru_provider_contract.py": {
+      "group": "acquisition-and-parse",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.002
+    },
+    "test_mineru_resume_contract.py": {
+      "group": "acquisition-and-parse",
+      "passed": 8,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.008
+    },
+    "test_mineru_staging_path.py": {
+      "group": "acquisition-and-parse",
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.109
+    },
+    "test_normalization_upgrade.py": {
+      "group": "acquisition-and-parse",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.377
+    },
+    "test_parse_models.py": {
+      "group": "acquisition-and-parse",
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.004
+    },
+    "test_pdf_preflight.py": {
+      "group": "acquisition-and-parse",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.015
+    },
+    "test_pid_liveness.py": {
+      "group": "pipeline-and-jobs",
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.001
+    },
+    "test_pipeline_excel_end_to_end.py": {
+      "group": "derived-and-assets",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 10.152
+    },
+    "test_platform_integration.py": {
+      "group": "platform-and-environment",
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 2,
+      "seconds": 0.10200000000000002
+    },
+    "test_reader_citations.py": {
+      "group": "reading-and-review",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.136
+    },
+    "test_reader_content_folding.py": {
+      "group": "reading-and-review",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.07500000000000001
+    },
+    "test_reader_interactions.py": {
+      "group": "reading-and-review",
+      "passed": 11,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.274
+    },
+    "test_reader_preview.py": {
+      "group": "reading-and-review",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.037
+    },
+    "test_reader_review_fixtures.py": {
+      "group": "reading-and-review",
+      "passed": 12,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 7.8759999999999994
+    },
+    "test_reader_review_render.py": {
+      "group": "reading-and-review",
+      "passed": 8,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 12.15
+    },
+    "test_reading_pipeline_integrity.py": {
+      "group": "pipeline-and-jobs",
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.2499999999999996
+    },
+    "test_review_cli.py": {
+      "group": "reading-and-review",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.55
+    },
+    "test_review_highlight_replacement.py": {
+      "group": "reading-and-review",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.391
+    },
+    "test_review_service.py": {
+      "group": "reading-and-review",
+      "passed": 14,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.277
+    },
+    "test_scansci_oa_boundary.py": {
+      "group": "acquisition-and-parse",
+      "passed": 13,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.169
+    },
+    "test_scope_boundary.py": {
+      "group": "storage-and-scope",
+      "passed": 16,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.4510000000000005
+    },
+    "test_secret_store.py": {
+      "group": "platform-and-environment",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.06
+    },
+    "test_subprocess_utils.py": {
+      "group": "pipeline-and-jobs",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.002
+    },
+    "test_worker_abstract_read.py": {
+      "group": "reading-and-review",
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.28
+    },
+    "test_worker_full_read.py": {
+      "group": "pipeline-and-jobs",
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.395
+    },
+    "test_worker_xlsx_snapshot.py": {
+      "group": "derived-and-assets",
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.578
+    },
+    "test_xlsx_snapshot.py": {
+      "group": "derived-and-assets",
+      "passed": 19,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 9.089
+    }
+  },
+  "pythonDirectRelativeImports": {
+    "__init__.py": [],
+    "__main__.py": [
+      "background_launcher",
+      "background_models",
+      "background_store",
+      "batch_service",
+      "candidate_rebuild",
+      "classification_service",
+      "data_guard",
+      "derived_pipeline",
+      "environment_status",
+      "evidence_locator",
+      "export_service",
+      "foreground",
+      "full_read_models",
+      "library_backup",
+      "library_service",
+      "migration_audit",
+      "models",
+      "pdf_acquisition",
+      "reading_pipeline",
+      "review_service",
+      "scope",
+      "secret_store",
+      "workspace",
+      "xlsx_snapshot"
+    ],
+    "abstract_read_models.py": [],
+    "abstract_read_service.py": [
+      "abstract_read_models",
+      "library_service",
+      "models",
+      "workspace"
+    ],
+    "assets.py": [
+      "models",
+      "workspace"
+    ],
+    "background_launcher.py": [
+      "background_models",
+      "background_store",
+      "data_guard",
+      "secret_store",
+      "workspace"
+    ],
+    "background_models.py": [],
+    "background_store.py": [
+      "background_models",
+      "data_guard",
+      "scope",
+      "workspace"
+    ],
+    "batch_service.py": [
+      "classification_service",
+      "library_service",
+      "workspace"
+    ],
+    "candidate_rebuild.py": [
+      "__main__",
+      "assets",
+      "data_guard",
+      "export_service",
+      "full_read_models",
+      "full_read_service",
+      "mineru_models",
+      "mineru_normalizer",
+      "models",
+      "package_manifest",
+      "parse_models",
+      "workspace"
+    ],
+    "classification_service.py": [
+      "library_service",
+      "scope"
+    ],
+    "data_guard.py": [],
+    "derived_pipeline.py": [
+      "background_launcher",
+      "background_models",
+      "background_store",
+      "library_service",
+      "models",
+      "workspace"
+    ],
+    "environment_status.py": [
+      "mineru_local",
+      "secret_store"
+    ],
+    "evidence_locator.py": [
+      "__main__",
+      "export_service",
+      "full_read_service",
+      "models",
+      "package_manifest",
+      "parse_models",
+      "workspace"
+    ],
+    "export_service.py": [
+      "assets",
+      "data_guard",
+      "mineru_artifacts",
+      "mineru_models",
+      "models",
+      "package_manifest",
+      "scope",
+      "workspace"
+    ],
+    "foreground.py": [],
+    "full_read_models.py": [],
+    "full_read_renderer.py": [
+      "data_guard",
+      "full_read_models",
+      "full_read_service",
+      "models",
+      "package_manifest",
+      "parse_models",
+      "scope",
+      "workspace"
+    ],
+    "full_read_service.py": [
+      "",
+      "data_guard",
+      "full_read_models",
+      "full_read_renderer",
+      "identifiers",
+      "mineru_artifacts",
+      "models",
+      "normalization_upgrade",
+      "parse_models",
+      "scope",
+      "workspace"
+    ],
+    "identifiers.py": [
+      "models"
+    ],
+    "library_backup.py": [
+      "",
+      "__main__",
+      "data_guard",
+      "library_schema"
+    ],
+    "library_schema.py": [
+      "data_guard",
+      "library_search"
+    ],
+    "library_search.py": [],
+    "library_service.py": [
+      "data_guard",
+      "identifiers",
+      "library_schema",
+      "library_search",
+      "models",
+      "pdf_validation",
+      "review_service",
+      "scope",
+      "workspace"
+    ],
+    "metadata_enrichment.py": [
+      "identifiers",
+      "models"
+    ],
+    "mineru_api.py": [
+      "workspace"
+    ],
+    "mineru_artifacts.py": [
+      "assets",
+      "mineru_models",
+      "mineru_normalizer",
+      "models",
+      "parse_models",
+      "workspace"
+    ],
+    "mineru_local.py": [
+      "mineru_provider",
+      "subprocess_utils"
+    ],
+    "mineru_models.py": [],
+    "mineru_normalizer.py": [
+      "identifiers",
+      "mineru_models",
+      "models",
+      "parse_models",
+      "workspace"
+    ],
+    "mineru_provider.py": [
+      "mineru_api",
+      "secret_store"
+    ],
+    "mineru_service.py": [
+      "",
+      "assets",
+      "background_models",
+      "data_guard",
+      "environment_status",
+      "mineru_api",
+      "mineru_artifacts",
+      "mineru_local",
+      "mineru_models",
+      "mineru_normalizer",
+      "mineru_provider",
+      "models",
+      "package_manifest",
+      "pdf_validation",
+      "workspace"
+    ],
+    "models.py": [],
+    "normalization_upgrade.py": [
+      "mineru_artifacts",
+      "mineru_models",
+      "mineru_normalizer",
+      "mineru_service",
+      "models",
+      "package_manifest",
+      "scope",
+      "workspace"
+    ],
+    "package_manifest.py": [
+      "workspace"
+    ],
+    "parse_models.py": [],
+    "pdf_acquisition.py": [
+      "",
+      "background_models",
+      "data_guard",
+      "library_service",
+      "models",
+      "pdf_validation",
+      "scope",
+      "subprocess_utils",
+      "workspace"
+    ],
+    "pdf_validation.py": [
+      "models"
+    ],
+    "reading_pipeline.py": [
+      "background_launcher",
+      "background_models",
+      "background_store",
+      "data_guard",
+      "full_read_renderer",
+      "full_read_service",
+      "identifiers",
+      "library_service",
+      "mineru_api",
+      "mineru_provider",
+      "mineru_service",
+      "models",
+      "pdf_acquisition",
+      "pdf_validation",
+      "reading_pipeline_models",
+      "scope",
+      "workspace"
+    ],
+    "reading_pipeline_models.py": [],
+    "review_service.py": [
+      "data_guard",
+      "evidence_locator",
+      "library_schema",
+      "library_service",
+      "scope"
+    ],
+    "scope.py": [
+      "data_guard"
+    ],
+    "secret_store.py": [
+      "environment_status"
+    ],
+    "subprocess_utils.py": [],
+    "worker.py": [
+      "abstract_read_service",
+      "background_launcher",
+      "background_models",
+      "background_store",
+      "data_guard",
+      "derived_pipeline",
+      "full_read_service",
+      "library_service",
+      "metadata_enrichment",
+      "models",
+      "pdf_acquisition",
+      "reading_pipeline",
+      "scope",
+      "workspace",
+      "xlsx_snapshot"
+    ],
+    "workspace.py": [
+      "data_guard",
+      "identifiers",
+      "models"
+    ],
+    "xlsx_snapshot.py": [
+      "data_guard",
+      "library_schema",
+      "library_service"
+    ]
+  },
+  "nodeRuns": [
+    {
+      "id": "test-offline-01",
+      "command": "node tests/client-build.mjs",
+      "startedAt": "2026-09-17T05:48:23.813Z",
+      "finishedAt": "2026-09-17T05:48:25.204Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-02",
+      "command": "node tests/client-ui-contract.mjs",
+      "startedAt": "2026-09-17T05:48:25.204Z",
+      "finishedAt": "2026-09-17T05:48:25.520Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-03",
+      "command": "node tests/client-actions.mjs",
+      "startedAt": "2026-09-17T05:48:25.521Z",
+      "finishedAt": "2026-09-17T05:48:25.812Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-04",
+      "command": "node tests/client-batch-actions.mjs",
+      "startedAt": "2026-09-17T05:48:25.813Z",
+      "finishedAt": "2026-09-17T05:48:26.054Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-05",
+      "command": "node tests/dsh-compat.mjs",
+      "startedAt": "2026-09-17T05:48:26.056Z",
+      "finishedAt": "2026-09-17T05:48:26.326Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-06",
+      "command": "node tests/bundle-contract.mjs",
+      "startedAt": "2026-09-17T05:48:26.327Z",
+      "finishedAt": "2026-09-17T05:48:26.603Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-07",
+      "command": "node tests/package-contents.mjs",
+      "startedAt": "2026-09-17T05:48:26.604Z",
+      "finishedAt": "2026-09-17T05:48:28.494Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-08",
+      "command": "node tests/reading-routes.mjs",
+      "startedAt": "2026-09-17T05:48:28.495Z",
+      "finishedAt": "2026-09-17T05:48:30.796Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-09",
+      "command": "node tests/full-read-pipeline.mjs",
+      "startedAt": "2026-09-17T05:48:30.797Z",
+      "finishedAt": "2026-09-17T05:48:31.401Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-10",
+      "command": "node tests/full-read-routes.mjs",
+      "startedAt": "2026-09-17T05:48:31.402Z",
+      "finishedAt": "2026-09-17T05:48:35.085Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-11",
+      "command": "node tests/asset-export-routes.mjs",
+      "startedAt": "2026-09-17T05:48:35.086Z",
+      "finishedAt": "2026-09-17T05:48:35.256Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-12",
+      "command": "node tests/batch-contract.mjs",
+      "startedAt": "2026-09-17T05:48:35.257Z",
+      "finishedAt": "2026-09-17T05:48:37.073Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-13",
+      "command": "node tests/download-batch.mjs",
+      "startedAt": "2026-09-17T05:48:37.074Z",
+      "finishedAt": "2026-09-17T05:48:38.293Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-14",
+      "command": "node tests/oa-download-boundary.mjs",
+      "startedAt": "2026-09-17T05:48:38.294Z",
+      "finishedAt": "2026-09-17T05:48:38.546Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-15",
+      "command": "node tests/two-stage-ingest.mjs",
+      "startedAt": "2026-09-17T05:48:38.548Z",
+      "finishedAt": "2026-09-17T05:48:42.076Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-16",
+      "command": "node tests/phase1-plugin-contract.mjs",
+      "startedAt": "2026-09-17T05:48:42.076Z",
+      "finishedAt": "2026-09-17T05:48:42.302Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-17",
+      "command": "node tests/library-navigation-api.mjs",
+      "startedAt": "2026-09-17T05:48:42.303Z",
+      "finishedAt": "2026-09-17T05:48:45.013Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-18",
+      "command": "node tests/settings-status-routes.mjs",
+      "startedAt": "2026-09-17T05:48:45.014Z",
+      "finishedAt": "2026-09-17T05:48:46.109Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-19",
+      "command": "node tests/settings-page-ui.mjs",
+      "startedAt": "2026-09-17T05:48:46.110Z",
+      "finishedAt": "2026-09-17T05:48:46.376Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-20",
+      "command": "node tests/excel-actions.mjs",
+      "startedAt": "2026-09-17T05:48:46.378Z",
+      "finishedAt": "2026-09-17T05:48:46.942Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-21",
+      "command": "node tests/restart-recovery-pid-safety.mjs",
+      "startedAt": "2026-09-17T05:48:46.943Z",
+      "finishedAt": "2026-09-17T05:48:47.504Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-22",
+      "command": "node tests/task7-hidden-subprocess.mjs",
+      "startedAt": "2026-09-17T05:48:47.505Z",
+      "finishedAt": "2026-09-17T05:48:47.922Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-23",
+      "command": "node tests/ci-workflow.mjs",
+      "startedAt": "2026-09-17T05:48:47.923Z",
+      "finishedAt": "2026-09-17T05:48:48.123Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-24",
+      "command": "node tests/literature-preset.mjs",
+      "startedAt": "2026-09-17T05:48:48.123Z",
+      "finishedAt": "2026-09-17T05:48:48.435Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-25",
+      "command": "node tests/harness.mjs",
+      "startedAt": "2026-09-17T05:48:48.435Z",
+      "finishedAt": "2026-09-17T05:48:48.672Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-26",
+      "command": "node tests/feishu-retired.mjs",
+      "startedAt": "2026-09-17T05:48:48.673Z",
+      "finishedAt": "2026-09-17T05:48:48.851Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-27",
+      "command": "node tests/mineru-secret-boundary.mjs",
+      "startedAt": "2026-09-17T05:48:48.852Z",
+      "finishedAt": "2026-09-17T05:48:49.555Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-28",
+      "command": "node tests/current-runtime-boundary.mjs",
+      "startedAt": "2026-09-17T05:48:49.555Z",
+      "finishedAt": "2026-09-17T05:48:49.738Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-29",
+      "command": "node tests/bundled-engine.mjs",
+      "startedAt": "2026-09-17T05:48:49.739Z",
+      "finishedAt": "2026-09-17T05:49:14.418Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-30",
+      "command": "node scripts/plugin-check.mjs",
+      "startedAt": "2026-09-17T05:49:14.418Z",
+      "finishedAt": "2026-09-17T05:49:14.724Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-31",
+      "command": "node tests/client-review-actions.mjs",
+      "startedAt": "2026-09-17T05:49:14.725Z",
+      "finishedAt": "2026-09-17T05:49:14.894Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-32",
+      "command": "node tests/review-engine-adapter.mjs",
+      "startedAt": "2026-09-17T05:49:14.895Z",
+      "finishedAt": "2026-09-17T05:49:15.955Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-33",
+      "command": "node tests/review-session-routes.mjs",
+      "startedAt": "2026-09-17T05:49:15.956Z",
+      "finishedAt": "2026-09-17T05:49:16.127Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-34",
+      "command": "node tests/review-tools.mjs",
+      "startedAt": "2026-09-17T05:49:16.128Z",
+      "finishedAt": "2026-09-17T05:49:16.348Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-35",
+      "command": "node tests/reader-review-server.mjs",
+      "startedAt": "2026-09-17T05:49:16.350Z",
+      "finishedAt": "2026-09-17T05:49:18.201Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-36",
+      "command": "node tests/reader-review-ui.mjs",
+      "startedAt": "2026-09-17T05:49:18.202Z",
+      "finishedAt": "2026-09-17T05:49:18.454Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-37",
+      "command": "node tests/reader-review-cli.mjs",
+      "startedAt": "2026-09-17T05:49:18.456Z",
+      "finishedAt": "2026-09-17T05:49:30.897Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-38",
+      "command": "node tests/reader-review-qa.mjs",
+      "startedAt": "2026-09-17T05:49:30.898Z",
+      "finishedAt": "2026-09-17T05:49:31.102Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-39",
+      "command": "node tests/reader-acceptance.mjs --self-check",
+      "startedAt": "2026-09-17T05:49:31.102Z",
+      "finishedAt": "2026-09-17T05:49:31.642Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-offline-40",
+      "command": "node tests/acceptance-dsh.mjs --self-check",
+      "startedAt": "2026-09-17T05:49:31.643Z",
+      "finishedAt": "2026-09-17T05:49:31.908Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-assets-01",
+      "command": "node tests/library-assets-tools.mjs",
+      "startedAt": "2026-09-17T05:49:31.909Z",
+      "finishedAt": "2026-09-17T05:49:45.307Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-assets-02",
+      "command": "node tests/evidence-engine-adapter.mjs",
+      "startedAt": "2026-09-17T05:49:45.308Z",
+      "finishedAt": "2026-09-17T05:49:46.108Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-assets-03",
+      "command": "node tests/evidence-routes.mjs",
+      "startedAt": "2026-09-17T05:49:46.108Z",
+      "finishedAt": "2026-09-17T05:49:46.300Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "id": "test-assets-04",
+      "command": "node tests/library-search-ui.mjs",
+      "startedAt": "2026-09-17T05:49:46.300Z",
+      "finishedAt": "2026-09-17T05:49:48.285Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    }
+  ],
+  "extraNavigationRun": {
+    "command": "node tests/navigation-contract.mjs",
+    "exitCode": 1,
+    "finishedAt": "2026-09-17T13:47:28.0415698+08:00"
+  }
+}

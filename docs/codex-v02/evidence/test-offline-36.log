@@ -1,0 +1,2 @@
+$ node tests/reader-review-ui.mjs
+PASS: Reader 统一审核页静态与纯函数合同通过

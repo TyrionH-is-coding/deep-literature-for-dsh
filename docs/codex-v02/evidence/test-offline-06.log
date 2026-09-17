@@ -1,0 +1,2 @@
+$ node tests/bundle-contract.mjs
+PASS: Profile Bundle manifest 与 patch 契约通过

@@ -1,0 +1,416 @@
+[
+  {
+    "id": "build",
+    "command": "npm run build:ci",
+    "startedAt": "2026-09-17T05:46:06.475Z",
+    "finishedAt": "2026-09-17T05:46:28.544Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "python",
+    "command": "node scripts/run-python.mjs -m pytest -q -ra engine/tests --junitxml=docs/codex-v02/evidence/python-junit.xml",
+    "startedAt": "2026-09-17T05:46:28.549Z",
+    "finishedAt": "2026-09-17T05:48:23.812Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-01",
+    "command": "node tests/client-build.mjs",
+    "startedAt": "2026-09-17T05:48:23.813Z",
+    "finishedAt": "2026-09-17T05:48:25.204Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-02",
+    "command": "node tests/client-ui-contract.mjs",
+    "startedAt": "2026-09-17T05:48:25.204Z",
+    "finishedAt": "2026-09-17T05:48:25.520Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-03",
+    "command": "node tests/client-actions.mjs",
+    "startedAt": "2026-09-17T05:48:25.521Z",
+    "finishedAt": "2026-09-17T05:48:25.812Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-04",
+    "command": "node tests/client-batch-actions.mjs",
+    "startedAt": "2026-09-17T05:48:25.813Z",
+    "finishedAt": "2026-09-17T05:48:26.054Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-05",
+    "command": "node tests/dsh-compat.mjs",
+    "startedAt": "2026-09-17T05:48:26.056Z",
+    "finishedAt": "2026-09-17T05:48:26.326Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-06",
+    "command": "node tests/bundle-contract.mjs",
+    "startedAt": "2026-09-17T05:48:26.327Z",
+    "finishedAt": "2026-09-17T05:48:26.603Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-07",
+    "command": "node tests/package-contents.mjs",
+    "startedAt": "2026-09-17T05:48:26.604Z",
+    "finishedAt": "2026-09-17T05:48:28.494Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-08",
+    "command": "node tests/reading-routes.mjs",
+    "startedAt": "2026-09-17T05:48:28.495Z",
+    "finishedAt": "2026-09-17T05:48:30.796Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-09",
+    "command": "node tests/full-read-pipeline.mjs",
+    "startedAt": "2026-09-17T05:48:30.797Z",
+    "finishedAt": "2026-09-17T05:48:31.401Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-10",
+    "command": "node tests/full-read-routes.mjs",
+    "startedAt": "2026-09-17T05:48:31.402Z",
+    "finishedAt": "2026-09-17T05:48:35.085Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-11",
+    "command": "node tests/asset-export-routes.mjs",
+    "startedAt": "2026-09-17T05:48:35.086Z",
+    "finishedAt": "2026-09-17T05:48:35.256Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-12",
+    "command": "node tests/batch-contract.mjs",
+    "startedAt": "2026-09-17T05:48:35.257Z",
+    "finishedAt": "2026-09-17T05:48:37.073Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-13",
+    "command": "node tests/download-batch.mjs",
+    "startedAt": "2026-09-17T05:48:37.074Z",
+    "finishedAt": "2026-09-17T05:48:38.293Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-14",
+    "command": "node tests/oa-download-boundary.mjs",
+    "startedAt": "2026-09-17T05:48:38.294Z",
+    "finishedAt": "2026-09-17T05:48:38.546Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-15",
+    "command": "node tests/two-stage-ingest.mjs",
+    "startedAt": "2026-09-17T05:48:38.548Z",
+    "finishedAt": "2026-09-17T05:48:42.076Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-16",
+    "command": "node tests/phase1-plugin-contract.mjs",
+    "startedAt": "2026-09-17T05:48:42.076Z",
+    "finishedAt": "2026-09-17T05:48:42.302Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-17",
+    "command": "node tests/library-navigation-api.mjs",
+    "startedAt": "2026-09-17T05:48:42.303Z",
+    "finishedAt": "2026-09-17T05:48:45.013Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-18",
+    "command": "node tests/settings-status-routes.mjs",
+    "startedAt": "2026-09-17T05:48:45.014Z",
+    "finishedAt": "2026-09-17T05:48:46.109Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-19",
+    "command": "node tests/settings-page-ui.mjs",
+    "startedAt": "2026-09-17T05:48:46.110Z",
+    "finishedAt": "2026-09-17T05:48:46.376Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-20",
+    "command": "node tests/excel-actions.mjs",
+    "startedAt": "2026-09-17T05:48:46.378Z",
+    "finishedAt": "2026-09-17T05:48:46.942Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-21",
+    "command": "node tests/restart-recovery-pid-safety.mjs",
+    "startedAt": "2026-09-17T05:48:46.943Z",
+    "finishedAt": "2026-09-17T05:48:47.504Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-22",
+    "command": "node tests/task7-hidden-subprocess.mjs",
+    "startedAt": "2026-09-17T05:48:47.505Z",
+    "finishedAt": "2026-09-17T05:48:47.922Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-23",
+    "command": "node tests/ci-workflow.mjs",
+    "startedAt": "2026-09-17T05:48:47.923Z",
+    "finishedAt": "2026-09-17T05:48:48.123Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-24",
+    "command": "node tests/literature-preset.mjs",
+    "startedAt": "2026-09-17T05:48:48.123Z",
+    "finishedAt": "2026-09-17T05:48:48.435Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-25",
+    "command": "node tests/harness.mjs",
+    "startedAt": "2026-09-17T05:48:48.435Z",
+    "finishedAt": "2026-09-17T05:48:48.672Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-26",
+    "command": "node tests/feishu-retired.mjs",
+    "startedAt": "2026-09-17T05:48:48.673Z",
+    "finishedAt": "2026-09-17T05:48:48.851Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-27",
+    "command": "node tests/mineru-secret-boundary.mjs",
+    "startedAt": "2026-09-17T05:48:48.852Z",
+    "finishedAt": "2026-09-17T05:48:49.555Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-28",
+    "command": "node tests/current-runtime-boundary.mjs",
+    "startedAt": "2026-09-17T05:48:49.555Z",
+    "finishedAt": "2026-09-17T05:48:49.738Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-29",
+    "command": "node tests/bundled-engine.mjs",
+    "startedAt": "2026-09-17T05:48:49.739Z",
+    "finishedAt": "2026-09-17T05:49:14.418Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-30",
+    "command": "node scripts/plugin-check.mjs",
+    "startedAt": "2026-09-17T05:49:14.418Z",
+    "finishedAt": "2026-09-17T05:49:14.724Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-31",
+    "command": "node tests/client-review-actions.mjs",
+    "startedAt": "2026-09-17T05:49:14.725Z",
+    "finishedAt": "2026-09-17T05:49:14.894Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-32",
+    "command": "node tests/review-engine-adapter.mjs",
+    "startedAt": "2026-09-17T05:49:14.895Z",
+    "finishedAt": "2026-09-17T05:49:15.955Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-33",
+    "command": "node tests/review-session-routes.mjs",
+    "startedAt": "2026-09-17T05:49:15.956Z",
+    "finishedAt": "2026-09-17T05:49:16.127Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-34",
+    "command": "node tests/review-tools.mjs",
+    "startedAt": "2026-09-17T05:49:16.128Z",
+    "finishedAt": "2026-09-17T05:49:16.348Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-35",
+    "command": "node tests/reader-review-server.mjs",
+    "startedAt": "2026-09-17T05:49:16.350Z",
+    "finishedAt": "2026-09-17T05:49:18.201Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-36",
+    "command": "node tests/reader-review-ui.mjs",
+    "startedAt": "2026-09-17T05:49:18.202Z",
+    "finishedAt": "2026-09-17T05:49:18.454Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-37",
+    "command": "node tests/reader-review-cli.mjs",
+    "startedAt": "2026-09-17T05:49:18.456Z",
+    "finishedAt": "2026-09-17T05:49:30.897Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-38",
+    "command": "node tests/reader-review-qa.mjs",
+    "startedAt": "2026-09-17T05:49:30.898Z",
+    "finishedAt": "2026-09-17T05:49:31.102Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-39",
+    "command": "node tests/reader-acceptance.mjs --self-check",
+    "startedAt": "2026-09-17T05:49:31.102Z",
+    "finishedAt": "2026-09-17T05:49:31.642Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-offline-40",
+    "command": "node tests/acceptance-dsh.mjs --self-check",
+    "startedAt": "2026-09-17T05:49:31.643Z",
+    "finishedAt": "2026-09-17T05:49:31.908Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-assets-01",
+    "command": "node tests/library-assets-tools.mjs",
+    "startedAt": "2026-09-17T05:49:31.909Z",
+    "finishedAt": "2026-09-17T05:49:45.307Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-assets-02",
+    "command": "node tests/evidence-engine-adapter.mjs",
+    "startedAt": "2026-09-17T05:49:45.308Z",
+    "finishedAt": "2026-09-17T05:49:46.108Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-assets-03",
+    "command": "node tests/evidence-routes.mjs",
+    "startedAt": "2026-09-17T05:49:46.108Z",
+    "finishedAt": "2026-09-17T05:49:46.300Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "test-assets-04",
+    "command": "node tests/library-search-ui.mjs",
+    "startedAt": "2026-09-17T05:49:46.300Z",
+    "finishedAt": "2026-09-17T05:49:48.285Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  }
+]

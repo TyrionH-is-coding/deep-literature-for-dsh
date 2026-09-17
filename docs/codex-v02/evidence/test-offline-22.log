@@ -1,0 +1,2 @@
+$ node tests/task7-hidden-subprocess.mjs
+PASS: Task 7 子进程边界在 Windows 隐藏控制台

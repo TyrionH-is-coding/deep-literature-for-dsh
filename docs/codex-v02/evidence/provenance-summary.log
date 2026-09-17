@@ -1,0 +1,7 @@
+baseCommit 8e00b334389cd90721b7d404013a07687753aa5c
+releaseSHA256 318814ec542de94a47cd2855b21d0f7af9778b22b283d3995d0c499a3465e2fd
+rebuiltSHA256 ea07f37c0f2ff4e90af104fa2cd4c8e0f8ee24fb8a6ce5e75264d22a22ef99f9
+releaseVsRebuiltTarMembers {'different': 1, 'exact': 52, 'text-eol-only': 1}
+releaseVsRebuiltWheelMembers {'different': 2, 'exact': 51, 'text-eol-only': 2}
+releasePythonVsGitBlobs {'text-eol-only': 50}
+releaseTrackedAssetsVsGitBlobs {'exact': 1, 'text-eol-only': 10}

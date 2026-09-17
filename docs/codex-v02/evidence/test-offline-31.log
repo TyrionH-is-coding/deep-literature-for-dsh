@@ -1,0 +1,2 @@
+$ node tests/client-review-actions.mjs
+PASS: 文献页整理入库会幂等打开当前父会话下的 continuable 子会话

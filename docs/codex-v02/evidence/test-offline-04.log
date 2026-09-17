@@ -1,0 +1,2 @@
+$ node tests/client-batch-actions.mjs
+PASS: 跨页选择、批量提交和单条父汇总合同

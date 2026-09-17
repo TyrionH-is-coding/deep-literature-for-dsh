@@ -1,0 +1,2 @@
+$ node tests/download-batch.mjs
+PASS: 批量仅获取 OA，失败等待本地 PDF，预检查异常和重启不阻塞其他条目

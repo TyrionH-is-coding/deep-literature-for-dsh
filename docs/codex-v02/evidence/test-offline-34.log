@@ -1,0 +1,2 @@
+$ node tests/review-tools.mjs
+PASS: 整理工具只信任当前 DSH 子会话身份并在确认后刷新 Excel

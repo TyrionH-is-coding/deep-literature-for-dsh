@@ -1,0 +1,2 @@
+$ node tests/library-search-ui.mjs
+PASS: typed 检索命中安全渲染，并经真实 library route 读回

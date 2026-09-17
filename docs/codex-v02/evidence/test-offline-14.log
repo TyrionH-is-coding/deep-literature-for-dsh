@@ -1,0 +1,2 @@
+$ node tests/oa-download-boundary.mjs
+PASS: 固定 OA 配置、独立 ScanSci 保护与机构工具退出

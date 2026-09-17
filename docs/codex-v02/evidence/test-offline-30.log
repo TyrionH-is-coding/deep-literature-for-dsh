@@ -1,0 +1,2 @@
+$ node scripts/plugin-check.mjs
+PASS: 插件健康门禁通过（构建/产物/客户端声明/仓库边界）

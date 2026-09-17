@@ -1,0 +1,2 @@
+$ node tests/batch-contract.mjs
+PASS: 批量 HTTP 合同固定白名单、单次完整转发与安全错误

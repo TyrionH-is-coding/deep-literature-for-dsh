@@ -1,0 +1,22 @@
+{
+  "taskId": "V02-002",
+  "fixture": "synthetic direct SQL conflict, not UI editing",
+  "firstRefreshStatus": "success",
+  "refreshStatus": "success",
+  "before": {
+    "personal_thoughts": "new thought",
+    "understanding_level": "new understanding",
+    "user_notes": "new note"
+  },
+  "after": {
+    "personal_thoughts": "old thought",
+    "understanding_level": "old understanding",
+    "user_notes": "old note"
+  },
+  "overwrittenFields": [
+    "personal_thoughts",
+    "understanding_level",
+    "user_notes"
+  ],
+  "reproduced": true
+}

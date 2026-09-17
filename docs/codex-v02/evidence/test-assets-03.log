@@ -1,0 +1,2 @@
+$ node tests/evidence-routes.mjs
+PASS: 动态证据路由只为当前有效 paper 定位跳转到固定 Reader/PDF 路径

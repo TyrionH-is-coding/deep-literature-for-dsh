@@ -1,0 +1,2 @@
+$ node tests/review-session-routes.mjs
+PASS: 整理入口幂等创建真实 continuable 子会话并守住文献父会话边界

@@ -1,0 +1,2 @@
+$ node tests/asset-export-routes.mjs
+PASS: 图表导出路由只消费引擎验证的 artifact resolver

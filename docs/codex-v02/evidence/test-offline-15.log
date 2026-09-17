@@ -1,0 +1,2 @@
+$ node tests/two-stage-ingest.mjs
+PASS: 两阶段入库本地结果先返回、派生脱离等待且 paper_id 防穿越

@@ -1,0 +1,20 @@
+dsh_scientific_reading_engine-0.1.0.dist-info/RECORD: release=4f3e3f1626f5b3947ef1543271d4c0f82da70255fe4edf701c519c271ff7cf0a rebuilt=eaa88380cb3c8ec770037e687a01121f25559739d6d9d64b8720ce964c9bbc52
+--- release/dsh_scientific_reading_engine-0.1.0.dist-info/RECORD
++++ rebuilt/dsh_scientific_reading_engine-0.1.0.dist-info/RECORD
+@@ -32,2 +32,2 @@
+-scientific_reading/mineru_models.py,sha256=w9N8Qy35F3lAEgLoxCOrYWuqsTiumZC1O-qUHWgR7mU,9627
+-scientific_reading/mineru_normalizer.py,sha256=4PNYMxuWkg8k8HT-7trmmh8phSL5kCUHitzsy78aCJA,17597
++scientific_reading/mineru_models.py,sha256=94EEijaHqHBuzxbdf6UdDCGyMOZEFnpCo4maa31SMTI,9662
++scientific_reading/mineru_normalizer.py,sha256=jyDH67EPD7z7xtFXOE3WX4efOXP5h6-SaRet8MvxtIc,17618
+@@ -52 +52 @@
+-dsh_scientific_reading_engine-0.1.0.dist-info/WHEEL,sha256=YVMoNqKzERt-wjUZwJ33xBGAwnFl-4cqbYkTtWa4itE,91
++dsh_scientific_reading_engine-0.1.0.dist-info/WHEEL,sha256=_zCd3N1l69ArxyTb8rzEoP9TpbYXkqRFSNOD5OuxnTs,91
+dsh_scientific_reading_engine-0.1.0.dist-info/WHEEL: release=61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1 rebuilt=ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b
+--- release/dsh_scientific_reading_engine-0.1.0.dist-info/WHEEL
++++ rebuilt/dsh_scientific_reading_engine-0.1.0.dist-info/WHEEL
+@@ -2 +2 @@
+-Generator: setuptools (84.0.0)
++Generator: setuptools (80.9.0)
+scientific_reading/mineru_models.py: release=c3d37c432df91779401202e8c423ab616baab138ae9990b53bea941d6811ee65 rebuilt=f781048a3687a8706ecf16dd7fa51d0c21b230e644167a42a3899a6b7d523132
+scientific_reading/mineru_normalizer.py: release=e0f358331b96920f24f074feeedae69a1f298522f99025078adceccbbf1a0890 rebuilt=8f20c7ebb10f0fbcfbc6d157384dd65f879f3973f987af926917adf0cbf1b487
+First ZIP member timestamps: release=(2026, 9, 7, 8, 22, 2), rebuilt=(2026, 9, 17, 5, 43, 12)

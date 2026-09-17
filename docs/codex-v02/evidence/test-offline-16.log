@@ -1,0 +1,2 @@
+$ node tests/phase1-plugin-contract.mjs
+PASS: Phase 1 插件只提交一次持久 derived-enqueue，Abstract 使用 agent submit，旧 detached 未接入入口

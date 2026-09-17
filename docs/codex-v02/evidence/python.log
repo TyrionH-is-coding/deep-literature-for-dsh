@@ -1,0 +1,14 @@
+$ node scripts/run-python.mjs -m pytest -q -ra engine/tests --junitxml=docs/codex-v02/evidence/python-junit.xml
+........................................................................ [ 14%]
+................................................................s....... [ 29%]
+........................................................................ [ 44%]
+........................................................................ [ 59%]
+....................................................................ss.. [ 73%]
+........................................................................ [ 88%]
+.......................................................                  [100%]
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-002\docs\codex-v02\evidence\python-junit.xml -
+=========================== short test summary info ===========================
+SKIPPED [1] engine\tests\test_generation_package_manifest.py:127: directory symlinks unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\Users\\15694\\AppData\\Local\\Temp\\pytest-of-15694\\pytest-23\\test_generation_package_manife3\\outside-dir' -> 'C:\\Users\\15694\\AppData\\Local\\Temp\\pytest-of-15694\\pytest-23\\test_generation_package_manife3\\papers\\doi_10.5555_bridge.2024.1\\generations\\eeeeeeeeeeeeeeee\\linked'
+SKIPPED [1] engine\tests\test_platform_integration.py:84: Unix zombie lifecycle
+SKIPPED [1] engine\tests\test_platform_integration.py:97: requires unlocked OS credential service
+484 passed, 3 skipped in 109.97s (0:01:49)

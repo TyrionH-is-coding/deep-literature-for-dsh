@@ -1,0 +1,2 @@
+$ node tests/evidence-engine-adapter.mjs
+PASS: 证据定位、结论解析和候选重建通过实际 runEngine 参数数组调用

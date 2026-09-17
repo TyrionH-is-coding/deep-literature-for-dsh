@@ -1,0 +1,2 @@
+$ node tests/current-runtime-boundary.mjs
+PASS: 生产运行面严格等于当前单仓库白名单

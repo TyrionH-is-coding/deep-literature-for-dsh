@@ -1,0 +1,2 @@
+$ node tests/reader-review-qa.mjs
+PASS: Reader 浏览器 QA 仅在当前 revision 完整通过后原子写回

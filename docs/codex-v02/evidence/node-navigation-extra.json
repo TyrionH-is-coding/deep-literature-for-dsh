@@ -1,0 +1,5 @@
+{
+  "command": "node tests/navigation-contract.mjs",
+  "exitCode": 1,
+  "finishedAt": "2026-09-17T13:47:28.0415698+08:00"
+}

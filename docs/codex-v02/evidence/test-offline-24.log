@@ -1,0 +1,2 @@
+$ node tests/literature-preset.mjs
+PASS: 文献模式仅在选定 preset 时启用，其余模式默认关闭工具

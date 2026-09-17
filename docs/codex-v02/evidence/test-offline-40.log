@@ -1,0 +1,2 @@
+$ node tests/acceptance-dsh.mjs --self-check
+PASS: 隔离 DSH 验收静态安全合同通过

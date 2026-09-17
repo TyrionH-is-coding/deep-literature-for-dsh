@@ -1,0 +1,2 @@
+$ node tests/reader-review-cli.mjs
+PASS: Reader 一键审核命令、服务复用和停止合同通过

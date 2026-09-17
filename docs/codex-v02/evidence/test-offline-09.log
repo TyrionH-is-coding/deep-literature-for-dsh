@@ -1,0 +1,3 @@
+$ node tests/full-read-pipeline.mjs
+PASS: 单一精读工具、受信 scansci 注入与 gate 路由合同
+PASS: full-read 子进程注入受信 provider 且强制 OA-only 配置

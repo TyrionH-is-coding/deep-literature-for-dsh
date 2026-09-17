@@ -1,0 +1,2 @@
+$ node tests/excel-actions.mjs
+PASS: Excel 定位只接受 paper_id，不接受路径或单元格参数

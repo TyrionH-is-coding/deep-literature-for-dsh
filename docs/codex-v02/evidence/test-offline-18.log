@@ -1,0 +1,2 @@
+$ node tests/settings-status-routes.mjs
+PASS: 设置状态 GET 静态快照，POST 同源 CSRF 与手动检测合同

@@ -1,0 +1,2 @@
+$ node tests/dsh-compat.mjs
+PASS: DSH 兼容契约与安装版本通过

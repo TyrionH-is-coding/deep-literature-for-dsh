@@ -1,0 +1,2 @@
+$ node tests/bundled-engine.mjs
+PASS: 内置 wheel 可独立安装并启动当前 CLI

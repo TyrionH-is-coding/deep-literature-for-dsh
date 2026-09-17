@@ -1,0 +1,2 @@
+$ node tests/client-ui-contract.mjs
+PASS: 两栏文献导航 DOM、文案与查询状态契约

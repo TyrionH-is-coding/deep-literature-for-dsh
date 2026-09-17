@@ -1,0 +1,2 @@
+$ node tests/full-read-routes.mjs
+PASS: 精读动态路由、并发 attach 清理与资产 allowlist/SHA 合同

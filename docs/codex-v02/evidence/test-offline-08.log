@@ -1,0 +1,2 @@
+$ node tests/reading-routes.mjs
+PASS: 精读页面与资产路由回归测试

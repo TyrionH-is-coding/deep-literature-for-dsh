@@ -1,0 +1,9 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9",
+  "git": "git version 2.53.0.windows.3",
+  "node": "v24.18.0",
+  "npm": "11.16.0",
+  "typescript": "Version 5.9.3",
+  "coreAutocrlf": "true"
+}

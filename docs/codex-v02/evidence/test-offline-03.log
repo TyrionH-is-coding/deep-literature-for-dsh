@@ -1,0 +1,2 @@
+$ node tests/client-actions.mjs
+PASS: 文献行、详情缓存、安全 URL 与单篇动作生命周期

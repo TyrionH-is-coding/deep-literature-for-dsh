@@ -1,0 +1,2 @@
+$ node tests/library-assets-tools.mjs
+PASS: 实际工具经 Python CLI 完成整库备份、恢复、Reader 读回和分层检索

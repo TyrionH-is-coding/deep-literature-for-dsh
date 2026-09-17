@@ -1,0 +1,2 @@
+$ node tests/ci-workflow.mjs
+PASS: CI workflow 构建内置 wheel 并执行单仓库门禁
