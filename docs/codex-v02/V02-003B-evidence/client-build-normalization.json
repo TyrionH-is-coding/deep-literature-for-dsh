@@ -1,0 +1,6 @@
+{
+  "semanticDifference": false,
+  "originalBytes": 77732,
+  "generatedBytes": 77732,
+  "action": "restore exact tracked bytes after verified newline-only build difference"
+}

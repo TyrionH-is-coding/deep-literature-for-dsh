@@ -1,0 +1,62 @@
+[
+  {
+    "id": "build",
+    "command": "npm run build:ci",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b",
+    "startedAt": "2026-09-17T06:30:10.067Z",
+    "finishedAt": "2026-09-17T06:30:31.100Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "offline",
+    "command": "npm run test:offline",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b",
+    "startedAt": "2026-09-17T06:30:31.247Z",
+    "finishedAt": "2026-09-17T06:31:35.310Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "assets",
+    "command": "npm run test:assets",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b",
+    "startedAt": "2026-09-17T06:31:35.450Z",
+    "finishedAt": "2026-09-17T06:31:52.053Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "freeze",
+    "command": "\"C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b\\.venv\\Scripts\\python.exe\" -m pip freeze --all",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b",
+    "startedAt": "2026-09-17T06:31:52.220Z",
+    "finishedAt": "2026-09-17T06:31:53.540Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "pack",
+    "command": "npm pack --json",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b",
+    "startedAt": "2026-09-17T06:32:03.057Z",
+    "finishedAt": "2026-09-17T06:32:04.130Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "python",
+    "command": "node scripts/run-python.mjs -m pytest -q engine/tests --tb=short --junitxml=docs/codex-v02/V02-003B-evidence/python-junit.xml",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b",
+    "startedAt": "2026-09-17T06:29:54.140Z",
+    "finishedAt": "2026-09-17T06:32:27.269Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  }
+]

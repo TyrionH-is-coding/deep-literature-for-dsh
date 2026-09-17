@@ -1,0 +1,23 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "Python 3.11.9",
+  "node": "v24.18.0",
+  "npm": "11.16.0",
+  "independentVenv": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003b\\.venv",
+  "requirements": "docs/codex-v02/evidence/audit-python-requirements.txt",
+  "nativeKeyringTests": "disabled",
+  "skipped": [
+    {
+      "test": "tests.test_generation_package_manifest.test_generation_package_manifest_rejects_symlinked_parent_escape",
+      "reason": "directory symlinks unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\15694\\\\AppData\\\\Local\\\\Temp\\\\pytest-of-15694\\\\pytest-29\\\\test_generation_package_manife3\\\\outside-dir' -> 'C:\\\\Users\\\\15694\\\\AppData\\\\Local\\\\Temp\\\\pytest-of-15694\\\\pytest-29\\\\test_generation_package_manife3\\\\papers\\\\doi_10.5555_bridge.2024.1\\\\generations\\\\eeeeeeeeeeeeeeee\\\\linked'"
+    },
+    {
+      "test": "tests.test_platform_integration.test_exited_unreaped_worker_does_not_block_job_retry",
+      "reason": "Unix zombie lifecycle"
+    },
+    {
+      "test": "tests.test_platform_integration.test_real_native_credential_service_roundtrip",
+      "reason": "requires unlocked OS credential service"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+[
+  {
+    "id": "@dsh-external/dsh-scientific-reading@0.2.0-dev.1",
+    "name": "@dsh-external/dsh-scientific-reading",
+    "version": "0.2.0-dev.1",
+    "size": 282059,
+    "unpackedSize": 593697,
+    "shasum": "4c1d6106c439a45f126d749a27f178e84c83cc0c",
+    "integrity": "sha512-nDHXoRodmF9F1cJeMWdsxtSRICjxDtcRd94L0/PGqcnalCG6tkBV5jDGUI4uU3/31JMpmDsv1SL9DfCrwM7hAA==",
+    "filename": "dsh-external-dsh-scientific-reading-0.2.0-dev.1.tgz",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 1554,
+        "mode": 420
+      },
+      {
+        "path": "MIGRATION.md",
+        "size": 421,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 22272,
+        "mode": 420
+      },
+      {
+        "path": "THIRD_PARTY_NOTICES.md",
+        "size": 1209,
+        "mode": 420
+      },
+      {
+        "path": "cordis.patch.yml",
+        "size": 126,
+        "mode": 420
+      },
+      {
+        "path": "dist/python/dsh_scientific_reading_engine-0.2.0.dev1-py3-none-any.whl",
+        "size": 189735,
+        "mode": 420
+      },
+      {
+        "path": "lib/cli.js",
+        "size": 21655,
+        "mode": 420
+      },
+      {
+        "path": "lib/cli.js.map",
+        "size": 21613,
+        "mode": 420
+      },
+      {
+        "path": "lib/client.js",
+        "size": 77732,
+        "mode": 420
+      },
+      {
+        "path": "lib/config.js",
+        "size": 1208,
+        "mode": 420
+      },
+      {
+        "path": "lib/config.js.map",
+        "size": 1443,
+        "mode": 420
+      },
+      {
+        "path": "lib/download_batch.js",
+        "size": 8122,
+        "mode": 420
+      },
+      {
+        "path": "lib/download_batch.js.map",
+        "size": 8910,
+        "mode": 420
+      },
+      {
+        "path": "lib/engine_scope.js",
+        "size": 667,
+        "mode": 420
+      },
+      {
+        "path": "lib/engine_scope.js.map",
+        "size": 769,
+        "mode": 420
+      },
+      {
+        "path": "lib/index.js",
+        "size": 1938,
+        "mode": 420
+      },
+      {
+        "path": "lib/index.js.map",
+        "size": 1883,
+        "mode": 420
+      },
+      {
+        "path": "lib/library_tools.js",
+        "size": 21769,
+        "mode": 420
+      },
+      {
+        "path": "lib/library_tools.js.map",
+        "size": 18458,
+        "mode": 420
+      },
+      {
+        "path": "lib/papers.js",
+        "size": 1066,
+        "mode": 420
+      },
+      {
+        "path": "lib/papers.js.map",
+        "size": 1102,
+        "mode": 420
+      },
+      {
+        "path": "lib/preset.js",
+        "size": 5104,
+        "mode": 420
+      },
+      {
+        "path": "lib/preset.js.map",
+        "size": 4283,
+        "mode": 420
+      },
+      {
+        "path": "lib/review_sessions.js",
+        "size": 6957,
+        "mode": 420
+      },
+      {
+        "path": "lib/review_sessions.js.map",
+        "size": 6575,
+        "mode": 420
+      },
+      {
+        "path": "lib/review_tools.js",
+        "size": 6667,
+        "mode": 420
+      },
+      {
+        "path": "lib/review_tools.js.map",
+        "size": 5365,
+        "mode": 420
+      },
+      {
+        "path": "lib/routes.js",
+        "size": 40361,
+        "mode": 420
+      },
+      {
+        "path": "lib/routes.js.map",
+        "size": 41929,
+        "mode": 420
+      },
+      {
+        "path": "lib/settings.js",
+        "size": 1516,
+        "mode": 420
+      },
+      {
+        "path": "lib/settings.js.map",
+        "size": 1096,
+        "mode": 420
+      },
+      {
+        "path": "lib/status_routes.js",
+        "size": 6436,
+        "mode": 420
+      },
+      {
+        "path": "lib/status_routes.js.map",
+        "size": 7324,
+        "mode": 420
+      },
+      {
+        "path": "lib/tools.js",
+        "size": 9218,
+        "mode": 420
+      },
+      {
+        "path": "lib/tools.js.map",
+        "size": 7075,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/cli.d.ts",
+        "size": 8642,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/config.d.ts",
+        "size": 2540,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/download_batch.d.ts",
+        "size": 1010,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/engine_scope.d.ts",
+        "size": 418,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/index.d.ts",
+        "size": 720,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/library_tools.d.ts",
+        "size": 893,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/papers.d.ts",
+        "size": 317,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/preset.d.ts",
+        "size": 1786,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/review_sessions.d.ts",
+        "size": 1761,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/review_tools.d.ts",
+        "size": 960,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/routes.d.ts",
+        "size": 1020,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/settings.d.ts",
+        "size": 962,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/status_routes.d.ts",
+        "size": 164,
+        "mode": 420
+      },
+      {
+        "path": "lib/types/tools.d.ts",
+        "size": 248,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 5522,
+        "mode": 420
+      },
+      {
+        "path": "preset/scientific-reading/agent.cordis.yml",
+        "size": 2210,
+        "mode": 420
+      },
+      {
+        "path": "preset/scientific-reading/preset.yml",
+        "size": 132,
+        "mode": 420
+      },
+      {
+        "path": "scripts/oa-requirements.txt",
+        "size": 2510,
+        "mode": 420
+      },
+      {
+        "path": "scripts/scansci_wrap.py",
+        "size": 8324,
+        "mode": 420
+      }
+    ],
+    "entryCount": 54,
+    "bundled": []
+  }
+]
