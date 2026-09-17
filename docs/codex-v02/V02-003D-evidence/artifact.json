@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "26abee5f8c8e4f92f26a9b7fba4ddd236e523b05",
+  "archive": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d\\dsh-external-dsh-scientific-reading-0.2.0-dev.2.tgz",
+  "sha256": "2e1ec6ebbc9ca37d33060d978f5d1f855455bb4423cc5b481957b3da0259bc09",
+  "wheel": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d\\dist\\python\\dsh_scientific_reading_engine-0.2.0.dev1-py3-none-any.whl",
+  "wheelSha256": "b5d6439b1e3e895e0127dac27ec2b12b9f0bdd46d813896a6a90fd990e2b66d3",
+  "npmVersion": "0.2.0-dev.2",
+  "pythonVersion": "0.2.0.dev1",
+  "pythonFilesByteMatched": 51,
+  "moduleHashes": {
+    "scientific_reading/xlsx_snapshot.py": "0ca976a4f308c8e27020953122e55888796ccb06d69196ab2d9f6a4498a7b7be",
+    "scientific_reading/xlsx_user_fields.py": "880ad0319956d4e4fa1af0e9da231d62be964e01fcd45f70897c74c27f1d9ea5"
+  }
+}

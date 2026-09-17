@@ -1,0 +1,6 @@
+
+> @dsh-external/dsh-scientific-reading@0.2.0-dev.2 build:ci
+> node scripts/build-engine.mjs && tsc -p tsconfig.json && node scripts/build-client.mjs
+
+PASS: 已生成内置 Python wheel dsh_scientific_reading_engine-0.2.0.dev1-py3-none-any.whl
+PASS: 已生成客户端产物

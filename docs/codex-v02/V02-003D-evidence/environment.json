@@ -1,0 +1,9 @@
+{
+  "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d",
+  "node": "v24.18.0",
+  "npm": "11.16.0",
+  "python": "Python 3.11.9",
+  "pythonSourceDiff": "",
+  "sourceCommit": "26abee5f8c8e4f92f26a9b7fba4ddd236e523b05",
+  "requirements": "docs/codex-v02/evidence/audit-python-requirements.txt"
+}

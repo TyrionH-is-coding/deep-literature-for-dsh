@@ -1,0 +1,61 @@
+
+> @dsh-external/dsh-scientific-reading@0.2.0-dev.2 test:offline
+> node tests/client-build.mjs && node tests/client-ui-contract.mjs && node tests/client-xlsx-conflicts.mjs && node tests/client-actions.mjs && node tests/client-batch-actions.mjs && node tests/dsh-compat.mjs && node tests/bundle-contract.mjs && node tests/package-contents.mjs && node tests/reading-routes.mjs && node tests/full-read-pipeline.mjs && node tests/full-read-routes.mjs && node tests/asset-export-routes.mjs && node tests/batch-contract.mjs && node tests/download-batch.mjs && node tests/oa-download-boundary.mjs && node tests/two-stage-ingest.mjs && node tests/phase1-plugin-contract.mjs && node tests/library-navigation-api.mjs && node tests/navigation-contract.mjs && node tests/settings-status-routes.mjs && node tests/settings-page-ui.mjs && node tests/excel-actions.mjs && node tests/restart-recovery-pid-safety.mjs && node tests/task7-hidden-subprocess.mjs && node tests/ci-workflow.mjs && node tests/literature-preset.mjs && node tests/harness.mjs && node tests/feishu-retired.mjs && node tests/mineru-secret-boundary.mjs && node tests/current-runtime-boundary.mjs && node tests/bundled-engine.mjs && node scripts/plugin-check.mjs && node tests/client-review-actions.mjs && node tests/review-engine-adapter.mjs && node tests/review-session-routes.mjs && node tests/review-tools.mjs && node tests/reader-review-server.mjs && node tests/reader-review-ui.mjs && node tests/reader-review-cli.mjs && node tests/reader-review-qa.mjs && node tests/reader-acceptance.mjs --self-check && node tests/acceptance-dsh.mjs --self-check
+
+PASS: 客户端构建器通过
+PASS: 两栏文献导航 DOM、文案与查询状态契约
+PASS 003C real HTTP shape renders in drawer
+PASS all personal fields
+PASS other paper is not attributed to current paper
+PASS normal success clears warning
+PASS PDF gate retained
+PASS missing optional details and unknown xlsx reason
+PASS identity and baseline explanations
+PASS hostile values are text and personal values are omitted
+PASS malformed detail does not crash
+PASS refresh and reopen rerender persistent state without accumulation
+10 drawer rendering checks passed
+PASS: 文献行、详情缓存、安全 URL 与单篇动作生命周期
+PASS: 跨页选择、批量提交和单条父汇总合同
+PASS: DSH 兼容契约与安装版本通过
+PASS: Profile Bundle manifest 与 patch 契约通过
+PASS: npm dry-run 包清单通过（54 个文件）
+PASS: 精读页面与资产路由回归测试
+PASS: 单一精读工具、受信 scansci 注入与 gate 路由合同
+PASS: full-read 子进程注入受信 provider 且强制 OA-only 配置
+PASS: 精读动态路由、并发 attach 清理与资产 allowlist/SHA 合同
+PASS: 图表导出路由只消费引擎验证的 artifact resolver
+PASS: 批量 HTTP 合同固定白名单、单次完整转发与安全错误
+PASS: 批量仅获取 OA，失败等待本地 PDF，预检查异常和重启不阻塞其他条目
+PASS: 固定 OA 配置、独立 ScanSci 保护与机构工具退出
+PASS: 两阶段入库本地结果先返回、派生脱离等待且 paper_id 防穿越
+PASS: Phase 1 插件只提交一次持久 derived-enqueue，Abstract 使用 agent submit，旧 detached 未接入入口
+PASS: 主库/文件夹/摘要轻量 API 稳定 JSON 与路径校验
+PASS: 导航 HTTP 合同固定分页、详情、资产、方法与安全边界
+PASS: 设置状态 GET 静态快照，POST 同源 CSRF 与手动检测合同
+PASS: 独立设置页、首次展示与 MinerU Key UI 合同
+PASS: Excel 定位只接受 paper_id，不接受路径或单元格参数
+PASS: restart recovery 使用跨平台只读 PID 探测
+PASS: Task 7 子进程边界在 Windows 隐藏控制台
+PASS: CI workflow 构建内置 wheel 并执行单仓库门禁
+PASS: 文献模式仅在选定 preset 时启用，其余模式默认关闭工具
+工具注册: 22 个
+路由注册: 18 条
+PASS: 插件挂载冒烟通过（含重复挂载容忍）
+PASS: 飞书已退出现行运行面，SQLite 遗留列仅作不可见兼容
+PASS: MinerU Key 仅经受保护写入边界传递，不进入配置、argv 或响应
+PASS: 生产运行面严格等于当前单仓库白名单
+PASS: 内置 wheel 可独立安装并启动当前 CLI
+PASS: 插件健康门禁通过（构建/产物/客户端声明/仓库边界）
+PASS: 文献页整理入库会幂等打开当前父会话下的 continuable 子会话
+PASS: 整理会话引擎适配器只通过 JSON stdin 传递绑定与结论
+PASS: 整理入口幂等创建真实 continuable 子会话并守住文献父会话边界
+PASS: 整理工具只信任当前 DSH 子会话身份并在确认后刷新 Excel
+PASS: Reader 审核服务器路由、安全与端口所有权合同通过
+PASS: Reader 统一审核页静态与纯函数合同通过
+PASS: Reader 一键审核命令、服务复用和停止合同通过
+PASS: Reader 浏览器 QA 仅在当前 revision 完整通过后原子写回
+PASS: Reader 离线验收编排、失败写回与 HTML 预检合同通过
+PASS: 隔离 DSH 验收静态安全合同通过
+(node:31108) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)

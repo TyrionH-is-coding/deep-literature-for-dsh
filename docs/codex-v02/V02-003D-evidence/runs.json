@@ -1,0 +1,52 @@
+[
+  {
+    "id": "build",
+    "command": "npm run build:ci",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d",
+    "startedAt": "2026-09-17T07:09:22.872Z",
+    "finishedAt": "2026-09-17T07:10:47.176Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "offline",
+    "command": "npm run test:offline",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d",
+    "startedAt": "2026-09-17T07:10:47.702Z",
+    "finishedAt": "2026-09-17T07:15:43.288Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "pack",
+    "command": "npm pack --json",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d",
+    "startedAt": "2026-09-17T07:15:51.737Z",
+    "finishedAt": "2026-09-17T07:15:57.054Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "assets",
+    "command": "npm run test:assets",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d",
+    "startedAt": "2026-09-17T07:15:43.951Z",
+    "finishedAt": "2026-09-17T07:17:14.596Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "id": "freeze",
+    "command": "\"C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d\\.venv\\Scripts\\python.exe\" -m pip freeze --all",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-003d",
+    "startedAt": "2026-09-17T07:17:15.879Z",
+    "finishedAt": "2026-09-17T07:17:30.121Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  }
+]
