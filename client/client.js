@@ -15,6 +15,30 @@ window.__ModuleLoader__.load({
       if (text !== undefined) node.textContent = text;
       return node;
     }
+    function renderXlsxPending(paper, job, item) {
+      var detail = job.detail || {}; var reason = typeof detail.reason_code === 'string' ? detail.reason_code : '';
+      var xlsx = reason.indexOf('xlsx_') === 0 || item.xlsx_sync_state === 'pending';
+      if (job.status !== 'waiting_user' || reason === 'pdf_required') return null;
+      if (!xlsx && reason) return null;
+      var note = el('section', 'sr-error-note'); note.setAttribute('role', 'status');
+      note.appendChild(el('h3', '', xlsx ? 'Excel 同步已暂停' : '任务已暂停，等待核对'));
+      var labels = { personal_thoughts: '个人思考', understanding_level: '个人理解程度', user_notes: '用户笔记' };
+      var reasons = { xlsx_user_fields_conflict: 'Excel 与数据库中的个人字段存在冲突，或同步基线需要核对。', xlsx_identity_conflict: '工作簿的文献身份无法安全对应。', xlsx_identity_columns_invalid: '工作簿身份表的列名异常。', xlsx_user_columns_missing: '工作簿缺少文献 ID 或个人字段列。', xlsx_user_columns_ambiguous: '工作簿的文献 ID 或个人字段列名重复。', xlsx_required_sheets_missing: '工作簿缺少文献总表或身份表。' };
+      note.appendChild(el('p', '', Object.prototype.hasOwnProperty.call(reasons, reason) ? reasons[reason] : '暂停原因的详细信息暂不可用，请核对后再重试。'));
+      var input = detail.required_input || {}; var rows = Array.isArray(input.conflict_details) ? input.conflict_details : [];
+      rows.forEach(function (row) {
+        if (!row || typeof row !== 'object') return;
+        var id = typeof row.paper_id === 'string' && row.paper_id ? row.paper_id : '';
+        var field = Object.prototype.hasOwnProperty.call(labels, row.field) ? labels[row.field] : '字段未明确';
+        var location = id ? (id === paper.paper_id ? '当前文献 ID：' : '同批其他文献 ID：') + id : '文献定位信息未提供';
+        var cause = row.code === 'baseline_invalid' ? '同步基线异常' : row.code === 'baseline_missing_difference' ? '缺少同步基线，双方记录有差异' : '需要核对';
+        note.appendChild(el('p', '', location + '；' + field + '；' + cause));
+      });
+      if (Object.prototype.hasOwnProperty.call(reasons, reason)) note.appendChild(el('p', '', '原工作簿和数据库均已保留，整批未导入；同批文献也可能因此暂停。'));
+      else note.appendChild(el('p', '', '当前状态尚未解决；请先核实工作簿与数据库记录，勿直接覆盖任一方。'));
+      note.appendChild(el('p', '', '请先备份 Excel，核对双方记录及文献身份、同步基线和冲突字段；处理差异后保存并关闭 Excel，再重试同步。'));
+      return note;
+    }
     function searchMatchModel(match) {
       if (!match || typeof match !== 'object' || typeof match.snippet !== 'string' || !match.snippet.trim()) return null;
       var kindLabels = { metadata: '元数据', abstract_en: '英文摘要', abstract_zh: '中文摘要', conclusion: '已确认结论' };
@@ -423,6 +447,7 @@ window.__ModuleLoader__.load({
         links.appendChild(btn('查看资产目录', function () { drawerActions.loadAssets(paper.paper_id, session); }, 'sr-entry'));
         links.appendChild(btn('整理文章图表', function () { exportPaperAssets(paper.paper_id, session); }, 'sr-entry'));
         var job = payload.detail.job || {}; var jobDetail = job.detail || {}; var needsPdf = (job.status === 'waiting_user' && jobDetail.reason_code === 'pdf_required') || (paper.needsUser && paper.pdfRequired);
+        var xlsxNotice = renderXlsxPending(paper, job, item); if (xlsxNotice) controls.drawerBody.appendChild(xlsxNotice);
         if (needsPdf) {
           var identifier = item.doi || item.pmid || item.source_url || '';
           var activeJobId = item.active_job_id || paper.active_job_id || '';
