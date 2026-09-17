@@ -1,0 +1,2 @@
+$ node tests/navigation-contract.mjs
+PASS: 导航 HTTP 合同固定分页、详情、资产、方法与安全边界

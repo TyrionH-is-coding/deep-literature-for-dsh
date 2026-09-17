@@ -1,0 +1,30 @@
+{
+  "baseCommit": "d26cb9e88d0f7884db8e69a5a2d18286a62aaf83",
+  "packageOnlyAddsNavigationToOffline": true,
+  "testOnlyAddsJournalAndSearchMatchesToTwoExpectations": true,
+  "allOtherAssertionsPreserved": true,
+  "productionAndLockFilesUnchanged": true,
+  "offlineCommandCount": 41,
+  "assetsCommandCount": 4,
+  "changedTrackedPaths": [
+    "package.json",
+    "tests/navigation-contract.mjs"
+  ],
+  "newPaths": [
+    "docs/codex-v02/V02-002B-evidence/after.log",
+    "docs/codex-v02/V02-002B-evidence/assets.log",
+    "docs/codex-v02/V02-002B-evidence/before.log",
+    "docs/codex-v02/V02-002B-evidence/build.log",
+    "docs/codex-v02/V02-002B-evidence/check-scope.py",
+    "docs/codex-v02/V02-002B-evidence/environment.json",
+    "docs/codex-v02/V02-002B-evidence/npm-ci.log",
+    "docs/codex-v02/V02-002B-evidence/offline.log",
+    "docs/codex-v02/V02-002B-evidence/python-freeze.txt",
+    "docs/codex-v02/V02-002B-evidence/python-install.log",
+    "docs/codex-v02/V02-002B-evidence/run.mjs",
+    "docs/codex-v02/V02-002B-evidence/scope-check.json",
+    "docs/codex-v02/V02-002B-evidence/test-runs.json",
+    "docs/codex-v02/V02-002B-receipt.json",
+    "docs/codex-v02/V02-002B.md"
+  ]
+}

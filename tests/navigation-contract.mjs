@@ -68,8 +68,8 @@ try {
   assert.equal(list.statusCode, 200)
   assert.deepEqual(JSON.parse(list.body), {
     items: [
-      { paper_id: paperId, title: 'Navigation', authors_short: 'A et al.', year: 2024, folder: null, tags: ['NLP'], abstract_status: 'ready', full_read_status: 'not_started', has_pdf: true, has_reader: true, last_error: '' },
-      { paper_id: '', title: '', authors_short: '', year: null, folder: null, tags: [], abstract_status: '', full_read_status: '', has_pdf: false, has_reader: false, last_error: '' },
+      { paper_id: paperId, title: 'Navigation', authors_short: 'A et al.', year: 2024, journal: '', folder: null, tags: ['NLP'], abstract_status: 'ready', full_read_status: 'not_started', has_pdf: true, has_reader: true, last_error: '', search_matches: [] },
+      { paper_id: '', title: '', authors_short: '', year: null, journal: '', folder: null, tags: [], abstract_status: '', full_read_status: '', has_pdf: false, has_reader: false, last_error: '', search_matches: [] },
     ],
     page: 1, page_size: 50, total: 2, jobs: { running: 0, queued: 0 },
   })
