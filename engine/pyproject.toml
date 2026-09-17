@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dsh-scientific-reading-engine"
-version = "0.1.0"
+version = "0.2.0.dev1"
 description = "Codex 驱动的可复现个人文献阅读工作流"
 readme = "README.md"
 license = { text = "BSD-3-Clause" }
