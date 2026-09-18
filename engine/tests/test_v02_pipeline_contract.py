@@ -81,15 +81,15 @@ def test_duplicate_translation_and_incomplete_candidate_are_non_destructive(shor
         library.close()
 
 
-def test_engine_stop_control_cli_preserves_business_states():
+def test_engine_stop_control_cli_preserves_business_states(tmp_path):
     from scientific_reading.background_store import ALLOWED_TRANSITIONS
     from scientific_reading.__main__ import _build_parser
     assert 'canceled' not in ALLOWED_TRANSITIONS
     parser = _build_parser()
-    args = parser.parse_args(['full-read-pipeline-stop', '--job-id', 'job_0123456789abcdef',
+    args = parser.parse_args(['--data-root', str(tmp_path), 'full-read-pipeline-stop', '--job-id', 'job_0123456789abcdef',
                               '--request-id', 'stop', '--expected-revision', '0'])
     assert args.expected_revision == 0
-    args = parser.parse_args(['full-read-pipeline-resume', '--job-id', 'job_0123456789abcdef',
+    args = parser.parse_args(['--data-root', str(tmp_path), 'full-read-pipeline-resume', '--job-id', 'job_0123456789abcdef',
                               '--resume-stopped', '--request-id', 'resume', '--expected-revision', '1'])
     assert args.resume_stopped
 
