@@ -1,0 +1,1 @@
+PASS: explicit stop resume exports, exact arguments, input, trusted environment, scope, legacy compatibility and invalid options

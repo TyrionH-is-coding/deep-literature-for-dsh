@@ -1,0 +1,4 @@
+
+> @dsh-external/dsh-scientific-reading@0.2.0-dev.3 typecheck
+> tsc -p tsconfig.json --noEmit
+

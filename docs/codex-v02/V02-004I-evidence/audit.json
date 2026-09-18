@@ -1,0 +1,48 @@
+{
+  "time": "2026-09-18T10:26:32.582687+00:00",
+  "head": "8a63f2ba2eb0ed10fd01cb6af47608d6ea5ec5b9",
+  "sourceCommit": "b9365ce",
+  "laterDelta": "scripts/v02-004i-verify.ps1 only; same production and tests",
+  "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\.venv\\Scripts\\python.exe",
+  "requirements": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\docs\\codex-v02\\evidence\\audit-python-requirements.txt",
+  "requirementSha256": "f76fab572a1f9a0bcfa6fc070309343795cc838e76ce49eb327110bee9e4ba86",
+  "versions": {
+    "beautifulsoup4": "4.14.3",
+    "soupsieve": "2.8",
+    "typing_extensions": "4.15.0",
+    "latex2mathml": "3.81.0",
+    "Pillow": "12.0.0",
+    "openpyxl": "3.1.5",
+    "et_xmlfile": "2.0.0",
+    "pytest": "8.4.2",
+    "iniconfig": "2.1.0",
+    "packaging": "25.0",
+    "pluggy": "1.6.0",
+    "Pygments": "2.19.2",
+    "colorama": "0.4.6",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1"
+  },
+  "hashes": {
+    "src/cli.ts": "70d796ec5271c6e990d10947ce5375153102dd8b625c43b3b59905becf8e71d1",
+    "src/index.ts": "83f6a1fbd23799c83003dedb6159933cc5b638bc91cca23562c147ad13a8dbfe",
+    "package.json": "f810f1c17484238d65734a561736706889464daadbaea795ca92432d420b5c34",
+    "tests/v02-stop-control-api.mjs": "dbe27e5a31d1474b02ac5500f6494b106c5686bb0d8a2b0f6645f23b94e33e66",
+    "scripts/v02-004i-prepare.py": "477c7085cd17228e27d546567e02aadb529692e7882b5b628f35df6b004f76f5",
+    "scripts/v02-004i-verify.ps1": "32dd9a39d400d7285b559e72d1c8bd3d62f8f3c1f36778d3d6056ae2542f3553",
+    "scripts/fixtures/v02-004i/parent.py": "6b35bd62c5db012c8ce77a4d481d7fc9dbc5650ecefd8d3efaa3c5291310abe4",
+    "lib/cli.js": "b7185c97b9b3c3094f7f6b04b3d43fbe1cd8b93f3f44a983f6393c35c5fa5082",
+    "lib/index.js": "a6453a843dc3ad955c79fc357229e46f4c865a2060b7faa0a876b9b2cd30af6e"
+  },
+  "pythonSourceFilesVerified": 52,
+  "changed": [
+    "package.json",
+    "scripts/fixtures/v02-004i/parent.py",
+    "scripts/v02-004i-prepare.py",
+    "scripts/v02-004i-verify.ps1",
+    "src/cli.ts",
+    "src/index.ts",
+    "tests/v02-stop-control-api.mjs"
+  ]
+}

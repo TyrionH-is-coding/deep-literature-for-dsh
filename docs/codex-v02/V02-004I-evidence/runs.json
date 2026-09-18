@@ -1,0 +1,112 @@
+[
+  {
+    "name": "build",
+    "command": "npm.cmd",
+    "args": [
+      "run",
+      "build"
+    ],
+    "started": "2026-09-18T10:25:00.1651449Z",
+    "exitCode": 0
+  },
+  {
+    "name": "typecheck",
+    "command": "npm.cmd",
+    "args": [
+      "run",
+      "typecheck"
+    ],
+    "started": "2026-09-18T10:25:17.2705546Z",
+    "exitCode": 0
+  },
+  {
+    "name": "v02-stop-control-api",
+    "command": "node.exe",
+    "args": [
+      "tests/v02-stop-control-api.mjs"
+    ],
+    "started": "2026-09-18T10:25:20.8720497Z",
+    "exitCode": 0
+  },
+  {
+    "name": "full-read-pipeline",
+    "command": "node.exe",
+    "args": [
+      "tests/full-read-pipeline.mjs"
+    ],
+    "started": "2026-09-18T10:25:21.860573Z",
+    "exitCode": 0
+  },
+  {
+    "name": "full-read-routes",
+    "command": "node.exe",
+    "args": [
+      "tests/full-read-routes.mjs"
+    ],
+    "started": "2026-09-18T10:25:22.3418884Z",
+    "exitCode": 0
+  },
+  {
+    "name": "current-runtime-boundary",
+    "command": "node.exe",
+    "args": [
+      "tests/current-runtime-boundary.mjs"
+    ],
+    "started": "2026-09-18T10:25:25.2435818Z",
+    "exitCode": 0
+  },
+  {
+    "name": "mineru-secret-boundary",
+    "command": "node.exe",
+    "args": [
+      "tests/mineru-secret-boundary.mjs"
+    ],
+    "started": "2026-09-18T10:25:25.4190078Z",
+    "exitCode": 0
+  },
+  {
+    "name": "task7-hidden-subprocess",
+    "command": "node.exe",
+    "args": [
+      "tests/task7-hidden-subprocess.mjs"
+    ],
+    "started": "2026-09-18T10:25:26.0747823Z",
+    "exitCode": 0
+  },
+  {
+    "name": "library-assets-tools",
+    "command": "node.exe",
+    "args": [
+      "tests/library-assets-tools.mjs"
+    ],
+    "started": "2026-09-18T10:25:26.503159Z",
+    "exitCode": 1
+  },
+  {
+    "name": "library-assets-tools",
+    "command": "node.exe",
+    "args": [
+      "tests/library-assets-tools.mjs"
+    ],
+    "started": "2026-09-18T10:25:53.4273228Z",
+    "exitCode": 0
+  },
+  {
+    "name": "review-engine-adapter",
+    "command": "node.exe",
+    "args": [
+      "tests/review-engine-adapter.mjs"
+    ],
+    "started": "2026-09-18T10:26:04.0814341Z",
+    "exitCode": 0
+  },
+  {
+    "name": "phase1-plugin-contract",
+    "command": "node.exe",
+    "args": [
+      "tests/phase1-plugin-contract.mjs"
+    ],
+    "started": "2026-09-18T10:26:05.4143098Z",
+    "exitCode": 0
+  }
+]

@@ -1,0 +1,214 @@
+Traceback (most recent call last):
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\full_read_service.py", line 704, in _inspect_active_mineru
+    MineruArtifactValidator.validate_mineru_artifacts(
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\mineru_artifacts.py", line 204, in validate_mineru_artifacts
+    MineruArtifactValidator._verify_mineru_normalization(
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\mineru_artifacts.py", line 231, in _verify_mineru_normalization
+    regenerated = MineruNormalizer(mineru_version, normalization_version=stored_version).normalize(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\mineru_normalizer.py", line 327, in normalize
+    atomic_write_json(output / "parse_report.json", report_payload)
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\workspace.py", line 28, in atomic_write_json
+    temporary.write_text(
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\outputs\v02-004i\python\Lib\pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\outputs\v02-004i\python\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\outputs\\v02-004i\\tmp\\sr-library-assets-tools-mrZfqy\\\u539f\u59cb\u5e93\\papers\\doi_10.1234_reading.assets\\generations\\5898fa00847f091c\\parsed\\.mineru-verify-136166527e4645f3a9883d7d8b772d9a\\parse_report.json.tmp'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\scripts\reading_asset_fixture.py", line 42, in seed_reading_assets
+    generation = materialize_fixture_payload(payload, base.root / "generations" / sha[:16])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\scripts\reader_review_fixtures.py", line 272, in materialize_fixture_payload
+    _write_translation_batches(
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\scripts\reader_review_fixtures.py", line 170, in _write_translation_batches
+    active = service._inspect_active_mineru(workspace)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\full_read_service.py", line 806, in _inspect_active_mineru
+    raise FullReadError(
+scientific_reading.full_read_service.FullReadError: full_read_artifact_inconsistent
+验收现场保留：C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\outputs\v02-004i\tmp\sr-library-assets-tools-mrZfqy
+node:internal/errors:985
+  const err = new Error(message);
+              ^
+
+Error: Command failed: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\.venv\Scripts\python.exe -c import json, sys, scientific_reading
+from pathlib import Path
+from scripts.reading_asset_fixture import seed_reading_assets
+from scientific_reading.evidence_locator import build_locator
+from scientific_reading.review_service import ReviewService
+result = seed_reading_assets(Path(sys.argv[1]))
+root = Path(sys.argv[1])
+blocks = json.loads((root / result["active_generation"] / "parsed/mineru/source_map.json").read_text(encoding="utf-8"))["blocks"]
+block = next(b for b in blocks if b["text"] and len(b["text"]) < 500)
+locator = build_locator(root, result["paper_id"], block["block_id"], block["text"])
+review = ReviewService(root)
+confirmed = review.confirm_conclusions("fixture-review", [{"conclusion_type": "定位检查", "conclusion_text": "定位回跳验证", "basis": "paper", "evidence": locator}])
+review.close()
+result["conclusion_id"] = confirmed["conclusion_ids"][0]
+result["locator"] = locator
+result["engine_import"] = scientific_reading.__file__
+print(json.dumps(result)) C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\outputs\v02-004i\tmp\sr-library-assets-tools-mrZfqy\原始库
+Traceback (most recent call last):
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\full_read_service.py", line 704, in _inspect_active_mineru
+
+    MineruArtifactValidator.validate_mineru_artifacts(
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\mineru_artifacts.py", line 204, in validate_mineru_artifacts
+
+    MineruArtifactValidator._verify_mineru_normalization(
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\mineru_artifacts.py", line 231, in _verify_mineru_normalization
+
+    regenerated = MineruNormalizer(mineru_version, normalization_version=stored_version).normalize(
+
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\mineru_normalizer.py", line 327, in normalize
+
+    atomic_write_json(output / "parse_report.json", report_payload)
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\workspace.py", line 28, in atomic_write_json
+
+    temporary.write_text(
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\outputs\v02-004i\python\Lib\pathlib.py", line 1078, in write_text
+
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\outputs\v02-004i\python\Lib\pathlib.py", line 1044, in open
+
+    return io.open(self, mode, buffering, encoding, errors, newline)
+
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\outputs\\v02-004i\\tmp\\sr-library-assets-tools-mrZfqy\\\u539f\u59cb\u5e93\\papers\\doi_10.1234_reading.assets\\generations\\5898fa00847f091c\\parsed\\.mineru-verify-136166527e4645f3a9883d7d8b772d9a\\parse_report.json.tmp'
+
+
+
+The above exception was the direct cause of the following exception:
+
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 6, in <module>
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\scripts\reading_asset_fixture.py", line 42, in seed_reading_assets
+
+    generation = materialize_fixture_payload(payload, base.root / "generations" / sha[:16])
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\scripts\reader_review_fixtures.py", line 272, in materialize_fixture_payload
+
+    _write_translation_batches(
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\scripts\reader_review_fixtures.py", line 170, in _write_translation_batches
+
+    active = service._inspect_active_mineru(workspace)
+
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004i\engine\src\scientific_reading\full_read_service.py", line 806, in _inspect_active_mineru
+
+    raise FullReadError(
+
+scientific_reading.full_read_service.FullReadError: full_read_artifact_inconsistent
+
+
+    at genericNodeError (node:internal/errors:985:15)
+    at wrappedFn (node:internal/errors:539:14)
+    at checkExecSyncError (node:child_process:925:11)
+    at execFileSync (node:child_process:961:15)
+    at file:///C:/Users/15694/Documents/ChatGPT/deep-literature-engine-v02-004i/tests/library-assets-tools.mjs:41:29 {
+  status: 1,
+  signal: null,
+  output: [
+    null,
+    '',
+    'Traceback (most recent call last):\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\full_read_service.py", line 704, in _inspect_active_mineru\r\n' +
+      '    MineruArtifactValidator.validate_mineru_artifacts(\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\mineru_artifacts.py", line 204, in validate_mineru_artifacts\r\n' +
+      '    MineruArtifactValidator._verify_mineru_normalization(\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\mineru_artifacts.py", line 231, in _verify_mineru_normalization\r\n' +
+      '    regenerated = MineruNormalizer(mineru_version, normalization_version=stored_version).normalize(\r\n' +
+      '                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\mineru_normalizer.py", line 327, in normalize\r\n' +
+      '    atomic_write_json(output / "parse_report.json", report_payload)\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\workspace.py", line 28, in atomic_write_json\r\n' +
+      '    temporary.write_text(\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\outputs\\v02-004i\\python\\Lib\\pathlib.py", line 1078, in write_text\r\n' +
+      "    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:\r\n" +
+      '         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\outputs\\v02-004i\\python\\Lib\\pathlib.py", line 1044, in open\r\n' +
+      '    return io.open(self, mode, buffering, encoding, errors, newline)\r\n' +
+      '           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+      "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\15694\\\\Documents\\\\ChatGPT\\\\deep-literature-engine-v02-004i\\\\outputs\\\\v02-004i\\\\tmp\\\\sr-library-assets-tools-mrZfqy\\\\\\u539f\\u59cb\\u5e93\\\\papers\\\\doi_10.1234_reading.assets\\\\generations\\\\5898fa00847f091c\\\\parsed\\\\.mineru-verify-136166527e4645f3a9883d7d8b772d9a\\\\parse_report.json.tmp'\r\n" +
+      '\r\n' +
+      'The above exception was the direct cause of the following exception:\r\n' +
+      '\r\n' +
+      'Traceback (most recent call last):\r\n' +
+      '  File "<string>", line 6, in <module>\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\scripts\\reading_asset_fixture.py", line 42, in seed_reading_assets\r\n' +
+      '    generation = materialize_fixture_payload(payload, base.root / "generations" / sha[:16])\r\n' +
+      '                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\scripts\\reader_review_fixtures.py", line 272, in materialize_fixture_payload\r\n' +
+      '    _write_translation_batches(\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\scripts\\reader_review_fixtures.py", line 170, in _write_translation_batches\r\n' +
+      '    active = service._inspect_active_mineru(workspace)\r\n' +
+      '             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+      '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\full_read_service.py", line 806, in _inspect_active_mineru\r\n' +
+      '    raise FullReadError(\r\n' +
+      'scientific_reading.full_read_service.FullReadError: full_read_artifact_inconsistent\r\n'
+  ],
+  pid: 26772,
+  stdout: '',
+  stderr: 'Traceback (most recent call last):\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\full_read_service.py", line 704, in _inspect_active_mineru\r\n' +
+    '    MineruArtifactValidator.validate_mineru_artifacts(\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\mineru_artifacts.py", line 204, in validate_mineru_artifacts\r\n' +
+    '    MineruArtifactValidator._verify_mineru_normalization(\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\mineru_artifacts.py", line 231, in _verify_mineru_normalization\r\n' +
+    '    regenerated = MineruNormalizer(mineru_version, normalization_version=stored_version).normalize(\r\n' +
+    '                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\mineru_normalizer.py", line 327, in normalize\r\n' +
+    '    atomic_write_json(output / "parse_report.json", report_payload)\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\workspace.py", line 28, in atomic_write_json\r\n' +
+    '    temporary.write_text(\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\outputs\\v02-004i\\python\\Lib\\pathlib.py", line 1078, in write_text\r\n' +
+    "    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:\r\n" +
+    '         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\outputs\\v02-004i\\python\\Lib\\pathlib.py", line 1044, in open\r\n' +
+    '    return io.open(self, mode, buffering, encoding, errors, newline)\r\n' +
+    '           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+    "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\15694\\\\Documents\\\\ChatGPT\\\\deep-literature-engine-v02-004i\\\\outputs\\\\v02-004i\\\\tmp\\\\sr-library-assets-tools-mrZfqy\\\\\\u539f\\u59cb\\u5e93\\\\papers\\\\doi_10.1234_reading.assets\\\\generations\\\\5898fa00847f091c\\\\parsed\\\\.mineru-verify-136166527e4645f3a9883d7d8b772d9a\\\\parse_report.json.tmp'\r\n" +
+    '\r\n' +
+    'The above exception was the direct cause of the following exception:\r\n' +
+    '\r\n' +
+    'Traceback (most recent call last):\r\n' +
+    '  File "<string>", line 6, in <module>\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\scripts\\reading_asset_fixture.py", line 42, in seed_reading_assets\r\n' +
+    '    generation = materialize_fixture_payload(payload, base.root / "generations" / sha[:16])\r\n' +
+    '                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\scripts\\reader_review_fixtures.py", line 272, in materialize_fixture_payload\r\n' +
+    '    _write_translation_batches(\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\scripts\\reader_review_fixtures.py", line 170, in _write_translation_batches\r\n' +
+    '    active = service._inspect_active_mineru(workspace)\r\n' +
+    '             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n' +
+    '  File "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004i\\engine\\src\\scientific_reading\\full_read_service.py", line 806, in _inspect_active_mineru\r\n' +
+    '    raise FullReadError(\r\n' +
+    'scientific_reading.full_read_service.FullReadError: full_read_artifact_inconsistent\r\n'
+}
+
+Node.js v24.18.0
