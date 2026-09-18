@@ -1,0 +1,9 @@
+{
+  "archive": "original-files.zip",
+  "sha256": "addf086e414d52c502acf0c36be0babdb280110f3bb054fbae0379f7c8989bd6",
+  "files": {
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\job.json": "f0609effc2d574beb791255998a077c77b179f0eae7f70d88f8e83c3badb4443",
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\job.json": "a475ca102da7e53d6aeebb643ff6b4bdb41be45e1f6932c832d17b6943dc1013"
+  },
+  "reason": "ZIP preserves exact raw bytes across Git text EOL normalization; JSON copies are readable evidence."
+}
