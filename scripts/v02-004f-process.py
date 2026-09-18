@@ -108,6 +108,15 @@ class QueueOnly:
         pass  # The test launches the controlled provider worker as a real child next.
 
 
+def reader_pointer(data, paper):
+    library = prior.LibraryService(data)
+    try:
+        return [list(row) for row in library.conn.execute(
+            "SELECT rel_path,status,updated_at FROM artifacts WHERE paper_id=? AND kind='reader'", (paper,)).fetchall()]
+    finally:
+        library.close()
+
+
 def scenario(root, point):
     root.mkdir(parents=True, exist_ok=False)
     data = root / 'data'
@@ -164,6 +173,8 @@ def scenario(root, point):
             confirmed = cli(root, 'full-read-pipeline-control')[1]
             assert confirmed['status'] == ('terminal' if point == 'derived' else 'acknowledged'), confirmed
             assert all(prior.assets(root).get(k) == v for k, v in protected.items())
+            pointer_before = reader_pointer(data, paper)
+            results['reader_pointer_at_stop'] = pointer_before
             state_before = store.handle(parent).reading_pipeline_path.read_bytes()
             calls_before = [x for x in (root / 'calls.jsonl').read_text(encoding='utf-8').splitlines() if 'stage_enter' in x]
             # Two fresh CLI processes reload durable control. Ordinary resume/start/advance cannot clear it.
@@ -175,6 +186,7 @@ def scenario(root, point):
                 from scientific_reading.background_launcher import BackgroundLauncher
                 assert not BackgroundLauncher(data).launch_existing(parent).process_started
             assert store.handle(parent).reading_pipeline_path.read_bytes() == state_before
+            assert reader_pointer(data, paper) == pointer_before
             assert calls_before == [x for x in (root / 'calls.jsonl').read_text(encoding='utf-8').splitlines() if 'stage_enter' in x]
             results['confirmed'] = confirmed
             results['protected_assets_unchanged'] = True
@@ -220,6 +232,9 @@ def scenario(root, point):
             store.transition(parent, 'queued')
     assert store.load_status(parent).state == 'completed'
     assert all(prior.assets(root).get(k) == v for k, v in protected.items())
+    if results['reader_pointer_at_stop']:
+        assert reader_pointer(data, paper) == results['reader_pointer_at_stop']
+    results['final_reader_pointer'] = reader_pointer(data, paper)
     results['final'] = pipeline.inspect(parent).to_dict()
     results['assets'] = prior.assets(root)
     results['children'] = []
