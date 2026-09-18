@@ -262,6 +262,9 @@ class ReadingControl:
         if self.alive(value["worker"]):
             raise ReadingControlError("reading_control_worker_busy")
         value["worker"] = self.owner()
+        operation = value["operations"].get(value["requestId"])
+        if operation is not None and operation["kind"] == "resume":
+            operation["dispatched"] = True
         self.save(value)
         return True
 
@@ -285,6 +288,16 @@ class ReadingControl:
             old = self.operation(value, "resume", request_id, expected_revision, supplied)
             if old is not None and (old["revision"] != value["revision"] or old.get("dispatched")):
                 return self.result(value, replay=old)
+            if old is not None:
+                marker_path = self.path.parent / "launch.json"
+                if marker_path.exists():
+                    marker = read_json_file(marker_path)
+                    if marker.get("controlRevision") == old["revision"]:
+                        if type(marker.get("pid")) is not int or marker["pid"] <= 0:
+                            raise ReadingControlError("reading_control_dispatch_uncertain")
+                        old["dispatched"] = True
+                        self.save(value)
+                        return self.result(value, replay=old)
             if old is None:
                 self.acknowledge(value)
                 if not value["stopRequested"]:

@@ -201,3 +201,21 @@ def test_control_command_refuses_mismatched_pipeline_identity(parent):
     with pytest.raises(ReadingControlError, match='full_read_parent_mismatch'):
         control.stop('stop', 0)
     assert not control.path.exists()
+
+@pytest.mark.parametrize('pid', [42424242, None])
+def test_pending_resume_never_relaunches_recorded_attempt(parent, pid):
+    pipeline, control, paper = parent
+    control.stop('s', 0)
+    class ReceiptLost:
+        def launch_existing(self, job):
+            atomic_write_json(control.path.parent / 'launch.json', {'controlRevision': 2, 'pid': pid})
+            raise OSError('receipt_lost_after_launch_record')
+    with pytest.raises(OSError):
+        resume(control, ReceiptLost())
+    launched = Launch()
+    if pid is None:
+        with pytest.raises(ReadingControlError, match='dispatch_uncertain'):
+            resume(control, launched)
+    else:
+        assert resume(control, launched)['revision'] == 2
+    assert launched.calls == []
