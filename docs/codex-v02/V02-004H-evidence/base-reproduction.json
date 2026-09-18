@@ -1,0 +1,39 @@
+{
+  "root": "C:\\tmp\\h4-base-ht1x4x7u",
+  "source": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004h\\engine\\src\\scientific_reading\\reading_pipeline.py",
+  "sourceSHA256": "324d42885a1d0ce07007a74812f1cff87114168e6b97f398d5ef2edf97defb26",
+  "base": "776a018c7855442de38d591517eea831eae5b463",
+  "returned": {
+    "paper_id": "doi_10.5555_h4",
+    "parent_job_id": "job_75509585f4dcb752",
+    "current_stage": "parse_mineru",
+    "state": "queued",
+    "stage_jobs": {},
+    "stage_outputs": {
+      "ensure_pdf": {
+        "status": "pdf_ready",
+        "source_pdf_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "stage_timings": {
+      "ensure_pdf": {
+        "started_at": "2026-09-18T07:34:17.478338+00:00",
+        "finished_at": "2026-09-18T07:34:17.837405+00:00"
+      }
+    },
+    "source_pdf_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "reader_source_sha256": null,
+    "required_action": null,
+    "last_error": null,
+    "created_at": "2026-09-18T07:34:17.169473+00:00",
+    "updated_at": "2026-09-18T07:34:17.901466+00:00",
+    "completed_at": null,
+    "contract_version": "reading-pipeline-v1"
+  },
+  "background": "failed",
+  "inspectError": "reading_pipeline_state_invalid",
+  "changed": [
+    "library.sqlite",
+    "jobs/job_75509585f4dcb752/reading_pipeline.json"
+  ]
+}

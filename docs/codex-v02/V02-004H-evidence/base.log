@@ -1,0 +1,498 @@
+FFFFFFFFFFFF.........F..                                                 [100%]
+================================== FAILURES ===================================
+_ test_explicit_terminal_advance_rejects_before_any_write[False-supplied0-failed] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance0')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'failed', supplied = {}, legacy = False
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_72f5474ecc7dfbd0', curren...+00:00', updated_at='2026-09-18T07:32:54.945138+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[False-supplied0-waiting_user] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance1')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_user', supplied = {}, legacy = False
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_230adef20f337a7c', curren...+00:00', updated_at='2026-09-18T07:32:57.626203+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[False-supplied0-waiting_agent] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance2')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_agent', supplied = {}, legacy = False
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_2ba203f072ecca92', curren...+00:00', updated_at='2026-09-18T07:32:59.251340+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[False-supplied1-failed] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance3')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'failed', supplied = {'unexpected': True}, legacy = False
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_8d8be5cd080d9d9a', curren...t='2026-09-18T07:33:00.884439+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {'unexpected': True})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[False-supplied1-waiting_user] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance4')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_user', supplied = {'unexpected': True}, legacy = False
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_3e8eb46fcfd54b7d', curren...t='2026-09-18T07:33:02.518690+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {'unexpected': True})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[False-supplied1-waiting_agent] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance5')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_agent', supplied = {'unexpected': True}, legacy = False
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_f1d08b8c1eaa1212', curren...t='2026-09-18T07:33:04.513727+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {'unexpected': True})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[True-supplied0-failed] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance6')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'failed', supplied = {}, legacy = True
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_92405efeda5d3fc8', curren...+00:00', updated_at='2026-09-18T07:33:06.699610+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[True-supplied0-waiting_user] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance7')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_user', supplied = {}, legacy = True
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_bc2733900bb35abd', curren...+00:00', updated_at='2026-09-18T07:33:08.475631+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[True-supplied0-waiting_agent] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance8')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_agent', supplied = {}, legacy = True
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_749d349dfc49f9ab', curren...+00:00', updated_at='2026-09-18T07:33:10.204811+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[True-supplied1-failed] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance9')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'failed', supplied = {'unexpected': True}, legacy = True
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_c59dfd26801a30a9', curren...t='2026-09-18T07:33:11.953616+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {'unexpected': True})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[True-supplied1-waiting_user] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance10')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_user', supplied = {'unexpected': True}, legacy = True
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_ea3322b5224699b7', curren...t='2026-09-18T07:33:13.663162+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {'unexpected': True})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+_ test_explicit_terminal_advance_rejects_before_any_write[True-supplied1-waiting_agent] _
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_explicit_terminal_advance11')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+outcome = 'waiting_agent', supplied = {'unexpected': True}, legacy = True
+
+    @pytest.mark.parametrize('outcome', ['failed', 'waiting_user', 'waiting_agent'])
+    @pytest.mark.parametrize('supplied', [{}, {'unexpected': True}])
+    @pytest.mark.parametrize('legacy', [False, True])
+    def test_explicit_terminal_advance_rejects_before_any_write(tmp_path, metadata, outcome, supplied, legacy):
+        pipeline, job = make_parent(tmp_path, metadata, outcome)
+        if legacy:
+            ReadingControl(pipeline.job_store, job).path.unlink()
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+        with pytest.raises(RuntimeError, match='^full_read_pipeline_resume_required$'):
+>           pipeline.advance(job, supplied)
+
+engine\tests\test_reading_pipeline_lifecycle.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+engine\src\scientific_reading\data_guard.py:127: in guarded
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:698: in advance
+    result = self._advance(parent_job_id, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+engine\src\scientific_reading\reading_pipeline.py:731: in _advance
+    output = self.stage_runner(stage, runner_state, supplied_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = ('ensure_pdf', ReadingPipelineState(paper_id='doi_10.5555_bridge.2024.1', parent_job_id='job_d7d2606dfad22e12', curren...t='2026-09-18T07:33:15.374077+00:00', completed_at=None, contract_version='reading-pipeline-v1'), {'unexpected': True})
+
+>   pipeline.stage_runner = lambda *_: pytest.fail('runner must not be entered')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: runner must not be entered
+
+engine\tests\test_reading_pipeline_lifecycle.py:43: Failed
+________________________ test_completed_is_idempotent _________________________
+
+tmp_path = WindowsPath('C:/Users/15694/AppData/Local/Temp/pytest-of-15694/pytest-46/test_completed_is_idempotent0')
+metadata = PaperMetadata(title='Load Distribution in Modular Steel Bridges', authors=['Alex Rivera'], doi='10.5555/bridge.2024.1'...ne, year=2024, journal='Open Engineering Notes', library_key=None, abstract_en=None, abstract_zh=None, source_url=None)
+
+    def test_completed_is_idempotent(tmp_path, metadata):
+        pipeline, job = make_parent(tmp_path, metadata, 'failed')
+        pipeline.job_store.transition(job, 'queued')
+        state = pipeline._load(job)
+        pipeline._complete(state)
+        pipeline.job_store.transition(job, 'running')
+        pipeline.job_store.transition(job, 'completed')
+        before = snapshot(tmp_path)
+        pipeline.stage_runner = lambda *_: pytest.fail('completed must not run')
+        assert pipeline.advance(job, {}).state == 'completed'
+>       assert snapshot(tmp_path) == before
+E       AssertionError: assert {'.library.sq...ae92491', ...} == {'.library.sq...ae92491', ...}
+E         
+E         Omitting 8 identical items, use -vv to show
+E         Differing items:
+E         {'library.sqlite': 'f90c67c1dbfac1711499a61c501fadb60ba590d653d9c187237fec86f2c97931'} != {'library.sqlite': '5226ab08adc1d3efe2ae44aec478c37818c5e24e263c555de661ab75b60667af'}
+E         Use -v to get more diff
+
+engine\tests\test_reading_pipeline_lifecycle.py:89: AssertionError
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004h\docs\codex-v02\V02-004H-evidence\base.xml -
+=========================== short test summary info ===========================
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[False-supplied0-failed]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[False-supplied0-waiting_user]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[False-supplied0-waiting_agent]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[False-supplied1-failed]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[False-supplied1-waiting_user]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[False-supplied1-waiting_agent]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[True-supplied0-failed]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[True-supplied0-waiting_user]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[True-supplied0-waiting_agent]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[True-supplied1-failed]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[True-supplied1-waiting_user]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_explicit_terminal_advance_rejects_before_any_write[True-supplied1-waiting_agent]
+FAILED engine\tests\test_reading_pipeline_lifecycle.py::test_completed_is_idempotent
+13 failed, 11 passed in 45.16s

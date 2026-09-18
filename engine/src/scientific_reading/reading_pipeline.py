@@ -692,6 +692,19 @@ class ReadingPipeline:
         with self.job_store.claim(parent_job_id, "reading_pipeline"):
             control = ReadingControl(self.job_store, parent_job_id)
             state = self._load(parent_job_id)
+            # Only worker/CLI resume owns the background lifecycle. Reject before
+            # stage registration writes control.json, while preserving stop gates.
+            with control.lock():
+                control.authorize()
+                stopped = control.load()["stopRequested"]
+                if (
+                    not stopped
+                    and state.current_stage != "completed"
+                    and supplied_input is not None
+                    and self.job_store.load_status(parent_job_id).state
+                    in {"failed", "waiting_user", "waiting_agent"}
+                ):
+                    raise RuntimeError("full_read_pipeline_resume_required")
             with control.stage(state.current_stage) as admitted:
                 if not admitted:
                     return control.overlay(state)
