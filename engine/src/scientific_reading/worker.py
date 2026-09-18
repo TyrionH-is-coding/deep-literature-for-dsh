@@ -376,6 +376,13 @@ def run_job(
             with control.lock():
                 control.authorize()
                 if not control.register_worker():
+                    # A child spawned just before stop must expose a user gate
+                    # even when it has not entered its first stage. Never rewrite
+                    # an existing running/terminal worker's business outcome.
+                    if store.load_status(job_id).state == "queued":
+                        store.transition(job_id, "running", pid=os.getpid())
+                        store.transition(job_id, "waiting_user", reason_code="pipeline_stop_requested",
+                                         required_input={"revision": control.load()["revision"]})
                     return 2
             try:
                 return _run_job(store, job_id, handlers, heartbeat_interval=heartbeat_interval)

@@ -49,6 +49,7 @@ def test_stop_replay_revision_and_resume_receipt_loss(parent):
     assert pipeline.start(paper).state == 'needs_user'
     assert not BackgroundLauncher(pipeline.data_root, popen=lambda *_: pytest.fail('spawn')).launch_existing(control.job_id).process_started
     assert run_job(control.store, control.job_id) == 2
+    assert control.store.load_status(control.job_id).reason_code == 'pipeline_stop_requested'
     with pytest.raises(ReadingControlError, match='revision_conflict'):
         control.stop('stale', 0)
     with pytest.raises(ReadingControlError, match='request_conflict'):

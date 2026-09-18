@@ -13,6 +13,15 @@ spec.loader.exec_module(probe)
 def test_real_provider_stop_boundary(point):
     with tempfile.TemporaryDirectory(prefix='v4f-') as root:
         result = probe.scenario(Path(root) / 'case', point)
+        import os
+        import shutil
+        evidence = os.environ.get('V02_004F_EVIDENCE')
+        if evidence:
+            destination = Path(evidence) / point
+            destination.mkdir(parents=True, exist_ok=True)
+            for artifact in (Path(root) / 'case').iterdir():
+                if artifact.is_file() and artifact.suffix in {'.json', '.jsonl', '.log'}:
+                    shutil.copy2(artifact, destination / artifact.name)
     assert result['final']['state'] == 'completed'
     assert result['protected_assets_unchanged']
     assert not any(p['alive'] for p in result['processes'] + result['children'])
