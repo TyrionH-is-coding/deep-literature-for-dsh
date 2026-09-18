@@ -1,0 +1,297 @@
+{
+  "scenario": "parse-kill-before",
+  "root": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\legacy",
+  "parent": "job_ab1836ef87645f96",
+  "processes": [
+    {
+      "pid": 43224,
+      "identity": "windows:01dd47327da42e33",
+      "attempt": 0,
+      "worker": {
+        "pid": 34028,
+        "identity": "windows:01dd47327dae2c0d"
+      },
+      "exit": 15,
+      "alive_after_wait": false,
+      "worker_alive_after_wait": false
+    },
+    {
+      "pid": 38952,
+      "identity": "windows:01dd47327f35a1e0",
+      "attempt": 1,
+      "exit": 4,
+      "worker": {
+        "pid": 38276,
+        "identity": "windows:01dd47327f4535cd"
+      },
+      "alive_after_wait": false,
+      "worker_alive_after_wait": false
+    }
+  ],
+  "snapshots": [
+    {
+      "boundary": "parse-kill-before",
+      "status": {
+        "job_id": "job_ab1836ef87645f96",
+        "state": "running",
+        "created_at": "2026-09-18T05:56:47.157019+00:00",
+        "updated_at": "2026-09-18T05:56:49.375643+00:00",
+        "pid": 34028,
+        "heartbeat_at": "2026-09-18T05:56:49.375643+00:00",
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      },
+      "locks": {
+        "jobs\\.full_read_heavy\\owner.json": {
+          "pid": 34028,
+          "created_at": "2026-09-18T05:56:49.427097+00:00"
+        },
+        "jobs\\job_ab1836ef87645f96\\.claim_reading_pipeline\\owner.json": {
+          "pid": 34028,
+          "started_at": "2026-09-18T05:56:49.384458+00:00"
+        }
+      },
+      "assets": {}
+    }
+  ],
+  "attempts": [
+    {
+      "status": {
+        "job_id": "job_ab1836ef87645f96",
+        "state": "running",
+        "created_at": "2026-09-18T05:56:47.157019+00:00",
+        "updated_at": "2026-09-18T05:56:49.375643+00:00",
+        "pid": 34028,
+        "heartbeat_at": "2026-09-18T05:56:49.375643+00:00",
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      },
+      "pipeline": {
+        "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+        "parent_job_id": "job_ab1836ef87645f96",
+        "current_stage": "parse_mineru",
+        "state": "parse_mineru",
+        "stage_jobs": {},
+        "stage_outputs": {
+          "ensure_pdf": {
+            "status": "pdf_ready",
+            "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\legacy\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+            "page_count": 0,
+            "reused": true
+          }
+        },
+        "stage_timings": {
+          "ensure_pdf": {
+            "started_at": "2026-09-18T05:56:49.168180+00:00",
+            "finished_at": "2026-09-18T05:56:49.307221+00:00"
+          },
+          "parse_mineru": {
+            "started_at": "2026-09-18T05:56:49.391820+00:00",
+            "finished_at": null
+          }
+        },
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "reader_source_sha256": null,
+        "required_action": null,
+        "last_error": null,
+        "created_at": "2026-09-18T05:56:47.183125+00:00",
+        "updated_at": "2026-09-18T05:56:49.391820+00:00",
+        "completed_at": null,
+        "contract_version": "reading-pipeline-v1"
+      },
+      "assets": {}
+    },
+    {
+      "status": {
+        "job_id": "job_ab1836ef87645f96",
+        "state": "failed",
+        "created_at": "2026-09-18T05:56:47.157019+00:00",
+        "updated_at": "2026-09-18T05:56:52.265389+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": "generation_workspace_conflict",
+        "scope": null
+      },
+      "pipeline": {
+        "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+        "parent_job_id": "job_ab1836ef87645f96",
+        "current_stage": "parse_mineru",
+        "state": "failed",
+        "stage_jobs": {},
+        "stage_outputs": {
+          "ensure_pdf": {
+            "status": "pdf_ready",
+            "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\legacy\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+            "page_count": 0,
+            "reused": true
+          }
+        },
+        "stage_timings": {
+          "ensure_pdf": {
+            "started_at": "2026-09-18T05:56:49.168180+00:00",
+            "finished_at": "2026-09-18T05:56:49.307221+00:00"
+          },
+          "parse_mineru": {
+            "started_at": "2026-09-18T05:56:49.391820+00:00",
+            "finished_at": null
+          }
+        },
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "reader_source_sha256": null,
+        "required_action": null,
+        "last_error": "generation_workspace_conflict",
+        "created_at": "2026-09-18T05:56:47.183125+00:00",
+        "updated_at": "2026-09-18T05:56:52.219998+00:00",
+        "completed_at": null,
+        "contract_version": "reading-pipeline-v1"
+      },
+      "assets": {}
+    }
+  ],
+  "concurrent_claim_rejected": true,
+  "final": {
+    "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+    "parent_job_id": "job_ab1836ef87645f96",
+    "current_stage": "parse_mineru",
+    "state": "failed",
+    "stage_jobs": {},
+    "stage_outputs": {
+      "ensure_pdf": {
+        "status": "pdf_ready",
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\legacy\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+        "page_count": 0,
+        "reused": true
+      }
+    },
+    "stage_timings": {
+      "ensure_pdf": {
+        "started_at": "2026-09-18T05:56:49.168180+00:00",
+        "finished_at": "2026-09-18T05:56:49.307221+00:00"
+      },
+      "parse_mineru": {
+        "started_at": "2026-09-18T05:56:49.391820+00:00",
+        "finished_at": null
+      }
+    },
+    "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+    "reader_source_sha256": null,
+    "required_action": null,
+    "last_error": "generation_workspace_conflict",
+    "created_at": "2026-09-18T05:56:47.183125+00:00",
+    "updated_at": "2026-09-18T05:56:52.219998+00:00",
+    "completed_at": null,
+    "contract_version": "reading-pipeline-v1"
+  },
+  "final_assets": {},
+  "protected_assets_unchanged": true,
+  "duplicate_start_id": "job_ab1836ef87645f96",
+  "calls": [
+    {
+      "name": "worker_loaded",
+      "pid": 34028,
+      "before": {
+        "job_id": "job_ab1836ef87645f96",
+        "state": "queued",
+        "created_at": "2026-09-18T05:56:47.157019+00:00",
+        "updated_at": "2026-09-18T05:56:47.157019+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      },
+      "after": {
+        "job_id": "job_ab1836ef87645f96",
+        "state": "queued",
+        "created_at": "2026-09-18T05:56:47.157019+00:00",
+        "updated_at": "2026-09-18T05:56:47.157019+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      }
+    },
+    {
+      "name": "provider_parse",
+      "pid": 34028
+    },
+    {
+      "name": "worker_loaded",
+      "pid": 38276,
+      "before": {
+        "job_id": "job_ab1836ef87645f96",
+        "state": "running",
+        "created_at": "2026-09-18T05:56:47.157019+00:00",
+        "updated_at": "2026-09-18T05:56:49.375643+00:00",
+        "pid": 34028,
+        "heartbeat_at": "2026-09-18T05:56:49.375643+00:00",
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      },
+      "after": {
+        "job_id": "job_ab1836ef87645f96",
+        "state": "queued",
+        "created_at": "2026-09-18T05:56:47.157019+00:00",
+        "updated_at": "2026-09-18T05:56:51.954970+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      }
+    }
+  ],
+  "library_item": {
+    "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+    "library_key": "lib_3527b0decfa9",
+    "title": "Load Distribution in Modular Truss Bridges",
+    "authors": [
+      "Alex Rivera"
+    ],
+    "doi": "10.5555/full-read-recovery.2026.1",
+    "pmid": null,
+    "year": 2026,
+    "journal": "Fictional Engineering Notes",
+    "source_url": null,
+    "status": "pdf_ready",
+    "created_at": "2026-09-18T05:56:47.054743+00:00",
+    "updated_at": "2026-09-18T05:56:52.522361+00:00",
+    "folder_id": null,
+    "active_job_id": "job_ab1836ef87645f96",
+    "last_error": "generation_workspace_conflict",
+    "folder_name": null,
+    "tags": [],
+    "display_title": "Load Distribution in Modular Truss Bridges",
+    "abstract_en": null,
+    "abstract_zh": null,
+    "abstract_status": null,
+    "full_read_status": "\u5904\u7406\u5931\u8d25",
+    "xlsx_sync_state": null,
+    "xlsx_error": null
+  },
+  "schema": 4,
+  "derived": [],
+  "live_owned_processes": []
+}

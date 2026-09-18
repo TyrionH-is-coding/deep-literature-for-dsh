@@ -1,0 +1,24 @@
+[
+  {
+    "step": "initial git commit",
+    "result": "author identity absent; failed without commit",
+    "resolution": "per-command Codex <codex@openai.com>, matching prior repository author; no global config"
+  },
+  {
+    "step": "python initial",
+    "result": "exit 1: No module named pytest",
+    "resolution": "waited for independent pip install completion; complete suite rerun",
+    "log": "python-env-not-ready.log"
+  },
+  {
+    "step": "pack clean guard",
+    "result": "refused due generated lib/client.js CRLF/LF index status; git diff contained no content changes",
+    "resolution": "git add lib/client.js refreshed index with zero staged changes"
+  },
+  {
+    "step": "initial pack overlap",
+    "result": "pack exit 0 but artifact checker failed len(wheels)==1 while offline bundled-engine test rebuilding wheel",
+    "resolution": "discarded incomplete candidate; waited offline/assets; rebuilt/packed serially from a45aff9a6d5419c1b7a5cbc7954355176d56fac5",
+    "log": "pack-overlap-incomplete.log"
+  }
+]

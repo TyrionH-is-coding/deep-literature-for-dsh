@@ -1,0 +1,44 @@
+{
+  "skips": [
+    {
+      "test": {
+        "classname": "tests.test_generation_package_manifest",
+        "name": "test_generation_package_manifest_rejects_symlinked_parent_escape",
+        "time": "0.114"
+      },
+      "reason": {
+        "type": "pytest.skip",
+        "message": "directory symlinks unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\15694\\\\AppData\\\\Local\\\\Temp\\\\pytest-of-15694\\\\pytest-34\\\\test_generation_package_manife3\\\\outside-dir' -> 'C:\\\\Users\\\\15694\\\\AppData\\\\Local\\\\Temp\\\\pytest-of-15694\\\\pytest-34\\\\test_generation_package_manife3\\\\papers\\\\doi_10.5555_bridge.2024.1\\\\generations\\\\eeeeeeeeeeeeeeee\\\\linked'"
+      },
+      "detail": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d\\engine\\tests\\test_generation_package_manifest.py:127: directory symlinks unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\15694\\\\AppData\\\\Local\\\\Temp\\\\pytest-of-15694\\\\pytest-34\\\\test_generation_package_manife3\\\\outside-dir' -> 'C:\\\\Users\\\\15694\\\\AppData\\\\Local\\\\Temp\\\\pytest-of-15694\\\\pytest-34\\\\test_generation_package_manife3\\\\papers\\\\doi_10.5555_bridge.2024.1\\\\generations\\\\eeeeeeeeeeeeeeee\\\\linked'"
+    },
+    {
+      "test": {
+        "classname": "tests.test_platform_integration",
+        "name": "test_exited_unreaped_worker_does_not_block_job_retry",
+        "time": "0.001"
+      },
+      "reason": {
+        "type": "pytest.skip",
+        "message": "Unix zombie lifecycle"
+      },
+      "detail": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d\\engine\\tests\\test_platform_integration.py:84: Unix zombie lifecycle"
+    },
+    {
+      "test": {
+        "classname": "tests.test_platform_integration",
+        "name": "test_real_native_credential_service_roundtrip",
+        "time": "0.001"
+      },
+      "reason": {
+        "type": "pytest.skip",
+        "message": "requires unlocked OS credential service"
+      },
+      "detail": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d\\engine\\tests\\test_platform_integration.py:97: requires unlocked OS credential service"
+    }
+  ],
+  "testSource": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+  "artifactSource": "a45aff9a6d5419c1b7a5cbc7954355176d56fac5",
+  "productionDiffBetweenTestAndArtifact": "",
+  "note": "Only standalone acceptance driver changes between these commits."
+}

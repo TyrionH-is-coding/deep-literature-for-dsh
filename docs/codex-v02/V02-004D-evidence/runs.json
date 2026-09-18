@@ -1,0 +1,110 @@
+[
+  {
+    "sourceCommit": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+    "trackedStatus": "",
+    "id": "python",
+    "command": "node scripts/run-python.mjs -m pytest -q engine/tests --tb=short --junitxml=docs/codex-v02/V02-004D-evidence/python-junit.xml",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:49:34.772Z",
+    "finishedAt": "2026-09-18T05:49:35.874Z",
+    "exitCode": 1,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+    "trackedStatus": "",
+    "id": "build",
+    "command": "npm run build:ci",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:50:42.510Z",
+    "finishedAt": "2026-09-18T05:51:20.262Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+    "trackedStatus": "",
+    "id": "pack",
+    "command": "npm pack --json",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:52:24.299Z",
+    "finishedAt": "2026-09-18T05:52:27.469Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+    "trackedStatus": "M lib/client.js",
+    "id": "offline",
+    "command": "npm run test:offline",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:51:40.745Z",
+    "finishedAt": "2026-09-18T05:53:22.868Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+    "trackedStatus": "M scripts/v02-004d-contract.py\n M scripts/v02-004d-negative.py",
+    "id": "assets",
+    "command": "npm run test:assets",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:53:23.184Z",
+    "finishedAt": "2026-09-18T05:53:56.082Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+    "trackedStatus": "M scripts/v02-004d-contract.py\n M scripts/v02-004d-negative.py",
+    "id": "freeze",
+    "command": "\"C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d\\.venv\\Scripts\\python.exe\" -m pip freeze --all",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:53:56.535Z",
+    "finishedAt": "2026-09-18T05:53:59.630Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "a45aff9a6d5419c1b7a5cbc7954355176d56fac5",
+    "trackedStatus": "",
+    "id": "build",
+    "command": "npm run build:ci",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:54:20.824Z",
+    "finishedAt": "2026-09-18T05:55:06.034Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "a45aff9a6d5419c1b7a5cbc7954355176d56fac5",
+    "trackedStatus": "",
+    "id": "pack",
+    "command": "npm pack --json",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:55:06.628Z",
+    "finishedAt": "2026-09-18T05:55:09.895Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  },
+  {
+    "sourceCommit": "deec00afb4c2c00cded9d648f6a79c4be6ec9968",
+    "trackedStatus": "",
+    "id": "python",
+    "command": "node scripts/run-python.mjs -m pytest -q engine/tests --tb=short --junitxml=docs/codex-v02/V02-004D-evidence/python-junit.xml",
+    "cwd": "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-engine-v02-004d",
+    "startedAt": "2026-09-18T05:50:32.328Z",
+    "finishedAt": "2026-09-18T05:59:03.961Z",
+    "exitCode": 0,
+    "signal": null,
+    "error": null
+  }
+]

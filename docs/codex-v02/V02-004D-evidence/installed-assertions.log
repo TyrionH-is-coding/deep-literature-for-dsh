@@ -1,0 +1,37 @@
+running source False True
+require completed False True
+running source True True
+require completed True True
+reject twice explicit_other_sha True
+reject twice explicit_null_sha True
+reject twice completed_missing_sha True
+reject twice completed_other_sha True
+reject twice failed True
+reject twice queued True
+reject twice wrong_job_status True
+reject twice pdf_unconfirmed True
+reject twice pdf_hash_missing True
+reject twice pdf_hash_other True
+reject twice missing_generation_source True
+reject twice changed_generation_source True
+reject twice changed_base_source True
+reject twice metadata True
+reject twice directory_identity True
+reject twice published_target True
+reject twice published_manifest True
+reject twice other_stage True
+confirmed cache corruption True
+process parse-fail-before True
+process parse-kill-before True
+process parse-kill-after True
+process translation-fail-after True
+process translation-kill-after True
+process baseline True
+translation atomic protection True
+{"before": ["generations/482ea8ab20667b66/reading/reader.html", "ready", "2026-09-18T06:06:29.481736+00:00"], "after": ["generations/482ea8ab20667b66/reading/reader.html", "stale", "2026-09-18T06:06:35.211755+00:00"], "reader_sha256": "96b89cbf4d2b1fdbd9beeab00b9c15b8ee6ce5ddb7a3956706e1ba6ec8dfbd10", "bytes_and_mtime_unchanged": true}
+published Reader protection True
+usage: v02-004d-installed.py [-h] --data-root DATA_ROOT
+                             {library-ingest,library-backup,library-restore,download-job-save,library-list-v2,library-item-v2,folder-list,scope-folder-state,folder-create,folder-rename,library-search-rebuild,classification-apply,classification-undo,derived-enqueue,abstract-read-submit,job-status,full-read-pipeline-start,full-read-pipeline-resume,full-read-pdf-attach-resume,pdf-attach-library,export-assets,artifact-resolve,environment-status,environment-recheck,environment-mark-presented,mineru-secret-save,mineru-secret-delete,xlsx-locate,xlsx-import-user-fields,xlsx-refresh,review-session-get,review-session-bind,review-context,review-confirm,evidence-locate,resolve-conclusion,candidate-rebuild,batch-submit}
+                             ...
+v02-004d-installed.py: error: argument command: invalid choice: 'full-read-pipeline-cancel' (choose from 'library-ingest', 'library-backup', 'library-restore', 'download-job-save', 'library-list-v2', 'library-item-v2', 'folder-list', 'scope-folder-state', 'folder-create', 'folder-rename', 'library-search-rebuild', 'classification-apply', 'classification-undo', 'derived-enqueue', 'abstract-read-submit', 'job-status', 'full-read-pipeline-start', 'full-read-pipeline-resume', 'full-read-pdf-attach-resume', 'pdf-attach-library', 'export-assets', 'artifact-resolve', 'environment-status', 'environment-recheck', 'environment-mark-presented', 'mineru-secret-save', 'mineru-secret-delete', 'xlsx-locate', 'xlsx-import-user-fields', 'xlsx-refresh', 'review-session-get', 'review-session-bind', 'review-context', 'review-confirm', 'evidence-locate', 'resolve-conclusion', 'candidate-rebuild', 'batch-submit')
+cancel remains gap True

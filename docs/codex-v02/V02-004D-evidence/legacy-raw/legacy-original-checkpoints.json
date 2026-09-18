@@ -1,0 +1,61 @@
+{
+  "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\job.json": {
+    "sha256": "f0609effc2d574beb791255998a077c77b179f0eae7f70d88f8e83c3badb4443",
+    "value": {
+      "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+      "status": "pdf_ready",
+      "stages": {
+        "pdf_acquisition": {
+          "status": "completed",
+          "started_at": null,
+          "finished_at": null,
+          "input_hash": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+          "tool_version": null,
+          "result": {
+            "sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "page_count": 0,
+            "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\legacy-raw\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf"
+          },
+          "error": null
+        }
+      },
+      "error": null
+    }
+  },
+  "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\job.json": {
+    "sha256": "a475ca102da7e53d6aeebb643ff6b4bdb41be45e1f6932c832d17b6943dc1013",
+    "value": {
+      "paper_id": "482ea8ab20667b66",
+      "status": "mineru_running",
+      "stages": {
+        "pdf_acquisition": {
+          "status": "completed",
+          "started_at": null,
+          "finished_at": null,
+          "input_hash": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+          "tool_version": null,
+          "result": {
+            "sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "page_count": 0,
+            "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\legacy-raw\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf"
+          },
+          "error": null
+        },
+        "paper_parse_upgrade": {
+          "status": "running",
+          "started_at": "2026-09-18T06:05:05.488755+00:00",
+          "finished_at": null,
+          "input_hash": "dc02cc155326604560dd12f9d5d5d6291d1187891c23c06343b1921bab5ca898",
+          "tool_version": "0.1.0",
+          "result": {
+            "method": "auto",
+            "mineru_version": "mineru-local-v1:v02-004a-fixture",
+            "upgrade_reason": "full-read"
+          },
+          "error": null
+        }
+      },
+      "error": null
+    }
+  }
+}

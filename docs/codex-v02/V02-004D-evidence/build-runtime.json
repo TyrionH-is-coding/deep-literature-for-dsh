@@ -1,0 +1,12 @@
+{
+  "node": "C:\\tmp\\v4d-tools\\node\\node.exe",
+  "nodeVersion": "v22.22.2",
+  "pythonBase": "C:\\tmp\\v4d-tools\\python\\python.exe",
+  "pythonVersion": "Python 3.11.16",
+  "filesMatchedToPinnedArchives": {
+    "node.exe": "ae1a50511be58e987483fdbc12125407443926d2d394669ade2352776e920dd3",
+    "python.exe": "4d33159de276fb921e2e987f63af88b75d88c4de0b1848373b7b85b570cd726a",
+    "python311.dll": "40a427366808674fb8ddba610e1ed9200709a4f166a135794f90205c94d69548",
+    "python3.dll": "630e1a8df9d641ec4065bdd189c17b3bf61c0a0a76d02ea23a93e67c4ff82530"
+  }
+}

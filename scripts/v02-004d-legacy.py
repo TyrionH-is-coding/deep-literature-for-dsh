@@ -23,6 +23,11 @@ def main():
         p.record_provenance(root / 'legacy-provenance.json')
         checkpoints = {str(f.relative_to(root)): {'sha256':p.sha(f), 'value':p.read(f)} for f in root.glob('data/papers/**/job.json')}
         p.atomic_write_json(root / 'legacy-original-checkpoints.json', checkpoints)
+        for relative, item in checkpoints.items():
+            target=root / 'legacy-original-files' / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((root / relative).read_bytes())
+            assert p.sha(target)==item['sha256']
         print(json.dumps(result, indent=2))
         return
     assert mode == 'resume'

@@ -1,0 +1,162 @@
+[
+  {
+    "name": "running source False",
+    "passed": true,
+    "seconds": 2.8307671546936035
+  },
+  {
+    "name": "require completed False",
+    "passed": true,
+    "seconds": 3.6394238471984863
+  },
+  {
+    "name": "running source True",
+    "passed": true,
+    "seconds": 3.105144500732422
+  },
+  {
+    "name": "require completed True",
+    "passed": true,
+    "seconds": 1.8797979354858398
+  },
+  {
+    "name": "reject twice explicit_other_sha",
+    "passed": true,
+    "seconds": 2.0735971927642822
+  },
+  {
+    "name": "reject twice explicit_null_sha",
+    "passed": true,
+    "seconds": 2.690096139907837
+  },
+  {
+    "name": "reject twice completed_missing_sha",
+    "passed": true,
+    "seconds": 1.9775245189666748
+  },
+  {
+    "name": "reject twice completed_other_sha",
+    "passed": true,
+    "seconds": 1.6353662014007568
+  },
+  {
+    "name": "reject twice failed",
+    "passed": true,
+    "seconds": 1.480478286743164
+  },
+  {
+    "name": "reject twice queued",
+    "passed": true,
+    "seconds": 1.4967732429504395
+  },
+  {
+    "name": "reject twice wrong_job_status",
+    "passed": true,
+    "seconds": 1.911214828491211
+  },
+  {
+    "name": "reject twice pdf_unconfirmed",
+    "passed": true,
+    "seconds": 1.7149865627288818
+  },
+  {
+    "name": "reject twice pdf_hash_missing",
+    "passed": true,
+    "seconds": 1.5575575828552246
+  },
+  {
+    "name": "reject twice pdf_hash_other",
+    "passed": true,
+    "seconds": 1.8625545501708984
+  },
+  {
+    "name": "reject twice missing_generation_source",
+    "passed": true,
+    "seconds": 2.2360267639160156
+  },
+  {
+    "name": "reject twice changed_generation_source",
+    "passed": true,
+    "seconds": 1.625077486038208
+  },
+  {
+    "name": "reject twice changed_base_source",
+    "passed": true,
+    "seconds": 2.1774017810821533
+  },
+  {
+    "name": "reject twice metadata",
+    "passed": true,
+    "seconds": 1.7501401901245117
+  },
+  {
+    "name": "reject twice directory_identity",
+    "passed": true,
+    "seconds": 1.7029953002929688
+  },
+  {
+    "name": "reject twice published_target",
+    "passed": true,
+    "seconds": 1.3351633548736572
+  },
+  {
+    "name": "reject twice published_manifest",
+    "passed": true,
+    "seconds": 1.5149874687194824
+  },
+  {
+    "name": "reject twice other_stage",
+    "passed": true,
+    "seconds": 1.498791217803955
+  },
+  {
+    "name": "confirmed cache corruption",
+    "passed": true,
+    "seconds": 2.069284439086914
+  },
+  {
+    "name": "process parse-fail-before",
+    "passed": true,
+    "seconds": 33.49335169792175
+  },
+  {
+    "name": "process parse-kill-before",
+    "passed": true,
+    "seconds": 33.910401344299316
+  },
+  {
+    "name": "process parse-kill-after",
+    "passed": true,
+    "seconds": 35.35857439041138
+  },
+  {
+    "name": "process translation-fail-after",
+    "passed": true,
+    "seconds": 35.538333892822266
+  },
+  {
+    "name": "process translation-kill-after",
+    "passed": true,
+    "seconds": 37.17901873588562
+  },
+  {
+    "name": "process baseline",
+    "passed": true,
+    "seconds": 30.258788108825684
+  },
+  {
+    "name": "translation atomic protection",
+    "passed": true,
+    "seconds": 3.6288702487945557
+  },
+  {
+    "name": "published Reader protection",
+    "passed": true,
+    "seconds": 35.84172821044922
+  },
+  {
+    "name": "cancel remains gap",
+    "passed": true,
+    "seconds": 0.27106142044067383
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "assertions": 32,
+  "passed": true,
+  "scenarios": [
+    {
+      "scenario": "parse-fail-before",
+      "parent": "job_4f77107a96ce7b0a",
+      "state": "completed",
+      "schema": 4,
+      "providerCalls": 2,
+      "protected": true,
+      "liveOwnedProcesses": [],
+      "duplicateParent": true
+    },
+    {
+      "scenario": "parse-kill-before",
+      "parent": "job_35d3c8b8c036f958",
+      "state": "completed",
+      "schema": 4,
+      "providerCalls": 2,
+      "protected": true,
+      "liveOwnedProcesses": [],
+      "duplicateParent": true
+    },
+    {
+      "scenario": "parse-kill-after",
+      "parent": "job_63fc3e91da0d77bf",
+      "state": "completed",
+      "schema": 4,
+      "providerCalls": 1,
+      "protected": true,
+      "liveOwnedProcesses": [],
+      "duplicateParent": true
+    },
+    {
+      "scenario": "translation-fail-after",
+      "parent": "job_cfb7dd2d63d61ced",
+      "state": "completed",
+      "schema": 4,
+      "providerCalls": 1,
+      "protected": true,
+      "liveOwnedProcesses": [],
+      "duplicateParent": true
+    },
+    {
+      "scenario": "translation-kill-after",
+      "parent": "job_49f5a24c4b0f7a88",
+      "state": "completed",
+      "schema": 4,
+      "providerCalls": 1,
+      "protected": true,
+      "liveOwnedProcesses": [],
+      "duplicateParent": true
+    },
+    {
+      "scenario": "baseline",
+      "parent": "job_93be370f452e2d6c",
+      "state": "completed",
+      "schema": 4,
+      "providerCalls": 1,
+      "protected": true,
+      "liveOwnedProcesses": [],
+      "duplicateParent": true
+    }
+  ],
+  "legacy": [
+    {
+      "case": "legacy",
+      "parent": "job_ab1836ef87645f96",
+      "completed": true,
+      "oldGenerationHash": "8abc9da78d1f6c0e3e735f9dec598dae9fe409d4119dfa7d1ae0fbb5285f6ae5",
+      "rawOriginalFilesSaved": false,
+      "providerCalls": 2
+    },
+    {
+      "case": "legacy-raw",
+      "parent": "job_68e1cfdeb9dd0057",
+      "completed": true,
+      "oldGenerationHash": "a475ca102da7e53d6aeebb643ff6b4bdb41be45e1f6932c832d17b6943dc1013",
+      "rawOriginalFilesSaved": true,
+      "providerCalls": 2
+    }
+  ]
+}

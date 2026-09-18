@@ -1,0 +1,8 @@
+
+> @dsh-external/dsh-scientific-reading@0.2.0-dev.3 test:assets
+> node tests/library-assets-tools.mjs && node tests/evidence-engine-adapter.mjs && node tests/evidence-routes.mjs && node tests/library-search-ui.mjs
+
+PASS: 实际工具经 Python CLI 完成整库备份、恢复、Reader 读回和分层检索
+PASS: 证据定位、结论解析和候选重建通过实际 runEngine 参数数组调用
+PASS: 动态证据路由只为当前有效 paper 定位跳转到固定 Reader/PDF 路径
+PASS: typed 检索命中安全渲染，并经真实 library route 读回

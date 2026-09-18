@@ -1,0 +1,20 @@
+{
+  "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+  "status": "pdf_ready",
+  "stages": {
+    "pdf_acquisition": {
+      "status": "completed",
+      "started_at": null,
+      "finished_at": null,
+      "input_hash": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+      "tool_version": null,
+      "result": {
+        "sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "page_count": 0,
+        "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\legacy-raw\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf"
+      },
+      "error": null
+    }
+  },
+  "error": null
+}
