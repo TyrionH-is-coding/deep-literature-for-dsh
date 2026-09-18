@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "630398634db15b72064e64e221bc5fa6105e7a25",
+  "sourceUnchanged": true,
+  "totals": {
+    "tests": 574,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3
+  },
+  "passed": 571,
+  "allPassed": true,
+  "runRoot": "C:\\tmp\\v4f-suite-qowj06i7"
+}

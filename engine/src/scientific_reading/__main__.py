@@ -1,4 +1,5 @@
 from __future__ import annotations
+from .reading_control import ReadingControl
 
 import argparse
 import hashlib
@@ -130,7 +131,12 @@ def resume_job(
     now: datetime | None = None,
     stale_after_seconds: float = 60.0,
 ):
-    with store.claim(job_id, "resume"):
+    from contextlib import nullcontext
+    parent = store.load_request(job_id).target_stage == "full_read_pipeline"
+    control = ReadingControl(store, job_id) if parent else None
+    with (control.lock() if control else nullcontext()), store.claim(job_id, "resume"):
+        if control and control.blocked():
+            raise ValueError("pipeline_stop_requested")
         status = store.load_status(job_id)
         if status.state == "running":
             reference = status.heartbeat_at or status.updated_at
@@ -286,15 +292,26 @@ def _run_full_read_pipeline(args) -> int:
     try:
         pipeline = ReadingPipeline(args.data_root)
         store = pipeline.job_store
+        if args.command in {"full-read-pipeline-stop", "full-read-pipeline-control"}:
+            control = ReadingControl(store, args.job_id)
+            result = (control.stop(args.request_id, args.expected_revision)
+                      if args.command == "full-read-pipeline-stop" else control.read())
+            print(json.dumps(result, ensure_ascii=False))
+            return 0
         if args.command == "full-read-pipeline-start":
             state = pipeline.start(args.paper_id, args.provider_profile)
             status = store.load_status(state.parent_job_id)
-            if status.state in {"queued", "failed", "interrupted"}:
+            control = ReadingControl(store, state.parent_job_id)
+            if control.blocked():
+                state = control.overlay(state)
+            elif status.state in {"queued", "failed", "interrupted"}:
                 if status.state in {"failed", "interrupted"} and not store.handle(state.parent_job_id).resume_path.exists():
                     store.save_resume_input(state.parent_job_id, {})
                 BackgroundLauncher(args.data_root).launch_existing(state.parent_job_id)
         else:
-            with store.claim(args.job_id, "resume"):
+            control = ReadingControl(store, args.job_id)
+            with control.lock(), store.claim(args.job_id, "resume"):
+                control.authorize()
                 supplied = {}
                 if args.input is not None:
                     if str(args.input) == "-":
@@ -305,6 +322,17 @@ def _run_full_read_pipeline(args) -> int:
                         supplied = json.loads(args.input.read_text(encoding="utf-8"))
                     if not isinstance(supplied, dict):
                         raise ValueError("pipeline_input_must_be_object")
+                if args.resume_stopped:
+                    result = control.resume(args.request_id, args.expected_revision, supplied,
+                                            validate=_validate_full_read_resume,
+                                            launcher=BackgroundLauncher(args.data_root))
+                    print(json.dumps(result, ensure_ascii=False))
+                    return 0
+                if args.request_id is not None or args.expected_revision is not None:
+                    raise ValueError("resume_stopped_required")
+                if control.blocked():
+                    print(json.dumps(control.read(), ensure_ascii=False))
+                    return 2
                 status = store.load_status(args.job_id)
                 if status.state not in {"waiting_user", "waiting_agent", "failed", "interrupted"}:
                     raise ValueError("full_read_pipeline_gate_required")
@@ -328,11 +356,15 @@ def _run_full_read_pdf_attach_resume(args) -> int:
 
     store = BackgroundJobStore(args.data_root)
     try:
-        with store.claim(args.job_id, "resume"):
+        control = ReadingControl(store, args.job_id)
+        with control.lock(), store.claim(args.job_id, "resume"):
             request = store.load_request(args.job_id)
             status = store.load_status(args.job_id)
             if request.target_stage != "full_read_pipeline" or request.paper_id != args.paper_id:
                 raise ValueError("full_read_parent_mismatch")
+            if control.blocked():
+                print(json.dumps(control.read(), ensure_ascii=False))
+                return 2
             if status.state != "waiting_user" or status.reason_code != "pdf_required":
                 raise ValueError("pdf_gate_required")
             result = TrustedPdfAcquisitionService(args.data_root).attach_local(args.paper_id, args.pdf)
@@ -870,6 +902,15 @@ def _build_parser() -> argparse.ArgumentParser:
     resume = commands.add_parser("full-read-pipeline-resume")
     resume.add_argument("--job-id", required=True)
     resume.add_argument("--input", type=Path)
+    resume.add_argument("--resume-stopped", action="store_true")
+    resume.add_argument("--request-id")
+    resume.add_argument("--expected-revision", type=int)
+    stop = commands.add_parser("full-read-pipeline-stop")
+    stop.add_argument("--job-id", required=True)
+    stop.add_argument("--request-id", required=True)
+    stop.add_argument("--expected-revision", type=int, required=True)
+    control = commands.add_parser("full-read-pipeline-control")
+    control.add_argument("--job-id", required=True)
     attach = commands.add_parser("full-read-pdf-attach-resume")
     attach.add_argument("--paper-id", required=True)
     attach.add_argument("--job-id", required=True)
@@ -1125,7 +1166,7 @@ def run_cli(argv: Sequence[str] | None = None) -> int:
             finally:
                 library.close()
         if current_scope() is not None:
-            allowed = {"library-list-v2", "library-item-v2", "folder-list", "library-ingest", "derived-enqueue", "job-status", "full-read-pipeline-start", "full-read-pipeline-resume", "full-read-pdf-attach-resume", "pdf-attach-library", "artifact-resolve", "export-assets", "abstract-read-submit", "review-session-get", "review-session-bind", "review-context", "review-confirm", "evidence-locate", "resolve-conclusion"}
+            allowed = {"library-list-v2", "library-item-v2", "folder-list", "library-ingest", "derived-enqueue", "job-status", "full-read-pipeline-start", "full-read-pipeline-resume", "full-read-pipeline-stop", "full-read-pipeline-control", "full-read-pdf-attach-resume", "pdf-attach-library", "artifact-resolve", "export-assets", "abstract-read-submit", "review-session-get", "review-session-bind", "review-context", "review-confirm", "evidence-locate", "resolve-conclusion"}
             if args.command not in allowed:
                 raise ScopeError("scope_command_forbidden")
             if getattr(args, "paper_id", None):
@@ -1192,7 +1233,7 @@ def _dispatch(args) -> int:
             result, code = _job_foreground(BackgroundJobStore(args.data_root), args.job_id, timer)
             print(json.dumps(result.to_dict(), ensure_ascii=False))
             return code
-        if args.command in {"full-read-pipeline-start", "full-read-pipeline-resume"}:
+        if args.command in {"full-read-pipeline-start", "full-read-pipeline-resume", "full-read-pipeline-stop", "full-read-pipeline-control"}:
             return _run_full_read_pipeline(args)
         if args.command == "full-read-pdf-attach-resume":
             return _run_full_read_pdf_attach_resume(args)

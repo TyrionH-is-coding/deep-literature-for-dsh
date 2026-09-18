@@ -123,6 +123,16 @@ class BackgroundLauncher:
         recover_terminal: bool = False,
         strict: bool = False,
     ) -> LaunchResult:
+        from .reading_control import ReadingControl
+        if self.store.load_request(job_id).target_stage == "full_read_pipeline":
+            control = ReadingControl(self.store, job_id)
+            with control.lock():
+                if control.blocked():
+                    return LaunchResult(job_id, self.store.load_status(job_id), False)
+                return self._start_uncontrolled(job_id, recover_terminal=recover_terminal, strict=strict)
+        return self._start_uncontrolled(job_id, recover_terminal=recover_terminal, strict=strict)
+
+    def _start_uncontrolled(self, job_id, *, recover_terminal=False, strict=False):
         handle = self.store.handle(job_id)
         try:
             with self.store.launch_claim(job_id):
@@ -186,12 +196,16 @@ class BackgroundLauncher:
                     "--job-id",
                     job_id,
                 ]
+                control_marker = {}
+                if self.store.load_request(job_id).target_stage == "full_read_pipeline":
+                    from .reading_control import ReadingControl
+                    control_marker = {"controlRevision": ReadingControl(self.store, job_id).load()["revision"]}
                 creationflags = 0
                 if os.name == "nt":
                     creationflags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
                 atomic_write_json(
                     launch_marker,
-                    {"started_at": datetime.now(timezone.utc).isoformat(), "pid": None},
+                    {"started_at": datetime.now(timezone.utc).isoformat(), "pid": None, **control_marker},
                 )
                 with handle.log_path.open("ab") as log_handle:
                     process = self.popen(
@@ -209,6 +223,7 @@ class BackgroundLauncher:
                     {
                         "started_at": datetime.now(timezone.utc).isoformat(),
                         "pid": getattr(process, "pid", None),
+                        **control_marker,
                         "process_start_identity": process_start_identity(
                             getattr(process, "pid", 0)
                         ),

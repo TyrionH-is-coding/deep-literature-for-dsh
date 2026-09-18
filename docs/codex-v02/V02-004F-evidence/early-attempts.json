@@ -1,0 +1,40 @@
+{
+  "preliminary": [
+    {
+      "run": "initial targeted collection",
+      "result": "2 collection errors: reader package absent from PYTHONPATH",
+      "resolution": "set PYTHONPATH to this worktree engine/src and engine"
+    },
+    {
+      "run": "pipeline integrity / full-read worker / launcher",
+      "result": "10 passed, 14.41s",
+      "runtime": "read-only fixed 004D venv"
+    },
+    {
+      "run": "first control unit run",
+      "result": "11 passed, 20.65s"
+    },
+    {
+      "run": "first real boundary suite",
+      "result": "5 passed, 291.62s",
+      "note": "diagnostic before final hardening; not final source evidence"
+    },
+    {
+      "run": "first git author check",
+      "result": "no configured author",
+      "resolution": "per-command Codex <codex@openai.com>, matching base; no global config change"
+    },
+    {
+      "run": "edit helper",
+      "result": "cp1252 UnicodeDecodeError before write",
+      "resolution": "explicit UTF-8 read; no partial production edit"
+    },
+    {
+      "run": "first full regression before final freeze",
+      "result": "1 failed, 557 passed, 3 skipped; 785.46s",
+      "failure": "new CLI contract fixture omitted required --data-root",
+      "resolution": "fixture adds --data-root; no production change or weakened assertion; corrected single test 1 passed in 3.98s"
+    }
+  ],
+  "note": "Preliminary logs/results are retained separately; only final source run is acceptance evidence. No failure hidden by weakening a test."
+}
