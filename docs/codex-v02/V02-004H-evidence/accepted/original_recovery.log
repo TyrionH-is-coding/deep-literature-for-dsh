@@ -1,0 +1,42 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.16, pytest-8.4.2, pluggy-1.6.0 -- C:\tmp\v004h-env\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004h\engine
+configfile: pyproject.toml
+collecting ... collected 32 items
+
+engine\tests\test_v02_parse_recovery.py::test_same_source_running_checkpoint_retries[False] PASSED [  3%]
+engine\tests\test_v02_parse_recovery.py::test_same_source_running_checkpoint_retries[True] PASSED [  6%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[explicit_other_sha] PASSED [  9%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[explicit_null_sha] PASSED [ 12%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[completed_missing_sha] PASSED [ 15%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[completed_other_sha] PASSED [ 18%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[failed] PASSED [ 21%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[queued] PASSED [ 25%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[wrong_job_status] PASSED [ 28%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[pdf_unconfirmed] PASSED [ 31%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[pdf_hash_missing] PASSED [ 34%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[pdf_hash_other] PASSED [ 37%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[missing_generation_source] PASSED [ 40%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[changed_generation_source] PASSED [ 43%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[changed_base_source] PASSED [ 46%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[metadata] PASSED [ 50%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[directory_identity] PASSED [ 53%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[published_target] PASSED [ 56%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[published_manifest] PASSED [ 59%]
+engine\tests\test_v02_parse_recovery.py::test_legacy_exception_rejects_conflicts[other_stage] PASSED [ 62%]
+engine\tests\test_v02_parse_recovery.py::test_running_never_satisfies_require_stage[False] PASSED [ 65%]
+engine\tests\test_v02_parse_recovery.py::test_running_never_satisfies_require_stage[True] PASSED [ 68%]
+engine\tests\test_v02_parse_recovery.py::test_confirmed_cache_corruption_never_calls_provider PASSED [ 71%]
+engine\tests\test_v02_pipeline_contract.py::test_cross_process_stage_recovery[parse-fail-before] PASSED [ 75%]
+engine\tests\test_v02_pipeline_contract.py::test_cross_process_stage_recovery[parse-kill-before] PASSED [ 78%]
+engine\tests\test_v02_pipeline_contract.py::test_cross_process_stage_recovery[parse-kill-after] PASSED [ 81%]
+engine\tests\test_v02_pipeline_contract.py::test_cross_process_stage_recovery[translation-fail-after] PASSED [ 84%]
+engine\tests\test_v02_pipeline_contract.py::test_cross_process_stage_recovery[translation-kill-after] PASSED [ 87%]
+engine\tests\test_v02_pipeline_contract.py::test_cross_process_stage_recovery[baseline] PASSED [ 90%]
+engine\tests\test_v02_pipeline_contract.py::test_duplicate_translation_and_incomplete_candidate_are_non_destructive PASSED [ 93%]
+engine\tests\test_v02_pipeline_contract.py::test_engine_stop_control_cli_preserves_business_states PASSED [ 96%]
+engine\tests\test_v02_pipeline_contract.py::test_incomplete_new_generation_preserves_published_reader PASSED [100%]
+
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004h\docs\codex-v02\V02-004H-evidence\accepted\original_recovery.xml -
+======================= 32 passed in 426.24s (0:07:06) ========================

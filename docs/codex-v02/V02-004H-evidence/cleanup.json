@@ -1,0 +1,71 @@
+{
+  "root": "C:\\tmp\\h4-ly014tv7",
+  "processes": [
+    {
+      "type": "worker",
+      "path": "C:\\tmp\\h4-ly014tv7\\cli-resume\\data\\jobs\\job_9bca5c0bad9caa40\\launch.json",
+      "pid": 40500,
+      "recordedIdentity": "windows:01dd47409f362a4e",
+      "currentIdentity": null,
+      "alive": false
+    },
+    {
+      "type": "worker",
+      "path": "C:\\tmp\\h4-ly014tv7\\cli-start\\data\\jobs\\job_731816a6efb9ebdc\\launch.json",
+      "pid": 21040,
+      "recordedIdentity": "windows:01dd4740af05f141",
+      "currentIdentity": null,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\cli-resume\\provider-calls.jsonl",
+      "pid": 15096,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\cli-resume\\provider-calls.jsonl",
+      "pid": 45216,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\cli-start\\provider-calls.jsonl",
+      "pid": 24752,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\cli-start\\provider-calls.jsonl",
+      "pid": 30188,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\direct-gate\\provider-calls.jsonl",
+      "pid": 33104,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\direct-none\\provider-calls.jsonl",
+      "pid": 30840,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\direct-refail\\provider-calls.jsonl",
+      "pid": 23760,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "path": "C:\\tmp\\h4-ly014tv7\\direct-success\\provider-calls.jsonl",
+      "pid": 38628,
+      "alive": false
+    }
+  ],
+  "ownerClaims": [],
+  "cleanup": "Synthetic files and private environment retained for review; no user files touched."
+}

@@ -1,0 +1,38 @@
+{
+  "direct-none": {
+    "job": "failed",
+    "pipeline": "failed",
+    "stage": "parse_mineru",
+    "inspect_ok": true
+  },
+  "direct-success": {
+    "job": "failed",
+    "pipeline": "failed",
+    "stage": "parse_mineru",
+    "inspect_ok": true
+  },
+  "direct-refail": {
+    "job": "failed",
+    "pipeline": "failed",
+    "stage": "parse_mineru",
+    "inspect_ok": true
+  },
+  "direct-gate": {
+    "job": "failed",
+    "pipeline": "failed",
+    "stage": "parse_mineru",
+    "inspect_ok": true
+  },
+  "cli-resume": {
+    "job": "waiting_agent",
+    "pipeline": "waiting_agent",
+    "stage": "translate_full",
+    "inspect_ok": true
+  },
+  "cli-start": {
+    "job": "waiting_agent",
+    "pipeline": "waiting_agent",
+    "stage": "translate_full",
+    "inspect_ok": true
+  }
+}

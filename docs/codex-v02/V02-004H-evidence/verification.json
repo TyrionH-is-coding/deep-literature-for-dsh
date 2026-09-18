@@ -1,0 +1,282 @@
+{
+  "sourceCommit": "2379f9341e872c900edf5258848f0c1bc603600a",
+  "xmlUniqueTests": 598,
+  "counts": {
+    "tests": 598,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 3
+  },
+  "testFiles": 65,
+  "sourceFilesVerified": 122,
+  "sourceUnchanged": true,
+  "durationSeconds": 431.5479784011841,
+  "originalRecovery": {
+    "tests": 32,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "controlProcessResults": [
+    {
+      "scenario": "batch",
+      "protectedAssetsUnchanged": true,
+      "recordedProcesses": [
+        {
+          "pid": 28300,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 36596,
+          "code": 2,
+          "alive": false
+        },
+        {
+          "pid": 36720,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 25540,
+          "code": 0,
+          "alive": false
+        },
+        {
+          "pid": 35648,
+          "alive": false,
+          "status": {
+            "job_id": "job_a1923004579e6471",
+            "state": "completed",
+            "created_at": "2026-09-18T07:39:26.511281+00:00",
+            "updated_at": "2026-09-18T07:39:32.173723+00:00",
+            "pid": null,
+            "heartbeat_at": null,
+            "reason_code": null,
+            "required_input": {},
+            "result": {
+              "status": "success",
+              "path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-kqeuot9n\\case\\data\\library\\scientific-reading.xlsx",
+              "rows": 1
+            },
+            "error": null,
+            "scope": null
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "before_reader",
+      "protectedAssetsUnchanged": true,
+      "recordedProcesses": [
+        {
+          "pid": 2684,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 21072,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 3804,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 33716,
+          "code": 2,
+          "alive": false
+        },
+        {
+          "pid": 21404,
+          "code": 0,
+          "alive": false
+        },
+        {
+          "pid": 36084,
+          "alive": false,
+          "status": {
+            "job_id": "job_9acbd1e851ee2f6b",
+            "state": "completed",
+            "created_at": "2026-09-18T07:40:33.021207+00:00",
+            "updated_at": "2026-09-18T07:40:38.023142+00:00",
+            "pid": null,
+            "heartbeat_at": null,
+            "reason_code": null,
+            "required_input": {},
+            "result": {
+              "status": "success",
+              "path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-jze_ra2v\\case\\data\\library\\scientific-reading.xlsx",
+              "rows": 1
+            },
+            "error": null,
+            "scope": null
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "derived",
+      "protectedAssetsUnchanged": true,
+      "recordedProcesses": [
+        {
+          "pid": 30652,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 8860,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 31732,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 28272,
+          "code": 0,
+          "alive": false
+        },
+        {
+          "pid": 41444,
+          "alive": false,
+          "status": {
+            "job_id": "job_0120ad95108bcdec",
+            "state": "completed",
+            "created_at": "2026-09-18T07:42:18.426129+00:00",
+            "updated_at": "2026-09-18T07:42:24.593465+00:00",
+            "pid": null,
+            "heartbeat_at": null,
+            "reason_code": null,
+            "required_input": {},
+            "result": {
+              "status": "success",
+              "path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-2mdmr44p\\case\\data\\library\\scientific-reading.xlsx",
+              "rows": 1
+            },
+            "error": null,
+            "scope": null
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "parse",
+      "protectedAssetsUnchanged": true,
+      "recordedProcesses": [
+        {
+          "pid": 34948,
+          "code": 2,
+          "alive": false
+        },
+        {
+          "pid": 33628,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 13068,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 35604,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 37260,
+          "code": 0,
+          "alive": false
+        },
+        {
+          "pid": 21080,
+          "alive": false,
+          "status": {
+            "job_id": "job_4835f06bd30daac7",
+            "state": "completed",
+            "created_at": "2026-09-18T07:38:23.571966+00:00",
+            "updated_at": "2026-09-18T07:38:29.168215+00:00",
+            "pid": null,
+            "heartbeat_at": null,
+            "reason_code": null,
+            "required_input": {},
+            "result": {
+              "status": "success",
+              "path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-uxh0gxls\\case\\data\\library\\scientific-reading.xlsx",
+              "rows": 1
+            },
+            "error": null,
+            "scope": null
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "reader",
+      "protectedAssetsUnchanged": true,
+      "recordedProcesses": [
+        {
+          "pid": 9244,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 33632,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 27924,
+          "code": 3,
+          "alive": false
+        },
+        {
+          "pid": 10388,
+          "code": 2,
+          "alive": false
+        },
+        {
+          "pid": 42820,
+          "code": 0,
+          "alive": false
+        },
+        {
+          "pid": 27084,
+          "alive": false,
+          "status": {
+            "job_id": "job_7bc9c03444d3ec72",
+            "state": "completed",
+            "created_at": "2026-09-18T07:41:34.126011+00:00",
+            "updated_at": "2026-09-18T07:41:38.988214+00:00",
+            "pid": null,
+            "heartbeat_at": null,
+            "reason_code": null,
+            "required_input": {},
+            "result": {
+              "status": "success",
+              "path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-epd1qwcl\\case\\data\\library\\scientific-reading.xlsx",
+              "rows": 1
+            },
+            "error": null,
+            "scope": null
+          }
+        }
+      ]
+    }
+  ],
+  "cleanup": {
+    "roots": [
+      "C:\\tmp\\v4h-suite-9dsu4sng",
+      "C:\\tmp\\h4-base-ht1x4x7u",
+      "C:\\tmp\\h4-ly014tv7"
+    ],
+    "ownerClaims": [],
+    "shardProcessesExited": true,
+    "retained": "Task-only synthetic roots and venv retained for review; process fixture TemporaryDirectory roots removed by passing tests."
+  }
+}

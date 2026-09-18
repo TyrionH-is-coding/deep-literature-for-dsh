@@ -1,0 +1,17 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.16, pytest-8.4.2, pluggy-1.6.0 -- C:\tmp\v004h-env\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004h\engine
+configfile: pyproject.toml
+collecting ... collected 7 items
+
+engine\tests\test_reading_control_process.py::test_real_provider_stop_boundary[parse] PASSED [ 14%]
+engine\tests\test_reading_control_process.py::test_real_provider_stop_boundary[batch] PASSED [ 28%]
+engine\tests\test_reading_control_process.py::test_real_provider_stop_boundary[before_reader] PASSED [ 42%]
+engine\tests\test_reading_control_process.py::test_real_provider_stop_boundary[reader] PASSED [ 57%]
+engine\tests\test_reading_control_process.py::test_real_provider_stop_boundary[derived] PASSED [ 71%]
+engine\tests\test_reading_control_process.py::test_cross_process_stop_start_and_resume_races PASSED [ 85%]
+engine\tests\test_reading_control_process.py::test_old_live_worker_without_capability_is_only_requested PASSED [100%]
+
+- generated xml file: C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004h\docs\codex-v02\V02-004H-evidence\accepted\control_process.xml -
+======================== 7 passed in 355.27s (0:05:55) ========================

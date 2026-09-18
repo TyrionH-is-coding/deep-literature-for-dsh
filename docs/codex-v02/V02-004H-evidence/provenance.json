@@ -1,0 +1,320 @@
+{
+  "executable": "C:\\tmp\\v004h-env\\Scripts\\python.exe",
+  "pipelineImport": "C:\\tmp\\v004h-env\\Lib\\site-packages\\scientific_reading\\reading_pipeline.py",
+  "readerImport": "C:\\tmp\\v004h-env\\Lib\\site-packages\\reader\\__init__.py",
+  "files": [
+    {
+      "file": "scientific_reading/abstract_read_models.py",
+      "sha256": "1fb51e097b7751c505460281649868265a2cb627f40280e966c1d7507edc32c0",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/abstract_read_service.py",
+      "sha256": "4eb024fa7f03021d25f29e265ee0629168bdcc69018d71acd64d22c271a0319e",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/assets.py",
+      "sha256": "33f1563a0a788c713396130d47fe802536bf6e18abfcc931d25ae086d4bfe06a",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/background_launcher.py",
+      "sha256": "94584c051af6be605d8c28aae75a74b8daac460a384440ec1ca9b9838ee25b47",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/background_models.py",
+      "sha256": "48c82d55ced38ad4b8464d173feb10fa5b9c741445fd8528ab56a3b13eba93f8",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/background_store.py",
+      "sha256": "94b6435ee5a826a80d4d07c876a30b37e60d9fd1f8a1e9b67b1518104aac8b52",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/batch_service.py",
+      "sha256": "277df8738dc5eb80cd8e457a0f5bb92ba0b948893a4e4e577aec4e7e0c4d9a11",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/candidate_rebuild.py",
+      "sha256": "9b77df59c0020df7718cf7e8aebbb39ce814a43342288db6710d50ae70c0b8c5",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/classification_service.py",
+      "sha256": "97bd30e3e37df5826a0d118392aae238f0987f4946a964cdb9c014c2f792d517",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/data_guard.py",
+      "sha256": "7a669642230d7c603599394847e35eaf54b6fdbd0269eaeac41d7cd0430e3230",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/derived_pipeline.py",
+      "sha256": "881129473b54b5fb3b242d0a7c51d8c49dd64d3bcd8caac115f1542ed09a2e9f",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/environment_status.py",
+      "sha256": "2805f1fa44720ffe2fe006429795a5d2ef4361d4807bbaeea3f82e6fd6e40563",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/evidence_locator.py",
+      "sha256": "5c8cbeb10a7493697e28e5ba1fc0013182086ff035d8c2fa96f96156cc0c24a0",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/export_service.py",
+      "sha256": "d4a1fd4a3d7e4aab2cecb7ed6cd94087712111b3a1bd6a7f1ab41f97a519f74a",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/foreground.py",
+      "sha256": "0dd1c776c026673104bec7dd78bc51c53b02b0faa893bc0cb5f1b2f77225e755",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/full_read_models.py",
+      "sha256": "85744805c154143bae05a4c8929be8c7f73bf8fb906765ceb8b66a25ad1e0c05",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/full_read_renderer.py",
+      "sha256": "6189c87ea4f889019b41362f06c44fb4e5ee7ff861ac1f2610cd9ba1feb4b601",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/full_read_service.py",
+      "sha256": "07868dd67716ad2b79dbc79574f7b2ddf91367271ff80e9f4ef5007b28b119ec",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/identifiers.py",
+      "sha256": "d5670563ce42dd5b6564f47072ab812df1fb2307524b107fb31306c303d4fd87",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/library_backup.py",
+      "sha256": "6a45ca116a1a2e19e1a43c7a373b88e73ce0ce0c1435ae900119eb3cb41c15f5",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/library_schema.py",
+      "sha256": "6daa518766f8c070cd6a1e2da93df9e1be6d7eb2cb874bbe6078c7216a02f8ad",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/library_search.py",
+      "sha256": "50652c303b78f95ee8c228dafbc407120e71738f4cec8fddb718ce59c96ba0e4",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/library_service.py",
+      "sha256": "de959f0f39bd1e27b7412e34d9c5e1ce2bd21e5dad79ad4512f4a53cc99c0b11",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/metadata_enrichment.py",
+      "sha256": "66bf1d4086c7b71cfa4e05966bad679239b5bb28995796b1da4f5e2f3e640695",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/mineru_api.py",
+      "sha256": "faf22b76797881972e5067bedf375f0489a3f67b1110fa1206dc94b066fd6e96",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/mineru_artifacts.py",
+      "sha256": "8d53fceb6412d39b1f971ce9b4b9f335cf48ea22d6cfe2d3bdf4ebbc84ae4c60",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/mineru_local.py",
+      "sha256": "fc570118302b8ff68c8cbed375202c1293e074b3127f37d81625665649c970db",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/mineru_models.py",
+      "sha256": "f781048a3687a8706ecf16dd7fa51d0c21b230e644167a42a3899a6b7d523132",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/mineru_normalizer.py",
+      "sha256": "8f20c7ebb10f0fbcfbc6d157384dd65f879f3973f987af926917adf0cbf1b487",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/mineru_provider.py",
+      "sha256": "56dbdabe7816eea39d4e14dffc19e01ed572a991a6709357a6ff80bd7e0c3eec",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/mineru_service.py",
+      "sha256": "451a0a17985782d4d1acfa74bb3902b80b83c7339c9140f3ca6be1dbea8c3f0a",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/models.py",
+      "sha256": "9d1e283cba034f7d6114f181b3283b71e9ffc505c8f48aa13a675b8954a60b33",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/normalization_upgrade.py",
+      "sha256": "ac9fca15fb876e6b53e4e31b8b343ad61ffd2bd018d98f49171b8ade9d0e60bb",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/package_manifest.py",
+      "sha256": "e771a4d972ac6324127a02232f28801b5e4251da5cd1562bf337cea716fd5101",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/parse_models.py",
+      "sha256": "ff9dfef4646c25248d3d7aeacb51926f846561787ffe834b9fa2588376402178",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/pdf_acquisition.py",
+      "sha256": "c9696fca35e4b9bfef7da6ae60cfb4d894fa20f1e536012e8fa090715f125a11",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/pdf_validation.py",
+      "sha256": "402807fd396894e91e89101a651905a6a1d3c2f1ca3127ac26426afae59e81f3",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/reading_control.py",
+      "sha256": "a3bdfe8562a923041280b428220d3564cff50d1baaac26249d89a9d523254579",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/reading_pipeline.py",
+      "sha256": "d7c0afd3b2c9bd0cb87f705db97454883d3cc9cb1545b2709b4eec183c0811f6",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/reading_pipeline_models.py",
+      "sha256": "4772fe31f5c9c5170762cf81a26a26ab3bf6180bf6a711481b93323e5c654e16",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/review_service.py",
+      "sha256": "aa8a702ebe992c0a3a13d1b5c2ebec5662aa7ab6d9acce96378f66bc12197c97",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/scope.py",
+      "sha256": "67c8ed79b94b5c2e7913b4b091fe070b2058039ce6fddf60a147c7f1f8b75d08",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/secret_store.py",
+      "sha256": "49f91b046f1dbe8a59f938e25aed869a46cd08c65f6e7c5fe4c183edc3d1fdf8",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/subprocess_utils.py",
+      "sha256": "63e221815874e22db6548a2bd904a3b69db1a52d9fb55c397b6f02623bd74ab4",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/worker.py",
+      "sha256": "efe7db9fb82eb8398253eacb9bb47e2cbfe279767bf3504c3b4239d2fc7f5558",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/workspace.py",
+      "sha256": "3d853838eab4b913b8108e2c4dd194073fd8614d43b6700ff78f5bda5156bc9d",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/xlsx_snapshot.py",
+      "sha256": "0ca976a4f308c8e27020953122e55888796ccb06d69196ab2d9f6a4498a7b7be",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/xlsx_user_fields.py",
+      "sha256": "880ad0319956d4e4fa1af0e9da231d62be964e01fcd45f70897c74c27f1d9ea5",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/__init__.py",
+      "sha256": "7adb753da09c27232c8d7056824d35da13499510aef10d1fbdcddc1c0cdde8f0",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "scientific_reading/__main__.py",
+      "sha256": "c7bfbb04febad7ca2554593400cc2948f7d579dc886f0e176d75c33e030da68f",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "reader/build_reader.py",
+      "sha256": "7a02640dae2d04845854b0a30dca5f38b9330b5d045dc28642e27ed080aa021a",
+      "checkoutMatches": true,
+      "installedMatches": true
+    },
+    {
+      "file": "reader/__init__.py",
+      "sha256": "e7b70422bb2ea4d755506496344904458b9a3f6673043abb5ffc2c260afe0718",
+      "checkoutMatches": true,
+      "installedMatches": true
+    }
+  ],
+  "allIdentical": true
+}
