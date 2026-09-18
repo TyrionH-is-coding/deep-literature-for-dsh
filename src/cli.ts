@@ -535,6 +535,18 @@ export async function engineContinueFullRead(config: Config, jobId: string, supp
   return { ok: r.ok, json: r.json, stderr: r.stderr }
 }
 
+/** Trusted host opt-in only; ordinary continuation never clears stop intent. */
+export async function engineResumeStoppedFullRead(config: Config, jobId: string, suppliedInput: Record<string, unknown>,
+  options: { requestId: string; expectedRevision: number }) {
+  if (!options || typeof options.requestId !== 'string' || !options.requestId.trim()
+    || [...options.requestId].length > 200 || !Number.isSafeInteger(options.expectedRevision) || options.expectedRevision < 0) {
+    throw new Error('reading_control_operation_invalid')
+  }
+  const env = await trustedProviderEnv(config)
+  return engineJson(config, ['full-read-pipeline-resume', '--job-id', jobId, '--resume-stopped',
+    '--request-id', options.requestId, '--expected-revision', String(options.expectedRevision), '--input', '-'], suppliedInput, env)
+}
+
 export async function engineAttachAndResumeFullReadPdf(config: Config, paperId: string, jobId: string, pdfPath: string) {
   const env = await trustedProviderEnv(config)
   const r = await engineJson(config, ['full-read-pdf-attach-resume', '--paper-id', paperId, '--job-id', jobId, '--pdf', pdfPath], undefined, env)

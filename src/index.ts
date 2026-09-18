@@ -19,7 +19,7 @@ export const inject = ['tools', 'webServer', 'agentPresets', 'agents', 'subagent
 
 export { Config }
 export { withEngineScope, type EngineScope } from './engine_scope.js'
-export { engineJson, engineStartFullRead, engineContinueFullRead, engineAttachAndResumeFullReadPdf } from './cli.js'
+export { engineJson, engineStartFullRead, engineContinueFullRead, engineResumeStoppedFullRead, engineAttachAndResumeFullReadPdf } from './cli.js'
 export {
   DEFAULT_PRESET_ID,
   PRESET_DISPLAY_NAME,
