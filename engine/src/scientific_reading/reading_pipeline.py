@@ -17,6 +17,7 @@ from typing import Any, Callable
 from .background_models import AgentRequired, BackgroundRequest, UserActionRequired
 from .background_store import BackgroundJobStore, JobClaimUnavailable, stable_job_id
 from .data_guard import root_operation
+from .reading_control import ReadingControl
 from .identifiers import metadata_identity_compatible
 from .library_service import LibraryService
 from .models import PaperMetadata, StageRecord
@@ -530,6 +531,12 @@ class ReadingPipeline:
 
     @root_operation
     def start(self, paper_id: str, provider_profile: str = "none", *, expected_parent_job_id: str | None = None) -> PipelineResult:
+        state = self._start(paper_id, provider_profile, expected_parent_job_id=expected_parent_job_id)
+        control = ReadingControl(self.job_store, state.parent_job_id)
+        control.blocked()
+        return control.overlay(state)
+
+    def _start(self, paper_id: str, provider_profile: str = "none", *, expected_parent_job_id: str | None = None) -> PipelineResult:
         if provider_profile not in {"none", "scansci"}:
             raise ValueError("trusted_provider_profile_invalid")
         library = LibraryService(self.data_root)
@@ -683,84 +690,94 @@ class ReadingPipeline:
         self, parent_job_id: str, supplied_input: dict | None = None
     ) -> PipelineResult:
         with self.job_store.claim(parent_job_id, "reading_pipeline"):
+            control = ReadingControl(self.job_store, parent_job_id)
             state = self._load(parent_job_id)
-            capture_scope(self.data_root, state.paper_id)
-            if state.current_stage == "completed":
-                self._sync_library(state)
-                return state
-            if (
-                state.state in {"failed", "needs_user", "waiting_agent"}
-                and supplied_input is None
-            ):
-                return state
+            with control.stage(state.current_stage) as admitted:
+                if not admitted:
+                    return control.overlay(state)
+                result = self._advance(parent_job_id, supplied_input)
+            return control.overlay(result)
 
-            stage = state.current_stage
-            state.state = stage
-            state.required_action = None
-            state.last_error = None
-            if stage not in state.stage_timings:
-                state.stage_timings[stage] = {
-                    "started_at": _now(),
-                    "finished_at": None,
-                }
-            state.updated_at = _now()
-            self._save(state)
+    def _advance(self, parent_job_id, supplied_input):
+        state = self._load(parent_job_id)
+        capture_scope(self.data_root, state.paper_id)
+        if state.current_stage == "completed":
             self._sync_library(state)
-            try:
-                runner_state = ReadingPipelineState.from_dict(state.to_dict())
-                if stage in _HEAVY_STAGES:
-                    with self._heavy_claim():
-                        output = self.stage_runner(stage, runner_state, supplied_input)
-                else:
-                    output = self.stage_runner(stage, runner_state, supplied_input)
-                capture_scope(self.data_root, state.paper_id)
-                if not isinstance(output, dict):
-                    raise ValueError("stage_output_not_json")
-                normalized_output = self._normalize_stage_output(stage, output)
-            except UserActionRequired as gate:
-                return self._persist_gate(state, "needs_user", gate)
-            except AgentRequired as gate:
-                return self._persist_gate(state, "waiting_agent", gate)
-            except Exception as error:
-                if stage == "schedule_derived_updates":
-                    state.stage_timings[stage]["finished_at"] = _now()
-                    state.stage_outputs[stage] = {
-                        "status": "failed",
-                        "error": self._safe_error(error),
-                    }
-                    state.last_error = self._safe_error(error)
-                    return self._complete(state)
-                state.state = "failed"
-                state.last_error = self._safe_error(error)
-                return self._persist(state)
+            return state
+        if (
+            state.state in {"failed", "needs_user", "waiting_agent"}
+            and supplied_input is None
+        ):
+            return state
 
-            state.stage_timings[stage]["finished_at"] = _now()
-            state.stage_outputs[stage] = normalized_output
-            stage_job = state.stage_outputs[stage].get("job_id")
-            if isinstance(stage_job, str):
-                state.stage_jobs[stage] = stage_job
-            source_sha = state.stage_outputs[stage].get("source_pdf_sha256")
-            reader_sha = state.stage_outputs[stage].get("reader_source_sha256")
-            if isinstance(source_sha, str):
-                state.source_pdf_sha256 = source_sha
-                library = LibraryService(self.data_root)
-                try:
-                    library.set_reading_parent(
-                        state.paper_id, source_sha, state.parent_job_id
-                    )
-                finally:
-                    library.close()
-            if isinstance(reader_sha, str):
-                state.reader_source_sha256 = reader_sha
-            index = PIPELINE_STAGES.index(stage)
-            if index == len(PIPELINE_STAGES) - 1:
+        stage = state.current_stage
+        state.state = stage
+        state.required_action = None
+        state.last_error = None
+        if stage not in state.stage_timings:
+            state.stage_timings[stage] = {
+                "started_at": _now(),
+                "finished_at": None,
+            }
+        state.updated_at = _now()
+        self._save(state)
+        self._sync_library(state)
+        try:
+            runner_state = ReadingPipelineState.from_dict(state.to_dict())
+            if stage in _HEAVY_STAGES:
+                with self._heavy_claim():
+                    output = self.stage_runner(stage, runner_state, supplied_input)
+            else:
+                output = self.stage_runner(stage, runner_state, supplied_input)
+            capture_scope(self.data_root, state.paper_id)
+            if not isinstance(output, dict):
+                raise ValueError("stage_output_not_json")
+            normalized_output = self._normalize_stage_output(stage, output)
+        except UserActionRequired as gate:
+            return self._persist_gate(state, "needs_user", gate)
+        except AgentRequired as gate:
+            return self._persist_gate(state, "waiting_agent", gate)
+        except Exception as error:
+            if stage == "schedule_derived_updates":
+                state.stage_timings[stage]["finished_at"] = _now()
+                state.stage_outputs[stage] = {
+                    "status": "failed",
+                    "error": self._safe_error(error),
+                }
+                state.last_error = self._safe_error(error)
                 return self._complete(state)
-            state.current_stage = PIPELINE_STAGES[index + 1]
-            state.state = "queued"
+            state.state = "failed"
+            state.last_error = self._safe_error(error)
             return self._persist(state)
+
+        state.stage_timings[stage]["finished_at"] = _now()
+        state.stage_outputs[stage] = normalized_output
+        stage_job = state.stage_outputs[stage].get("job_id")
+        if isinstance(stage_job, str):
+            state.stage_jobs[stage] = stage_job
+        source_sha = state.stage_outputs[stage].get("source_pdf_sha256")
+        reader_sha = state.stage_outputs[stage].get("reader_source_sha256")
+        if isinstance(source_sha, str):
+            state.source_pdf_sha256 = source_sha
+            library = LibraryService(self.data_root)
+            try:
+                library.set_reading_parent(
+                    state.paper_id, source_sha, state.parent_job_id
+                )
+            finally:
+                library.close()
+        if isinstance(reader_sha, str):
+            state.reader_source_sha256 = reader_sha
+        index = PIPELINE_STAGES.index(stage)
+        if index == len(PIPELINE_STAGES) - 1:
+            return self._complete(state)
+        state.current_stage = PIPELINE_STAGES[index + 1]
+        state.state = "queued"
+        return self._persist(state)
 
     @root_operation
     def inspect(self, parent_job_id: str) -> PipelineResult:
+        ReadingControl(self.job_store, parent_job_id).load()
         state = self._load(parent_job_id)
         status = self.job_store.load_status(parent_job_id)
         if (
@@ -776,7 +793,7 @@ class ReadingPipeline:
                 state.state = "queued"
                 self._save(state)
         self._sync_library(state, replace_active=False)
-        return state
+        return ReadingControl(self.job_store, parent_job_id).overlay(state)
 
     def _complete(self, state: ReadingPipelineState) -> ReadingPipelineState:
         state.current_stage = "completed"
@@ -810,7 +827,8 @@ class ReadingPipeline:
             state,
             parent_job_id,
             expected_paper_id=expected_paper_id,
-            job_state=self.job_store.load_status(parent_job_id).state,
+            job_state=("queued" if self.job_store.load_status(parent_job_id).reason_code == "pipeline_stop_requested"
+                       else self.job_store.load_status(parent_job_id).state),
         )
         return state
 

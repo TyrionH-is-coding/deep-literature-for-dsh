@@ -81,14 +81,17 @@ def test_duplicate_translation_and_incomplete_candidate_are_non_destructive(shor
         library.close()
 
 
-def test_engine_has_no_cancel_state_or_cli_command():
+def test_engine_stop_control_cli_preserves_business_states():
     from scientific_reading.background_store import ALLOWED_TRANSITIONS
     from scientific_reading.__main__ import _build_parser
     assert 'canceled' not in ALLOWED_TRANSITIONS
-    # This is an explicit boundary assertion, NOT evidence that cancellation works.
-    with pytest.raises(SystemExit) as caught:
-        _build_parser().parse_args(['full-read-pipeline-cancel', '--job-id', 'job_0123456789abcdef'])
-    assert caught.value.code == 2
+    parser = _build_parser()
+    args = parser.parse_args(['full-read-pipeline-stop', '--job-id', 'job_0123456789abcdef',
+                              '--request-id', 'stop', '--expected-revision', '0'])
+    assert args.expected_revision == 0
+    args = parser.parse_args(['full-read-pipeline-resume', '--job-id', 'job_0123456789abcdef',
+                              '--resume-stopped', '--request-id', 'resume', '--expected-revision', '1'])
+    assert args.resume_stopped
 
 
 def test_incomplete_new_generation_preserves_published_reader(short_root):
