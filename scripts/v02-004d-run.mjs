@@ -1,0 +1,18 @@
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { spawnSync, execFileSync } from 'node:child_process';
+const root=resolve(import.meta.dirname,'..'), out=resolve(root,'docs/codex-v02/V02-004D-evidence');
+mkdirSync(out,{recursive:true});
+const python=resolve(root,'.venv/Scripts/python.exe');
+const env={...process.env, SCIENTIFIC_READING_PYTHON:python,PYTHON:python,PYTHONUTF8:'1',PYTHONIOENCODING:'utf-8',SR_NATIVE_KEYRING_TEST:'0',PIP_NO_BUILD_ISOLATION:'1',PIP_CONSTRAINT:resolve(root,'docs/codex-v02/evidence/audit-python-requirements.txt')};
+const commands={build:'npm run build:ci',python:'node scripts/run-python.mjs -m pytest -q engine/tests --tb=short --junitxml=docs/codex-v02/V02-004D-evidence/python-junit.xml',offline:'npm run test:offline',assets:'npm run test:assets',pack:'npm pack --json',freeze:'"'+python+'" -m pip freeze --all'};
+const id=process.argv[2]; if(!Object.hasOwn(commands,id))throw Error('Unknown check');
+const startedAt=new Date().toISOString();
+const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+const trackedStatus=execFileSync('git',['status','--porcelain','--untracked-files=no'],{cwd:root,encoding:'utf8'}).trim();
+if(['build','pack'].includes(id) && trackedStatus)throw Error('clean tracked source required');
+const run=spawnSync(commands[id],{cwd:root,env,shell:true,encoding:'utf8',timeout:1200000,maxBuffer:64*1024*1024,windowsHide:true});
+writeFileSync(resolve(out,id+'.log'),(run.stdout??'')+(run.stderr??'')+(run.error?.stack??''));
+const p=resolve(out,'runs.json'), runs=existsSync(p)?JSON.parse(readFileSync(p,'utf8')):[];
+runs.push({sourceCommit,trackedStatus,id,command:commands[id],cwd:root,startedAt,finishedAt:new Date().toISOString(),exitCode:run.status,signal:run.signal,error:run.error?.message??null});
+writeFileSync(p,JSON.stringify(runs,null,2)+'\n'); console.log(id+': '+run.status+'\n'+(run.stdout??'').slice(-2500)+(run.stderr??'').slice(-1500));process.exitCode=run.status??1;
