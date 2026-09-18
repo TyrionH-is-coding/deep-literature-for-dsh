@@ -1,0 +1,6 @@
+{
+  "originalAdvanceBodyPreserved": true,
+  "stateValidatorPreserved": true,
+  "base": "a37a415c4bec9a895f1dc1619cfa35081cf85d26",
+  "note": "Only admission wrapper and stop-gate load exception added. No 004G output was used."
+}

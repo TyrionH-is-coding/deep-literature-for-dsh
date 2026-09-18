@@ -1,0 +1,262 @@
+[
+  {
+    "scenario": "parse",
+    "state": "completed",
+    "processes": [
+      {
+        "pid": 40360,
+        "code": 2,
+        "alive": false
+      },
+      {
+        "pid": 35564,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 3804,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 19980,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 12440,
+        "code": 0,
+        "alive": false
+      }
+    ],
+    "children": [
+      {
+        "pid": 35400,
+        "alive": false,
+        "status": {
+          "job_id": "job_af030bd02066a46b",
+          "state": "completed",
+          "created_at": "2026-09-18T06:43:58.091107+00:00",
+          "updated_at": "2026-09-18T06:44:02.829823+00:00",
+          "pid": null,
+          "heartbeat_at": null,
+          "reason_code": null,
+          "required_input": {},
+          "result": {
+            "status": "success",
+            "path": "C:\\tmp\\v4f-boundaries-final\\parse\\data\\library\\scientific-reading.xlsx",
+            "rows": 1
+          },
+          "error": null,
+          "scope": null
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "batch",
+    "state": "completed",
+    "processes": [
+      {
+        "pid": 39276,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 33088,
+        "code": 2,
+        "alive": false
+      },
+      {
+        "pid": 36584,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 45612,
+        "code": 0,
+        "alive": false
+      }
+    ],
+    "children": [
+      {
+        "pid": 35900,
+        "alive": false,
+        "status": {
+          "job_id": "job_8229e475a9c515a5",
+          "state": "completed",
+          "created_at": "2026-09-18T06:44:54.415056+00:00",
+          "updated_at": "2026-09-18T06:44:59.241080+00:00",
+          "pid": null,
+          "heartbeat_at": null,
+          "reason_code": null,
+          "required_input": {},
+          "result": {
+            "status": "success",
+            "path": "C:\\tmp\\v4f-boundaries-final\\batch\\data\\library\\scientific-reading.xlsx",
+            "rows": 1
+          },
+          "error": null,
+          "scope": null
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "before_reader",
+    "state": "completed",
+    "processes": [
+      {
+        "pid": 33036,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 3424,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 44052,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 44056,
+        "code": 2,
+        "alive": false
+      },
+      {
+        "pid": 35824,
+        "code": 0,
+        "alive": false
+      }
+    ],
+    "children": [
+      {
+        "pid": 44332,
+        "alive": false,
+        "status": {
+          "job_id": "job_d414128f960cf92a",
+          "state": "completed",
+          "created_at": "2026-09-18T06:45:56.183552+00:00",
+          "updated_at": "2026-09-18T06:46:01.460677+00:00",
+          "pid": null,
+          "heartbeat_at": null,
+          "reason_code": null,
+          "required_input": {},
+          "result": {
+            "status": "success",
+            "path": "C:\\tmp\\v4f-boundaries-final\\before_reader\\data\\library\\scientific-reading.xlsx",
+            "rows": 1
+          },
+          "error": null,
+          "scope": null
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "reader",
+    "state": "completed",
+    "processes": [
+      {
+        "pid": 9764,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 22096,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 25556,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 42236,
+        "code": 2,
+        "alive": false
+      },
+      {
+        "pid": 3568,
+        "code": 0,
+        "alive": false
+      }
+    ],
+    "children": [
+      {
+        "pid": 16760,
+        "alive": false,
+        "status": {
+          "job_id": "job_109b037a6be494e7",
+          "state": "completed",
+          "created_at": "2026-09-18T06:46:58.908036+00:00",
+          "updated_at": "2026-09-18T06:47:03.640898+00:00",
+          "pid": null,
+          "heartbeat_at": null,
+          "reason_code": null,
+          "required_input": {},
+          "result": {
+            "status": "success",
+            "path": "C:\\tmp\\v4f-boundaries-final\\reader\\data\\library\\scientific-reading.xlsx",
+            "rows": 1
+          },
+          "error": null,
+          "scope": null
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "derived",
+    "state": "completed",
+    "processes": [
+      {
+        "pid": 16848,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 30156,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 19356,
+        "code": 3,
+        "alive": false
+      },
+      {
+        "pid": 40760,
+        "code": 0,
+        "alive": false
+      }
+    ],
+    "children": [
+      {
+        "pid": 32636,
+        "alive": false,
+        "status": {
+          "job_id": "job_6a3c5a9922b42c5d",
+          "state": "completed",
+          "created_at": "2026-09-18T06:47:33.104540+00:00",
+          "updated_at": "2026-09-18T06:47:37.612126+00:00",
+          "pid": null,
+          "heartbeat_at": null,
+          "reason_code": null,
+          "required_input": {},
+          "result": {
+            "status": "success",
+            "path": "C:\\tmp\\v4f-boundaries-final\\derived\\data\\library\\scientific-reading.xlsx",
+            "rows": 1
+          },
+          "error": null,
+          "scope": null
+        }
+      }
+    ]
+  }
+]

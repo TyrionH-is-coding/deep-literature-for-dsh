@@ -1,0 +1,142 @@
+{
+  "task": "V02-004F",
+  "phase": "review",
+  "sourceCommit": "630398634db15b72064e64e221bc5fa6105e7a25",
+  "baseCommit": "a37a415c4bec9a895f1dc1619cfa35081cf85d26",
+  "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+  "sourceUnchanged": true,
+  "fullPython": {
+    "tests": 574,
+    "passed": 571,
+    "skipped": 3,
+    "failures": 0,
+    "errors": 0,
+    "wallSeconds": 655.47,
+    "shards": {
+      "control_process": {
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "original_recovery": {
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "regression_a": {
+        "tests": 296,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      },
+      "regression_b": {
+        "tests": 239,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 2
+      }
+    }
+  },
+  "originalRecoveryTests": 32,
+  "controlUnitTests": 17,
+  "controlProcessTests": 7,
+  "compiledModules": 50,
+  "skips": [
+    {
+      "test": "test_generation_package_manifest_rejects_symlinked_parent_escape",
+      "reason": "directory symlinks unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\tmp\\\\v4f-suite-qowj06i7\\\\regression_a\\\\test_generation_package_manife3\\\\outside-dir' -> 'C:\\\\tmp\\\\v4f-suite-qowj06i7\\\\regression_a\\\\test_generation_package_manife3\\\\papers\\\\doi_10.5555_bridge.2024.1\\\\generations\\\\eeeeeeeeeeeeeeee\\\\linked'"
+    },
+    {
+      "test": "test_exited_unreaped_worker_does_not_block_job_retry",
+      "reason": "Unix zombie lifecycle"
+    },
+    {
+      "test": "test_real_native_credential_service_roundtrip",
+      "reason": "requires unlocked OS credential service"
+    }
+  ],
+  "boundaries": [
+    {
+      "scenario": "batch",
+      "parent": "job_ff727fee16cc68c9",
+      "requestSeconds": 2.562999999994645,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:translate_full",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 4,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "before_reader",
+      "parent": "job_b4659ecc1a831fcb",
+      "requestSeconds": 2.5930000000080327,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:translate_full",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 5,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "derived",
+      "parent": "job_4109cfac3a4d64ba",
+      "requestSeconds": 2.702999999994063,
+      "controlAtBoundary": "terminal",
+      "boundary": "after:schedule_derived_updates",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 1,
+      "workerCount": 4,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "parse",
+      "parent": "job_3a3813e1b46363be",
+      "requestSeconds": 2.4689999999973224,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:parse_mineru",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 5,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "reader",
+      "parent": "job_3da85c331c8af8b8",
+      "requestSeconds": 2.297000000005937,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:render_reader",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 5,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    }
+  ],
+  "cleanup": "cleanup.json",
+  "sourceManifest": "source-manifest.json",
+  "evidence": "accepted/run.json",
+  "knownLimitations": [
+    "A source only; B/UI and installed combination remain separate",
+    "No forced provider/independent child termination",
+    "Unknown launch PID remains uncertain; manual reconciliation required",
+    "Old code downgrade cannot protect new stop records",
+    "Non-Windows, physical power loss and real scientific quality not validated"
+  ]
+}

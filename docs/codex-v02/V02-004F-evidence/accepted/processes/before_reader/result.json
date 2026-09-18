@@ -1,0 +1,317 @@
+{
+  "scenario": "before_reader",
+  "parent": "job_b4659ecc1a831fcb",
+  "processes": [
+    {
+      "pid": 14580,
+      "code": 3,
+      "alive": false
+    },
+    {
+      "pid": 40884,
+      "code": 3,
+      "alive": false
+    },
+    {
+      "pid": 27664,
+      "code": 3,
+      "alive": false
+    },
+    {
+      "pid": 44624,
+      "code": 2,
+      "alive": false
+    },
+    {
+      "pid": 42464,
+      "code": 0,
+      "alive": false
+    }
+  ],
+  "snapshots": [
+    {
+      "contract": "reading-control-v1",
+      "parentJobId": "job_b4659ecc1a831fcb",
+      "revision": 1,
+      "stopRequested": true,
+      "requestId": "stop",
+      "acknowledgedRevision": null,
+      "effectiveBoundary": null,
+      "activeStage": {
+        "pid": 43368,
+        "identity": "windows:01dd473c7d12275d",
+        "stage": "translate_full"
+      },
+      "worker": {
+        "pid": 43368,
+        "identity": "windows:01dd473c7d12275d"
+      },
+      "operations": {
+        "stop": {
+          "kind": "stop",
+          "expectedRevision": 0,
+          "revision": 1
+        }
+      },
+      "status": "requested",
+      "businessStatus": {
+        "job_id": "job_b4659ecc1a831fcb",
+        "state": "running",
+        "created_at": "2026-09-18T07:07:34.655446+00:00",
+        "updated_at": "2026-09-18T07:08:33.713200+00:00",
+        "pid": 43368,
+        "heartbeat_at": "2026-09-18T07:08:33.713200+00:00",
+        "reason_code": null,
+        "required_input": {},
+        "result": {},
+        "error": null,
+        "scope": null
+      },
+      "pipelineState": {
+        "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+        "parent_job_id": "job_b4659ecc1a831fcb",
+        "current_stage": "translate_full",
+        "state": "translate_full",
+        "stage_jobs": {},
+        "stage_outputs": {
+          "ensure_pdf": {
+            "status": "pdf_ready",
+            "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+            "page_count": 0,
+            "reused": true
+          },
+          "parse_mineru": {
+            "status": "parsed_mineru",
+            "source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+            "output_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md",
+            "manifest_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json"
+          }
+        },
+        "stage_timings": {
+          "ensure_pdf": {
+            "started_at": "2026-09-18T07:07:46.756263+00:00",
+            "finished_at": "2026-09-18T07:07:48.027525+00:00"
+          },
+          "parse_mineru": {
+            "started_at": "2026-09-18T07:07:48.824715+00:00",
+            "finished_at": "2026-09-18T07:07:52.117843+00:00"
+          },
+          "translate_full": {
+            "started_at": "2026-09-18T07:07:52.822291+00:00",
+            "finished_at": null
+          }
+        },
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "reader_source_sha256": null,
+        "required_action": null,
+        "last_error": null,
+        "created_at": "2026-09-18T07:07:34.946447+00:00",
+        "updated_at": "2026-09-18T07:08:29.239625+00:00",
+        "completed_at": null,
+        "contract_version": "reading-pipeline-v1"
+      },
+      "independentChildrenStopped": false,
+      "compatibility": "unconfirmed_worker_or_stage",
+      "replayedOperation": null
+    }
+  ],
+  "request_seconds": 2.5930000000080327,
+  "reader_pointer_at_stop": [],
+  "confirmed": {
+    "contract": "reading-control-v1",
+    "parentJobId": "job_b4659ecc1a831fcb",
+    "revision": 1,
+    "stopRequested": true,
+    "requestId": "stop",
+    "acknowledgedRevision": 1,
+    "effectiveBoundary": "after:translate_full",
+    "activeStage": null,
+    "worker": null,
+    "operations": {
+      "stop": {
+        "kind": "stop",
+        "expectedRevision": 0,
+        "revision": 1
+      }
+    },
+    "status": "acknowledged",
+    "businessStatus": {
+      "job_id": "job_b4659ecc1a831fcb",
+      "state": "waiting_user",
+      "created_at": "2026-09-18T07:07:34.655446+00:00",
+      "updated_at": "2026-09-18T07:08:43.145241+00:00",
+      "pid": null,
+      "heartbeat_at": null,
+      "reason_code": "pipeline_stop_requested",
+      "required_input": {
+        "revision": 1
+      },
+      "result": {},
+      "error": null,
+      "scope": null
+    },
+    "pipelineState": {
+      "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+      "parent_job_id": "job_b4659ecc1a831fcb",
+      "current_stage": "render_reader",
+      "state": "queued",
+      "stage_jobs": {},
+      "stage_outputs": {
+        "ensure_pdf": {
+          "status": "pdf_ready",
+          "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+          "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+          "page_count": 0,
+          "reused": true
+        },
+        "parse_mineru": {
+          "status": "parsed_mineru",
+          "source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+          "output_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md",
+          "manifest_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json"
+        },
+        "translate_full": {
+          "status": "translated_full",
+          "source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+          "output_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\reading\\full\\translations.json",
+          "manifest_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\reading\\full\\translations.json",
+          "completed_batches": 2
+        }
+      },
+      "stage_timings": {
+        "ensure_pdf": {
+          "started_at": "2026-09-18T07:07:46.756263+00:00",
+          "finished_at": "2026-09-18T07:07:48.027525+00:00"
+        },
+        "parse_mineru": {
+          "started_at": "2026-09-18T07:07:48.824715+00:00",
+          "finished_at": "2026-09-18T07:07:52.117843+00:00"
+        },
+        "translate_full": {
+          "started_at": "2026-09-18T07:07:52.822291+00:00",
+          "finished_at": "2026-09-18T07:08:42.907340+00:00"
+        }
+      },
+      "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+      "reader_source_sha256": null,
+      "required_action": null,
+      "last_error": null,
+      "created_at": "2026-09-18T07:07:34.946447+00:00",
+      "updated_at": "2026-09-18T07:08:42.907340+00:00",
+      "completed_at": null,
+      "contract_version": "reading-pipeline-v1"
+    },
+    "independentChildrenStopped": false,
+    "compatibility": "cooperative_boundary",
+    "replayedOperation": null
+  },
+  "protected_assets_unchanged": true,
+  "child_count_at_stop": 0,
+  "final_reader_pointer": [
+    [
+      "generations/482ea8ab20667b66/reading/reader.html",
+      "ready",
+      "2026-09-18T07:09:22.604350+00:00"
+    ]
+  ],
+  "final": {
+    "paper_id": "doi_10.5555_full-read-recovery.2026.1",
+    "parent_job_id": "job_b4659ecc1a831fcb",
+    "current_stage": "completed",
+    "state": "completed",
+    "stage_jobs": {},
+    "stage_outputs": {
+      "ensure_pdf": {
+        "status": "pdf_ready",
+        "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "source_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\source.pdf",
+        "page_count": 0,
+        "reused": true
+      },
+      "parse_mineru": {
+        "status": "parsed_mineru",
+        "source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "output_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md",
+        "manifest_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json"
+      },
+      "translate_full": {
+        "status": "translated_full",
+        "source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+        "output_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\reading\\full\\translations.json",
+        "manifest_path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\reading\\full\\translations.json",
+        "completed_batches": 2
+      },
+      "render_reader": {
+        "status": "reader_ready",
+        "reader_html": "generations/482ea8ab20667b66/reading/reader.html",
+        "manifest_path": "generations/482ea8ab20667b66/reading/reader-manifest.json",
+        "reader_source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a"
+      },
+      "schedule_derived_updates": {
+        "status": "queued",
+        "xlsx_job_id": "job_ac661e6227442d55"
+      }
+    },
+    "stage_timings": {
+      "ensure_pdf": {
+        "started_at": "2026-09-18T07:07:46.756263+00:00",
+        "finished_at": "2026-09-18T07:07:48.027525+00:00"
+      },
+      "parse_mineru": {
+        "started_at": "2026-09-18T07:07:48.824715+00:00",
+        "finished_at": "2026-09-18T07:07:52.117843+00:00"
+      },
+      "translate_full": {
+        "started_at": "2026-09-18T07:07:52.822291+00:00",
+        "finished_at": "2026-09-18T07:08:42.907340+00:00"
+      },
+      "render_reader": {
+        "started_at": "2026-09-18T07:09:14.946845+00:00",
+        "finished_at": "2026-09-18T07:09:22.801899+00:00"
+      },
+      "schedule_derived_updates": {
+        "started_at": "2026-09-18T07:09:23.289063+00:00",
+        "finished_at": "2026-09-18T07:09:25.085934+00:00"
+      }
+    },
+    "source_pdf_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+    "reader_source_sha256": "482ea8ab20667b667ab6dc8fb56b0947aede3d9fbe566316222c11283f12e46a",
+    "required_action": null,
+    "last_error": null,
+    "created_at": "2026-09-18T07:07:34.946447+00:00",
+    "updated_at": "2026-09-18T07:09:25.085934+00:00",
+    "completed_at": "2026-09-18T07:09:25.085934+00:00",
+    "contract_version": "reading-pipeline-v1"
+  },
+  "assets": {
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\full.md": "fda36e794449e2b9fb08def1985a92f2fb2c1dc07e2fd77de241ea8dde415afa",
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\parsed\\mineru\\source_map.json": "1cf8ac12f622d62efcbc4f161d295c773352ae2b1ccfa72c942f57b7a25b9ac9",
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\reading\\full\\batches\\batch-0001.translation.json": "daa0b812ba310a9f112e28c2cfd564ad56baa9354dcdc24970dbeb5a6e8b93fc",
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\reading\\full\\batches\\batch-0002.translation.json": "c2f0886afda466cbd10159a638b5dff7d58d8ad7a76e04fceb505db4e5ac46a7",
+    "data\\papers\\doi_10.5555_full-read-recovery.2026.1\\generations\\482ea8ab20667b66\\reading\\reader.html": "96b89cbf4d2b1fdbd9beeab00b9c15b8ee6ce5ddb7a3956706e1ba6ec8dfbd10"
+  },
+  "children": [
+    {
+      "pid": 13000,
+      "alive": false,
+      "status": {
+        "job_id": "job_ac661e6227442d55",
+        "state": "completed",
+        "created_at": "2026-09-18T07:09:24.034045+00:00",
+        "updated_at": "2026-09-18T07:09:39.041348+00:00",
+        "pid": null,
+        "heartbeat_at": null,
+        "reason_code": null,
+        "required_input": {},
+        "result": {
+          "status": "success",
+          "path": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4f-3a0xvk56\\case\\data\\library\\scientific-reading.xlsx",
+          "rows": 1
+        },
+        "error": null,
+        "scope": null
+      }
+    }
+  ]
+}

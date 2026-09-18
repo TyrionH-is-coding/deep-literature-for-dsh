@@ -1,0 +1,106 @@
+{
+  "checkedAt": "2026-09-18T07:22:01.769749+00:00",
+  "taskOwnedServicesStarted": 0,
+  "verifierProcessesJoined": [
+    {
+      "name": "control_process",
+      "pid": 38304,
+      "exitCode": 0
+    },
+    {
+      "name": "original_recovery",
+      "pid": 36416,
+      "exitCode": 0
+    },
+    {
+      "name": "regression_a",
+      "pid": 25480,
+      "exitCode": 0
+    },
+    {
+      "name": "regression_b",
+      "pid": 38160,
+      "exitCode": 0
+    }
+  ],
+  "processBoundaries": [
+    {
+      "scenario": "batch",
+      "parent": "job_ff727fee16cc68c9",
+      "requestSeconds": 2.562999999994645,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:translate_full",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 4,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "before_reader",
+      "parent": "job_b4659ecc1a831fcb",
+      "requestSeconds": 2.5930000000080327,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:translate_full",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 5,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "derived",
+      "parent": "job_4109cfac3a4d64ba",
+      "requestSeconds": 2.702999999994063,
+      "controlAtBoundary": "terminal",
+      "boundary": "after:schedule_derived_updates",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 1,
+      "workerCount": 4,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "parse",
+      "parent": "job_3a3813e1b46363be",
+      "requestSeconds": 2.4689999999973224,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:parse_mineru",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 5,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    },
+    {
+      "scenario": "reader",
+      "parent": "job_3da85c331c8af8b8",
+      "requestSeconds": 2.297000000005937,
+      "controlAtBoundary": "acknowledged",
+      "boundary": "after:render_reader",
+      "finalState": "completed",
+      "protectedAssetsUnchanged": true,
+      "childCountAtStop": 0,
+      "workerCount": 5,
+      "childCount": 1,
+      "liveOwnedAtScenarioEnd": 0,
+      "readerPointerPreserved": true
+    }
+  ],
+  "liveOwnedAtScenarioEnd": 0,
+  "retainedSyntheticRoots": [
+    "C:\\tmp\\v4f-suite-qowj06i7",
+    "C:/tmp/v4f-boundaries-final",
+    "C:/tmp/v4f-venv"
+  ],
+  "note": "Scenario assertions verify each owned child after wait; no signal is sent to old or potentially reused PIDs. TemporaryDirectory-controlled process libraries are removed. The explicit pytest basetemp, ordinary tmp_path fixtures, venv and dedicated diagnostic libraries are retained for audit; inert synthetic unit-test lock fixtures are not live workers. No user instance was accessed.",
+  "retainedDiagnosticOwnerFiles": []
+}

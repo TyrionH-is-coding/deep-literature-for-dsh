@@ -1,0 +1,51 @@
+{
+  "full_review": {
+    "contract_version": "full-review-v2",
+    "highlights": [
+      {
+        "block_id": "p0001-m0002",
+        "kind": "result",
+        "reason": "验收用核心结果。"
+      },
+      {
+        "block_id": "p0001-m0003",
+        "kind": "method",
+        "reason": "验收用关键方法。"
+      }
+    ],
+    "guide": {
+      "research_question": [
+        {
+          "text": "验收研究问题。",
+          "source_block_ids": [
+            "p0001-m0002"
+          ]
+        }
+      ],
+      "key_methods": [
+        {
+          "text": "验收关键方法。",
+          "source_block_ids": [
+            "p0001-m0003"
+          ]
+        }
+      ],
+      "core_results": [
+        {
+          "text": "验收核心结果。",
+          "source_block_ids": [
+            "p0001-m0004"
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "text": "验收局限性。",
+          "source_block_ids": [
+            "p0001-m0005"
+          ]
+        }
+      ]
+    }
+  }
+}

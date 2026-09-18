@@ -1,0 +1,46 @@
+{
+  "sourceCommit": "630398634db15b72064e64e221bc5fa6105e7a25",
+  "createdAt": "2026-09-18T07:04:56.4893713Z",
+  "files": [
+    {
+      "path": "engine/src/scientific_reading/__main__.py",
+      "sha256": "c7bfbb04febad7ca2554593400cc2948f7d579dc886f0e176d75c33e030da68f"
+    },
+    {
+      "path": "engine/src/scientific_reading/background_launcher.py",
+      "sha256": "94584c051af6be605d8c28aae75a74b8daac460a384440ec1ca9b9838ee25b47"
+    },
+    {
+      "path": "engine/src/scientific_reading/reading_control.py",
+      "sha256": "a3bdfe8562a923041280b428220d3564cff50d1baaac26249d89a9d523254579"
+    },
+    {
+      "path": "engine/src/scientific_reading/reading_pipeline.py",
+      "sha256": "324d42885a1d0ce07007a74812f1cff87114168e6b97f398d5ef2edf97defb26"
+    },
+    {
+      "path": "engine/src/scientific_reading/worker.py",
+      "sha256": "efe7db9fb82eb8398253eacb9bb47e2cbfe279767bf3504c3b4239d2fc7f5558"
+    },
+    {
+      "path": "engine/tests/test_reading_control.py",
+      "sha256": "97cb7db1c170543ad6e1f3eab3cdba261d1948897d7f437056f1b8f563c5f76e"
+    },
+    {
+      "path": "engine/tests/test_reading_control_process.py",
+      "sha256": "2def61e8b6cffa0d3b098a23dfd6f3ffef3712f7b06261f9a010dfc0a0973fa5"
+    },
+    {
+      "path": "engine/tests/test_v02_pipeline_contract.py",
+      "sha256": "d5951c5fda6020ddfd7181aed13024f143031d1b0d57754c0fcbb27e5a56259c"
+    },
+    {
+      "path": "scripts/v02-004f-process.py",
+      "sha256": "8c4c02e87c7d562c3313e954684ff2bc3692a358ebf60053adfd6e99f8462621"
+    },
+    {
+      "path": "scripts/v02-004f-verify.py",
+      "sha256": "6bf416b97a23dde6e794533943b85eeab412893d8dc1a169d035fa0b908a283d"
+    }
+  ]
+}

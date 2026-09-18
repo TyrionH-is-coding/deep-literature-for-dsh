@@ -1,0 +1,52 @@
+........................................................................ [ 12%]
+................................................................s....... [ 25%]
+........................................................................ [ 38%]
+........................................................................ [ 51%]
+.....................................................................ss. [ 64%]
+........................................................................ [ 77%]
+....................................................................F... [ 89%]
+.........................................................                [100%]
+================================== FAILURES ===================================
+___________ test_engine_stop_control_cli_preserves_business_states ____________
+
+    def test_engine_stop_control_cli_preserves_business_states():
+        from scientific_reading.background_store import ALLOWED_TRANSITIONS
+        from scientific_reading.__main__ import _build_parser
+        assert 'canceled' not in ALLOWED_TRANSITIONS
+        parser = _build_parser()
+>       args = parser.parse_args(['full-read-pipeline-stop', '--job-id', 'job_0123456789abcdef',
+                                  '--request-id', 'stop', '--expected-revision', '0'])
+
+engine\tests\test_v02_pipeline_contract.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\tmp\v4d-tools\python\Lib\argparse.py:1874: in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\tmp\v4d-tools\python\Lib\argparse.py:1907: in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\tmp\v4d-tools\python\Lib\argparse.py:2156: in _parse_known_args
+    self.error(_('the following arguments are required: %s') %
+C:\tmp\v4d-tools\python\Lib\argparse.py:2640: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = ArgumentParser(prog='__main__.py', usage=None, description='DSH Scientific Reading', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = '__main__.py: error: the following arguments are required: --data-root\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+C:\tmp\v4d-tools\python\Lib\argparse.py:2627: SystemExit
+---------------------------- Captured stderr call -----------------------------
+usage: __main__.py [-h] --data-root DATA_ROOT
+                   {library-ingest,library-backup,library-restore,download-job-save,library-list-v2,library-item-v2,folder-list,scope-folder-state,folder-create,folder-rename,library-search-rebuild,classification-apply,classification-undo,derived-enqueue,abstract-read-submit,job-status,full-read-pipeline-start,full-read-pipeline-resume,full-read-pipeline-stop,full-read-pipeline-control,full-read-pdf-attach-resume,pdf-attach-library,export-assets,artifact-resolve,environment-status,environment-recheck,environment-mark-presented,mineru-secret-save,mineru-secret-delete,xlsx-locate,xlsx-import-user-fields,xlsx-refresh,review-session-get,review-session-bind,review-context,review-confirm,evidence-locate,resolve-conclusion,candidate-rebuild,batch-submit}
+                   ...
+__main__.py: error: the following arguments are required: --data-root
+=========================== short test summary info ===========================
+FAILED engine\tests\test_v02_pipeline_contract.py::test_engine_stop_control_cli_preserves_business_states
+1 failed, 557 passed, 3 skipped in 785.46s (0:13:05)

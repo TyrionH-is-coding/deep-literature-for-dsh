@@ -1,0 +1,21 @@
+{
+  "python": "3.11.16 (main, Sep  1 2026, 14:15:24) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\tmp\\v4f-venv\\Scripts\\python.exe",
+  "dependencies": {
+    "beautifulsoup4": "4.14.3",
+    "soupsieve": "2.8",
+    "typing_extensions": "4.15.0",
+    "latex2mathml": "3.81.0",
+    "Pillow": "12.0.0",
+    "openpyxl": "3.1.5",
+    "et_xmlfile": "2.0.0",
+    "pytest": "8.4.2",
+    "iniconfig": "2.1.0",
+    "packaging": "25.0",
+    "pluggy": "1.6.0",
+    "Pygments": "2.19.2",
+    "colorama": "0.4.6",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1"
+  }
+}
