@@ -1,0 +1,49 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Traceback (most recent call last):
+
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-v02-004d\scripts\fixtures\v02-004d\restart-failure.py", line 27, in <module>
+
+    state=pipeline.inspect(value['parent'])
+
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\15694\AppData\Local\Temp\v4do\releases\2e3ea62e9a4a11a4\runtime\venv\Lib\site-packages\scientific_reading\data_guard.py", line 127, in guarded
+
+    return method(self, *args, **kwargs)
+
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\15694\AppData\Local\Temp\v4do\releases\2e3ea62e9a4a11a4\runtime\venv\Lib\site-packages\scientific_reading\reading_pipeline.py", line 764, in inspect
+
+    state = self._load(parent_job_id)
+
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\15694\AppData\Local\Temp\v4do\releases\2e3ea62e9a4a11a4\runtime\venv\Lib\site-packages\scientific_reading\reading_pipeline.py", line 809, in _load
+
+    self._validate_state(
+
+  File "C:\Users\15694\AppData\Local\Temp\v4do\releases\2e3ea62e9a4a11a4\runtime\venv\Lib\site-packages\scientific_reading\reading_pipeline.py", line 933, in _validate_state
+
+    raise ValueError("reading_pipeline_state_invalid")
+
+ValueError: reading_pipeline_state_invalid
+
+
+
+1 !== 0
+
+    at probe (file:///C:/Users/15694/Documents/ChatGPT/deep-literature-v02-004d/scripts/acceptance-v02-004d-failure.mjs:8:412)
+    at file:///C:/Users/15694/Documents/ChatGPT/deep-literature-v02-004d/scripts/acceptance-v02-004d-failure.mjs:17:25 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.22.2

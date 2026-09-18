@@ -1,0 +1,50 @@
+[
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "AGENTS.md",
+    "saved": "frozen-AGENTS.md",
+    "sha256": "c0aa8d666354d9dd313b2efcd38d1b2d75252fe8ae6b281b18164201f87e0ef3"
+  },
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "docs/project/session-protocol.md",
+    "saved": "frozen-session-protocol.md",
+    "sha256": "919acfc7f22bb313c9dd277c6c229ee751219f23c24c171a2f37c418cad7e21a"
+  },
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "docs/project/tasks/V02-004G.md",
+    "saved": "frozen-V02-004G.md",
+    "sha256": "a568a66348364b90f7610e445b5735c4f2ae105400e68d6c4d436903f8bf7ab0"
+  },
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "docs/project/evidence/V02-004D-control-review.md",
+    "saved": "frozen-V02-004D-control-review.md",
+    "sha256": "d5f4f01d8ff5ddcddee8b6f6be6e95e1885942ffca850ea802b69507cfa1fa15"
+  },
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "docs/project/evidence/V02-004D/restart-failure-direct-advance.json",
+    "saved": "frozen-restart-failure-direct-advance.json",
+    "sha256": "3748e726010c158f339437b2d7f55cf3c70c54c5f63f1906a9aaa082345b2aea"
+  },
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "docs/project/evidence/V02-004D/restart-failure-direct-advance.txt",
+    "saved": "frozen-restart-failure-direct-advance.txt",
+    "sha256": "fa9f81bf9e73f52e33ba6404a8c2e318aaeb8ae2c62f8f3cb2e2b14d46882545"
+  },
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "scripts/fixtures/v02-004d/restart-failure.py",
+    "saved": "frozen-restart-failure.py",
+    "sha256": "51d7be6af5ac0273d7e4c02f7703e28150c0c97af67b4a86a58a55618b786ad4"
+  },
+  {
+    "contextCommit": "fd1e08d2d35c13af8723a93b794187ea6d87a021",
+    "source": "scripts/fixtures/v02-004d/process-probe.py",
+    "saved": "frozen-process-probe.py",
+    "sha256": "023cdd233b2b2e4957b87bc3f3bd364d6ec1a5a2bc58d671aa4322cfffb573fc"
+  }
+]

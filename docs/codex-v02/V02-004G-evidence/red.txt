@@ -1,0 +1,46 @@
+{
+  "direct-none": {
+    "job": "failed",
+    "pipeline": "failed",
+    "stage": "parse_mineru",
+    "inspect_ok": true
+  },
+  "direct-success": {
+    "job": "failed",
+    "pipeline": "queued",
+    "stage": "translate_full",
+    "inspect_ok": false
+  },
+  "direct-refail": {
+    "job": "failed",
+    "pipeline": "failed",
+    "stage": "parse_mineru",
+    "inspect_ok": true
+  },
+  "direct-gate": {
+    "job": "failed",
+    "pipeline": "waiting_agent",
+    "stage": "parse_mineru",
+    "inspect_ok": false
+  },
+  "cli-resume": {
+    "job": "waiting_agent",
+    "pipeline": "waiting_agent",
+    "stage": "translate_full",
+    "inspect_ok": true
+  },
+  "cli-start": {
+    "job": "waiting_agent",
+    "pipeline": "waiting_agent",
+    "stage": "translate_full",
+    "inspect_ok": true
+  }
+}
+Traceback (most recent call last):
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004g\scripts\v02-004g-audit.py", line 161, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\15694\Documents\ChatGPT\deep-literature-engine-v02-004g\scripts\v02-004g-audit.py", line 157, in main
+    assert 'inspect_traceback' not in case['after'], 'REGRESSION: accepted explicit advance must leave reloadable state (or reject before mutation)'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: REGRESSION: accepted explicit advance must leave reloadable state (or reject before mutation)

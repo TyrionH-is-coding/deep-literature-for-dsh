@@ -1,0 +1,81 @@
+{
+  "roots": [
+    "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8",
+    "C:\\Users\\15694\\AppData\\Local\\Temp\\g4d-kc2qq31k"
+  ],
+  "processes": [
+    {
+      "type": "worker",
+      "marker": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\cli-resume\\data\\jobs\\job_e0e2a312bc1894f6\\launch.json",
+      "pid": 32508,
+      "recorded_identity": "windows:01dd4737da0a3cd2",
+      "current_identity": null,
+      "alive": false
+    },
+    {
+      "type": "worker",
+      "marker": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\cli-start\\data\\jobs\\job_0ee4779c420cafd1\\launch.json",
+      "pid": 40440,
+      "recorded_identity": "windows:01dd4737e78e08ca",
+      "current_identity": null,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\cli-resume\\provider-calls.jsonl",
+      "pid": 31976,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\cli-resume\\provider-calls.jsonl",
+      "pid": 3172,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\cli-start\\provider-calls.jsonl",
+      "pid": 19568,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\cli-start\\provider-calls.jsonl",
+      "pid": 35320,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\direct-gate\\provider-calls.jsonl",
+      "pid": 23584,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\direct-none\\provider-calls.jsonl",
+      "pid": 39136,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\direct-refail\\provider-calls.jsonl",
+      "pid": 24768,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\direct-success\\provider-calls.jsonl",
+      "pid": 45164,
+      "alive": false
+    },
+    {
+      "type": "provider",
+      "record": "C:\\Users\\15694\\AppData\\Local\\Temp\\g4-c62jvcv8\\direct-success\\provider-calls.jsonl",
+      "pid": 20176,
+      "alive": false
+    }
+  ],
+  "live_owned_processes": [],
+  "owner_json": [],
+  "cleanup": "all observed children exited naturally; no kill needed; synthetic files retained"
+}

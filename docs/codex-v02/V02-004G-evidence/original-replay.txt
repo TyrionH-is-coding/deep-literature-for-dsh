@@ -1,0 +1,1 @@
+Exact 004D error reproduced; direct return queued, job failed, inspect invalid.

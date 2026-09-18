@@ -1,0 +1,206 @@
+{
+  "root": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+  "startedAt": "2026-09-18T06:05:50.138Z",
+  "checks": [
+    {
+      "cycle": 0,
+      "launch": {
+        "product": "codex-scientific-reading",
+        "schema": 1,
+        "instanceId": "1d04bf14-8a60-4dbe-9856-bdb21d6fa81e",
+        "root": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "version": "0.2.0-dev.3",
+        "candidate": true,
+        "status": "running",
+        "launchId": "de88be20-60e3-473f-a49c-ecf2a9bdb571",
+        "supervisorPid": 42284,
+        "startedAt": 1789711556538,
+        "pid": 14344,
+        "url": "http://127.0.0.1:50164"
+      },
+      "identity": {
+        "product": "codex-scientific-reading",
+        "instanceId": "1d04bf14-8a60-4dbe-9856-bdb21d6fa81e",
+        "launchId": "de88be20-60e3-473f-a49c-ecf2a9bdb571",
+        "version": "0.2.0-dev.3",
+        "candidate": true,
+        "pid": 14344,
+        "displayName": "Deep Literature for Codex"
+      },
+      "failed": {
+        "parent": "job_fe7f19bc1a4687cb",
+        "state": "failed",
+        "unchanged": true
+      }
+    },
+    {
+      "cycle": 1,
+      "launch": {
+        "product": "codex-scientific-reading",
+        "schema": 1,
+        "instanceId": "1d04bf14-8a60-4dbe-9856-bdb21d6fa81e",
+        "root": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "version": "0.2.0-dev.3",
+        "candidate": true,
+        "status": "running",
+        "launchId": "43b4e939-3157-46b1-992d-0afd9e87c600",
+        "supervisorPid": 37240,
+        "startedAt": 1789711574325,
+        "pid": 29972,
+        "url": "http://127.0.0.1:60988"
+      },
+      "identity": {
+        "product": "codex-scientific-reading",
+        "instanceId": "1d04bf14-8a60-4dbe-9856-bdb21d6fa81e",
+        "launchId": "43b4e939-3157-46b1-992d-0afd9e87c600",
+        "version": "0.2.0-dev.3",
+        "candidate": true,
+        "pid": 29972,
+        "displayName": "Deep Literature for Codex"
+      },
+      "failed": {
+        "parent": "job_fe7f19bc1a4687cb",
+        "state": "failed",
+        "unchanged": true
+      }
+    },
+    {
+      "cycle": 2,
+      "launch": {
+        "product": "codex-scientific-reading",
+        "schema": 1,
+        "instanceId": "1d04bf14-8a60-4dbe-9856-bdb21d6fa81e",
+        "root": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "version": "0.2.0-dev.3",
+        "candidate": true,
+        "status": "running",
+        "launchId": "b2f127df-16a3-4c11-943d-5eb828ce7491",
+        "supervisorPid": 43844,
+        "startedAt": 1789711590883,
+        "pid": 38020,
+        "url": "http://127.0.0.1:65126"
+      },
+      "identity": {
+        "product": "codex-scientific-reading",
+        "instanceId": "1d04bf14-8a60-4dbe-9856-bdb21d6fa81e",
+        "launchId": "b2f127df-16a3-4c11-943d-5eb828ce7491",
+        "version": "0.2.0-dev.3",
+        "candidate": true,
+        "pid": 38020,
+        "displayName": "Deep Literature for Codex"
+      },
+      "failed": {
+        "parent": "job_fe7f19bc1a4687cb",
+        "state": "failed",
+        "unchanged": true
+      }
+    }
+  ],
+  "commands": [
+    {
+      "python": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Scripts\\python.exe",
+      "args": [
+        "-I",
+        "-X",
+        "utf8",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\restart-failure.py",
+        "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "seed",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\process-probe.py"
+      ],
+      "code": 0,
+      "stdout": "{\"parent\": \"job_fe7f19bc1a4687cb\", \"paper\": \"doi_10.5555_v02-004d-restart-failure-v2\", \"status\": {\"job_id\": \"job_fe7f19bc1a4687cb\", \"state\": \"failed\", \"created_at\": \"2026-09-18T06:05:54.495577+00:00\", \"updated_at\": \"2026-09-18T06:05:55.859564+00:00\", \"pid\": null, \"heartbeat_at\": null, \"reason_code\": null, \"required_input\": {}, \"result\": {}, \"error\": \"controlled_parse_fail_before\", \"scope\": null}, \"files\": {\"library\\\\jobs\\\\job_fe7f19bc1a4687cb\\\\reading_pipeline.json\": \"6d17db764a2b8d123f839a4a6feee26a4a349eb8286ec46332f95c442fee940c\", \"library\\\\jobs\\\\job_fe7f19bc1a4687cb\\\\request.json\": \"0acca249495a683f6e5e7007ddb5f81d4cd621afa78bb16b4b6f997529843baa\", \"library\\\\jobs\\\\job_fe7f19bc1a4687cb\\\\status.json\": \"879348ea94344ce45b7b0ab2172656fa32e109b77d78c9f585aabb97d040272d\"}}\r\n",
+      "stderr": ""
+    },
+    {
+      "python": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Scripts\\python.exe",
+      "args": [
+        "-I",
+        "-X",
+        "utf8",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\restart-failure.py",
+        "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "read",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\process-probe.py"
+      ],
+      "code": 0,
+      "stdout": "{\"parent\": \"job_fe7f19bc1a4687cb\", \"state\": \"failed\", \"unchanged\": true}\r\n",
+      "stderr": ""
+    },
+    {
+      "python": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Scripts\\python.exe",
+      "args": [
+        "-I",
+        "-X",
+        "utf8",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\restart-failure.py",
+        "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "read",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\process-probe.py"
+      ],
+      "code": 0,
+      "stdout": "{\"parent\": \"job_fe7f19bc1a4687cb\", \"state\": \"failed\", \"unchanged\": true}\r\n",
+      "stderr": ""
+    },
+    {
+      "python": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Scripts\\python.exe",
+      "args": [
+        "-I",
+        "-X",
+        "utf8",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\restart-failure.py",
+        "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "read",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\process-probe.py"
+      ],
+      "code": 0,
+      "stdout": "{\"parent\": \"job_fe7f19bc1a4687cb\", \"state\": \"failed\", \"unchanged\": true}\r\n",
+      "stderr": ""
+    },
+    {
+      "python": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Scripts\\python.exe",
+      "args": [
+        "-I",
+        "-X",
+        "utf8",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\restart-failure.py",
+        "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+        "resume",
+        "C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\process-probe.py"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\15694\\Documents\\ChatGPT\\deep-literature-v02-004d\\scripts\\fixtures\\v02-004d\\restart-failure.py\", line 27, in <module>\r\n    state=pipeline.inspect(value['parent'])\r\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Lib\\site-packages\\scientific_reading\\data_guard.py\", line 127, in guarded\r\n    return method(self, *args, **kwargs)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Lib\\site-packages\\scientific_reading\\reading_pipeline.py\", line 764, in inspect\r\n    state = self._load(parent_job_id)\r\n            ^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Lib\\site-packages\\scientific_reading\\reading_pipeline.py\", line 809, in _load\r\n    self._validate_state(\r\n  File \"C:\\Users\\15694\\AppData\\Local\\Temp\\v4do\\releases\\2e3ea62e9a4a11a4\\runtime\\venv\\Lib\\site-packages\\scientific_reading\\reading_pipeline.py\", line 933, in _validate_state\r\n    raise ValueError(\"reading_pipeline_state_invalid\")\r\nValueError: reading_pipeline_state_invalid\r\n"
+    }
+  ],
+  "seed": {
+    "parent": "job_fe7f19bc1a4687cb",
+    "paper": "doi_10.5555_v02-004d-restart-failure-v2",
+    "status": {
+      "job_id": "job_fe7f19bc1a4687cb",
+      "state": "failed",
+      "created_at": "2026-09-18T06:05:54.495577+00:00",
+      "updated_at": "2026-09-18T06:05:55.859564+00:00",
+      "pid": null,
+      "heartbeat_at": null,
+      "reason_code": null,
+      "required_input": {},
+      "result": {},
+      "error": "controlled_parse_fail_before",
+      "scope": null
+    },
+    "files": {
+      "library\\jobs\\job_fe7f19bc1a4687cb\\reading_pipeline.json": "6d17db764a2b8d123f839a4a6feee26a4a349eb8286ec46332f95c442fee940c",
+      "library\\jobs\\job_fe7f19bc1a4687cb\\request.json": "0acca249495a683f6e5e7007ddb5f81d4cd621afa78bb16b4b6f997529843baa",
+      "library\\jobs\\job_fe7f19bc1a4687cb\\status.json": "879348ea94344ce45b7b0ab2172656fa32e109b77d78c9f585aabb97d040272d"
+    }
+  },
+  "finalStatus": {
+    "product": "codex-scientific-reading",
+    "schema": 1,
+    "instanceId": "1d04bf14-8a60-4dbe-9856-bdb21d6fa81e",
+    "root": "C:\\Users\\15694\\AppData\\Local\\Temp\\v4do",
+    "status": "stopped",
+    "startedAt": 1789711590883
+  }
+}
