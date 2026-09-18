@@ -338,6 +338,9 @@ class ReadingControl:
             # Only this revision may reconcile an interrupted dispatch. A replay
             # of an earlier resume never clears a later stop or launches a worker.
             status = self.store.load_status(self.job_id)
+            if status.state == "running" and status.pid is not None and not self.store._pid_is_alive(status.pid):
+                self.store.transition(self.job_id, "interrupted", error="worker_interrupted")
+                status = self.store.load_status(self.job_id)
             if status.state not in {"queued", "running", "completed"}:
                 self.store.save_resume_input(self.job_id, old["input"])
                 (self.path.parent / "launch.json").unlink(missing_ok=True)

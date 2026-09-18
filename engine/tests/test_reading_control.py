@@ -220,3 +220,18 @@ def test_pending_resume_never_relaunches_recorded_attempt(parent, pid):
     else:
         assert resume(control, launched)['revision'] == 2
     assert launched.calls == []
+
+def test_stopped_dead_worker_is_requeued_by_explicit_resume(parent):
+    import subprocess
+    import sys
+    pipeline, control, paper = parent
+    child = subprocess.Popen([sys.executable, '-c', 'pass'], creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+    assert child.wait(timeout=20) == 0
+    assert not control.store._pid_is_alive(child.pid)
+    control.store.transition(control.job_id, 'running', pid=child.pid)
+    assert control.stop('dead-worker-stop', 0)['status'] == 'acknowledged'
+    launched = Launch()
+    result = resume(control, launched)
+    assert result['revision'] == 2
+    assert launched.calls == [control.job_id]
+    assert control.store.load_status(control.job_id).state == 'queued'
