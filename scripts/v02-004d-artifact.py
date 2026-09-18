@@ -24,6 +24,6 @@ with tarfile.open(archive) as tgz:
         for n,b in expected.items(): assert actual[n]==b,n
         metadata=[n for n in z.namelist() if n.endswith('.dist-info/METADATA')]
         assert len(metadata)==1 and BytesParser().parsebytes(z.read(metadata[0]))['Version']=='0.2.0.dev2'
-    record={'sourceCommit':source,'archive':str(archive),'sha256':sha(archive.read_bytes()),'wheel':str(local),'wheelSha256':sha(wheel),'npmVersion':pkg['version'],'pythonVersion':'0.2.0.dev2','pythonFilesByteMatched':len(expected),'moduleHashes':{n:sha(actual[n]) for n in ['scientific_reading/xlsx_snapshot.py','scientific_reading/xlsx_user_fields.py']}}
+    record={'sourceCommit':source,'archive':str(archive),'sha256':sha(archive.read_bytes()),'wheel':str(local),'wheelSha256':sha(wheel),'npmVersion':pkg['version'],'pythonVersion':'0.2.0.dev2','pythonFilesByteMatched':len(expected),'moduleHashes':{n:sha(v) for n,v in actual.items()},'clientSha256':sha((root/'lib/client.js').read_bytes())}
 (root/'docs/codex-v02/V02-004D-evidence/artifact.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(record,indent=2))

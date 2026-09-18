@@ -3,7 +3,27 @@ import importlib.util
 from pathlib import Path
 import tempfile
 
-import pytest
+# Standalone assertion adapter; no third-party package or production import overlay.
+import re
+from contextlib import contextmanager
+from types import SimpleNamespace
+class AssertionAdapter:
+    fixture = staticmethod(lambda fn: fn)
+    mark = SimpleNamespace(parametrize=lambda *args: (lambda fn: fn))
+    @staticmethod
+    @contextmanager
+    def raises(kind, match=None):
+        caught = SimpleNamespace(value=None)
+        try:
+            yield caught
+        except kind as error:
+            caught.value = error
+            if match is not None:
+                assert re.search(match, str(error)), str(error)
+        else:
+            raise AssertionError('expected ' + str(kind))
+pytest = AssertionAdapter()
+
 
 from scientific_reading.models import StageRecord
 
